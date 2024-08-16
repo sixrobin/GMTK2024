@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/player.tscn" id="1_ilet3"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
-[ext_resource type="Script" path="res://scripts/food_spawner.gd" id="4_g34v0"]
-[ext_resource type="PackedScene" uid="uid://bpkjl0jejj4r0" path="res://prefabs/food.tscn" id="5_5b81w"]
+[ext_resource type="Script" path="res://scripts/food/food_spawner.gd" id="4_g34v0"]
+[ext_resource type="PackedScene" uid="uid://h263xlmwxob8" path="res://prefabs/negative_food.tscn" id="5_o5o5d"]
 
 [node name="Game" type="Node2D"]
 
@@ -16,4 +16,4 @@ TARGET = NodePath("../Player")
 
 [node name="FoodSpawner" type="Node2D" parent="."]
 script = ExtResource("4_g34v0")
-FOOD_PREFAB = ExtResource("5_5b81w")
+FOOD_PREFAB = ExtResource("5_o5o5d")

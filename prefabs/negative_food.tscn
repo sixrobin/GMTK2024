@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpkjl0jejj4r0"]
+[gd_scene load_steps=5 format=3 uid="uid://h263xlmwxob8"]
 
-[ext_resource type="Script" path="res://scripts/food/food.gd" id="1_a6tc5"]
+[ext_resource type="Script" path="res://scripts/food/negative_food.gd" id="1_5nnjt"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fg7ti"]
 
@@ -11,7 +11,7 @@ size = Vector2(6, 6)
 radius = 5.0
 
 [node name="Food" type="RigidBody2D"]
-script = ExtResource("1_a6tc5")
+script = ExtResource("1_5nnjt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)

@@ -10,6 +10,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.eat(self)
 		
 func apply_eat(player: Player):
+	print("super apply eat")
 	player.scale *= 1.1
 	destroy()
 
