@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://brnlpkcmj084h"]
+[gd_scene load_steps=4 format=3 uid="uid://brnlpkcmj084h"]
+
+[ext_resource type="Shader" path="res://shaders/radial_blur.gdshader" id="1_7ypjj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u5wp3"]
+shader = ExtResource("1_7ypjj")
+shader_parameter/blur_center = Vector2(0.5, 0.5)
+shader_parameter/blur_power = 0.02
+shader_parameter/sampling_count = 12
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qj4kc"]
 
 [node name="Camera2D" type="Camera2D"]
+
+[node name="RadialBlur" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_u5wp3")
+scale = Vector2(10000, 10000)
+texture = SubResource("PlaceholderTexture2D_qj4kc")
