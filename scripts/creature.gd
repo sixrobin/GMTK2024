@@ -31,7 +31,6 @@ func interact(object: ObjectOfInterest):
 		on_interaction_end(object)
 		
 func on_interaction_end(object: ObjectOfInterest):
-	print("end of interaction")
 	is_interacting = false
 	object.apply(self)
 
@@ -59,7 +58,6 @@ func speedBoost(speed_modifier: SpeedModifier):
 	speed_timer.start(speed_modifier.duration)
 
 func endSpeedBoost(timer: Timer, speed_modifier: SpeedModifier):
-	print("end speed boost")
 	speed_boost = 1
 	timer.queue_free()
 
