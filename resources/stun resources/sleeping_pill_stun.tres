@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StunResource" load_steps=2 format=3 uid="uid://b4ou5garcy602"]
+
+[ext_resource type="Script" path="res://scripts/utils/stun_resource.gd" id="1_t1fry"]
+
+[resource]
+script = ExtResource("1_t1fry")
+duration = 5.0
+mode = 2
