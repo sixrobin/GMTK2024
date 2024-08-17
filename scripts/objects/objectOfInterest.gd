@@ -15,6 +15,9 @@ var is_being_interacted: bool = false
 @export var restored_hunger: float = 0
 @export var speed_modifier: SpeedModifier = null
 
+#ON CLICK
+@export var on_click_handler : ObjectOnClickHandler
+
 func _ready() -> void:
 	if attractive:
 		ObjectManager.register_object(self)
@@ -29,7 +32,7 @@ func before_apply():
 	is_being_interacted = true
 
 func on_click():
-	print("Clicked!")
+	self.on_click_handler.onClick()
 
 func apply():
 	if stun_resource:

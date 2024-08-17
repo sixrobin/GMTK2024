@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhpyndspvoo28"]
+[gd_scene load_steps=5 format=3 uid="uid://bhpyndspvoo28"]
 
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="1_udoxx"]
-[ext_resource type="PackedScene" uid="uid://bmjbq1lnvltth" path="res://prefabs/debug_object_spawner.tscn" id="2_jkmac"]
+[ext_resource type="PackedScene" uid="uid://c5w20knbajgvs" path="res://prefabs/objects/foods/egg.tscn" id="3_q4l80"]
+[ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="4_8a2ug"]
+[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_tkupw"]
 
 [node name="Cursor" type="Node2D" node_paths=PackedStringArray("debug_object_spawner")]
 script = ExtResource("1_udoxx")
 debug_object_spawner = NodePath("DebugObjectSpawner")
 
-[node name="DebugObjectSpawner" parent="." instance=ExtResource("2_jkmac")]
+[node name="DebugObjectSpawner" type="Node" parent="."]
+script = ExtResource("4_tkupw")
+prefabs = Array[PackedScene]([ExtResource("3_q4l80"), ExtResource("4_8a2ug")])

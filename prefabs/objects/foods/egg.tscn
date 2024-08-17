@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5w20knbajgvs"]
+[gd_scene load_steps=8 format=3 uid="uid://c5w20knbajgvs"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_lbwer"]
 [ext_resource type="Texture2D" uid="uid://cth7oaq5g1xgb" path="res://textures/environment/Egg.png" id="2_dd1uc"]
+[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="3_ctchy"]
+[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ycjpr"]
+[ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="4_smhqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(31.8198, 40.3051)
@@ -9,12 +12,14 @@ size = Vector2(31.8198, 40.3051)
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 34.0
 
-[node name="Object" type="RigidBody2D"]
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
 script = ExtResource("1_lbwer")
 priority = 10
+attractive = false
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
+on_click_handler = NodePath("ClickHandler")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
@@ -30,5 +35,16 @@ shape = SubResource("RectangleShape2D_kfbe5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_702al")
+
+[node name="ClickHandler" type="Node" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
+script = ExtResource("3_ycjpr")
+parent = NodePath("..")
+object_spawner = NodePath("ObjectSpawner")
+
+[node name="ObjectSpawner" type="Node" parent="ClickHandler"]
+script = ExtResource("3_ctchy")
+amount_to_spawn = 3
+quantity = 8
+prefabs = Array[PackedScene]([ExtResource("4_smhqx")])
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
