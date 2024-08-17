@@ -8,11 +8,11 @@ func tryCatchFood() -> void:
 	
 	for collision in result:
 		if collision.has("collider"):
-			var food: Food = collision.collider as Food
-			if food != null:
-				self.catchFood(food)
+			var object: ObjectOfInterest = collision.collider as ObjectOfInterest
+			if object != null:
+				self.catchFood(object)
 
-func catchFood(food: Food) -> void:
+func catchFood(object: ObjectOfInterest) -> void:
 	# start dragging the food
 	pass
 
