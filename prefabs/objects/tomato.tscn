@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpkjl0jejj4r0"]
+[gd_scene load_steps=5 format=3 uid="uid://b5yorlh5s1xfc"]
 
-[ext_resource type="Script" path="res://scripts/food/food.gd" id="1_a6tc5"]
-[ext_resource type="Texture2D" uid="uid://bhu7ssde6f2dy" path="res://textures/environment/Banana.png" id="2_kfcjg"]
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_ws00s"]
+[ext_resource type="Texture2D" uid="uid://bwj0ubd0rayai" path="res://textures/environment/Tomatoes.png" id="2_nqgha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(6, 6)
@@ -9,14 +9,13 @@ size = Vector2(6, 6)
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 5.0
 
-[node name="Food" type="RigidBody2D"]
-script = ExtResource("1_a6tc5")
-stun_duration = 3.0
+[node name="Object" type="RigidBody2D"]
+script = ExtResource("1_ws00s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
-texture = ExtResource("2_kfcjg")
+texture = ExtResource("2_nqgha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398

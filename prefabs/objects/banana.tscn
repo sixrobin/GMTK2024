@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://h263xlmwxob8"]
+[gd_scene load_steps=5 format=3 uid="uid://bpkjl0jejj4r0"]
 
-[ext_resource type="Script" path="res://scripts/food/negative_food.gd" id="1_5nnjt"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fg7ti"]
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_12mxu"]
+[ext_resource type="Texture2D" uid="uid://bhu7ssde6f2dy" path="res://textures/environment/Banana.png" id="2_noxkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(6, 6)
@@ -10,14 +9,13 @@ size = Vector2(6, 6)
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 5.0
 
-[node name="Food" type="RigidBody2D"]
-script = ExtResource("1_5nnjt")
+[node name="Object" type="RigidBody2D"]
+script = ExtResource("1_12mxu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
-scale = Vector2(6, 6)
-texture = SubResource("PlaceholderTexture2D_fg7ti")
+texture = ExtResource("2_noxkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398
