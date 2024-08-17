@@ -10,11 +10,12 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kmpkd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6dok"]
-radius = 5.0
+radius = 4.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stun_timer")]
+[node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("stun_timer")]
 motion_mode = 1
 script = ExtResource("1_qoasn")
+SMOOTH_SPEED = 1.0
 stun_timer = NodePath("Timer")
 growth_stages = Array[ExtResource("2_g73dj")]([ExtResource("3_dd8mf"), ExtResource("4_34unq"), ExtResource("5_0omj0"), ExtResource("6_0kc5i")])
 

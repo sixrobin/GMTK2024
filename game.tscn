@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cw1e63d2mpduj"]
 
-[ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_ilet3"]
+[ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_g34v0"]
@@ -11,15 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="8_kajkh"]
 [ext_resource type="PackedScene" uid="uid://bogsjx7shaanv" path="res://prefabs/objects/foods/plantes.tscn" id="9_knke4"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
-[ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
+[ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="12_u6lta"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Creature" parent="." instance=ExtResource("1_ilet3")]
-
-[node name="Camera" parent="." node_paths=PackedStringArray("TARGET") instance=ExtResource("2_juggh")]
+[node name="Camera" parent="." instance=ExtResource("2_juggh")]
 script = ExtResource("3_ixshh")
-TARGET = NodePath("../Creature")
+
+[node name="Creature" parent="." instance=ExtResource("1_3mugn")]
 
 [node name="ObjectSpawner" type="Node2D" parent="."]
 script = ExtResource("4_g34v0")

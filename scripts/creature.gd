@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Player
+class_name Creature
 
 @export var SMOOTH_SPEED: float = 5
 @export var stun_timer: Timer = null
@@ -13,11 +13,14 @@ var speed_boost: float = 1
 var current_growth_stage: int = 0
 var growth_meter: float = 0
 
+func _ready() -> void:
+	CreatureSingleton.creature = self
+
 func _process(delta: float):
 	if is_stunned or is_interacting:
 		return
 	if target_object == null:
-		target_object = ObjectManager.get_first_object()
+		target_object = ObjectManager.get_best_object()
 	if target_object != null:
 		self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
 
@@ -36,7 +39,8 @@ func interact(object: ObjectOfInterest):
 		
 func on_interaction_end(object: ObjectOfInterest):
 	is_interacting = false
-	object.apply(self)
+	object.apply()
+	target_object = null
 
 # STUN
 func stun(stun_resource: StunResource) -> Timer:
@@ -73,6 +77,7 @@ func grow(growth_value: int):
 		return
 	
 	growth_meter += growth_value
+	print(growth_meter)
 	
 	#Si le growth meter est rempli, on passe au prochain stage et on update la scale & le sprite
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:

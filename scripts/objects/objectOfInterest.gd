@@ -3,6 +3,7 @@ class_name ObjectOfInterest
 
 var is_being_interacted: bool = false
 
+@export var priority: int = 1
 @export var attractive: bool = true
 @export var delete_on_applied: bool = true
 
@@ -20,19 +21,19 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_being_interacted == true:
 		return
-	if body is Player: 
-		body.interact(self)
+	if body is Creature:
+		CreatureSingleton.creature.interact(self)
 
 func before_apply():
 	is_being_interacted = true
 
-func apply(player: Player):
+func apply():
 	if stun_resource:
-		player.stun(stun_resource)
-	if growth_value >0:
-		player.grow(growth_value)
+		CreatureSingleton.creature.stun(stun_resource)
+	if growth_value > 0:
+		CreatureSingleton.creature.grow(growth_value)
 	if speed_modifier:
-		player.speedBoost(speed_modifier)
+		CreatureSingleton.creature.speedBoost(speed_modifier)
 	on_applied()
 
 func on_applied():
