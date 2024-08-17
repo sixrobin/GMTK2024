@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ObjectManager="*res://scripts/objects/objectManager.gd"
 CreatureSingleton="*res://prefabs/creatureSingleton.tscn"
+GameScoreSingleton="*res://scripts/game_score_singleton.gd"
 
 [dotnet]
 
