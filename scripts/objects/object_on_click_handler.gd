@@ -16,4 +16,4 @@ func onClick():
 		
 func applyClickResult():
 	if object_spawner:
-		object_spawner.spawn_object(self.parent.global_position, self.parent)
+		object_spawner.spawn_object(self.parent.global_position, self.parent.rotation, self.parent.get_parent())

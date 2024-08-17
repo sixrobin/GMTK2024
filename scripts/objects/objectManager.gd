@@ -29,6 +29,6 @@ func get_best_object() -> ObjectOfInterest:
 
 func sort_by_distance(a: ObjectOfInterest, b: ObjectOfInterest):
 	var creaturePosition = CreatureSingleton.creature.position
-	if a.position.distance_squared_to(creaturePosition) < b.position.distance_squared_to(creaturePosition):
+	if a.global_position.distance_squared_to(creaturePosition) < b.global_position.distance_squared_to(creaturePosition):
 		return true
 	return false;

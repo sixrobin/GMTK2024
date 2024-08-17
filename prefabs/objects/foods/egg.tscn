@@ -45,7 +45,6 @@ object_spawner = NodePath("ObjectSpawner")
 [node name="ObjectSpawner" type="Node" parent="ClickHandler"]
 script = ExtResource("3_ctchy")
 amount_to_spawn = 3
-quantity = 8
 prefabs = Array[PackedScene]([ExtResource("4_smhqx")])
 random_angle = Vector2(-30, 30)
 spawn_force = 300.0

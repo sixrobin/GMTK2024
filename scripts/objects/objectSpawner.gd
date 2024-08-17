@@ -9,7 +9,7 @@ class_name ObjectSpawner
 
 var spawned_amount: int = 0
 
-func spawn_object(position: Vector2, parent: Node2D):
+func spawn_object(position: Vector2, orientation: float, parent: Node2D):
 	for i in amount_to_spawn:
 		if quantity > 0 and spawned_amount > quantity:
 			return
@@ -20,7 +20,7 @@ func spawn_object(position: Vector2, parent: Node2D):
 		
 		if spawn_force > 0:
 			var random: float = randf_range(random_angle.x, random_angle.y)
-			var direction = Vector2.RIGHT.rotated(parent.rotation + deg_to_rad(random))
+			var direction = Vector2.RIGHT.rotated(orientation + deg_to_rad(random))
 			object.apply_impulse(direction * spawn_force)
 			
 		spawned_amount += 1

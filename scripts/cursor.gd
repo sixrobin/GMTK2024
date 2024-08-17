@@ -63,7 +63,7 @@ func _teleportCursor(screenPosition: Vector2) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("SpawnObject"):
-		self.debug_object_spawner.spawn_object(get_global_mouse_position(), get_parent())
+		self.debug_object_spawner.spawn_object(get_global_mouse_position(), 0, get_parent())
 	if event.is_action_pressed("ClickObject"):
 		self.tryClickObject()
 	if event.is_action_pressed("StartDrag"):
