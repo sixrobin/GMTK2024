@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8oopuy4vxqkf"]
+
+[ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="1_88ki1"]
+[ext_resource type="Texture2D" uid="uid://dm3ery2m4khxh" path="res://textures/tamagotchi/Tamagotchi_Device.png" id="2_ka38p"]
+
+[node name="TamagotchiBackground" type="Sprite2D"]
+z_index = -1
+texture_filter = 1
+scale = Vector2(12.52, 12.52)
+texture = ExtResource("1_88ki1")
+
+[node name="TamagotchiDevice" type="Sprite2D" parent="."]
+position = Vector2(0.75, -35.1875)
+scale = Vector2(0.108, 0.113)
+texture = ExtResource("2_ka38p")
