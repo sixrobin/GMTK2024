@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h307qyi721p3"
-path="res://.godot/imported/Monster.png-cdb33d1bc117c056a7eafb815495929e.ctex"
+uid="uid://bmkkdugbx3h6b"
+path="res://.godot/imported/Fridge.png-4015c974bdad364e50361f82aa83c70d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Monster.png"
-dest_files=["res://.godot/imported/Monster.png-cdb33d1bc117c056a7eafb815495929e.ctex"]
+source_file="res://textures/environment/Fridge.png"
+dest_files=["res://.godot/imported/Fridge.png-4015c974bdad364e50361f82aa83c70d.ctex"]
 
 [params]
 

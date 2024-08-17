@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnoaojmcl46v6"
-path="res://.godot/imported/Chair.png-bf5d6248d6c9285aa80e6c8596e017dd.ctex"
+uid="uid://ccux7i0pbrb3l"
+path="res://.godot/imported/Oven.png-52723d7afa69e349e269ebff9da3d86e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Chair.png"
-dest_files=["res://.godot/imported/Chair.png-bf5d6248d6c9285aa80e6c8596e017dd.ctex"]
+source_file="res://textures/environment/Oven.png"
+dest_files=["res://.godot/imported/Oven.png-52723d7afa69e349e269ebff9da3d86e.ctex"]
 
 [params]
 

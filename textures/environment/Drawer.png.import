@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhu7ssde6f2dy"
-path="res://.godot/imported/Banana.png-a6cf324c4716202646385e6f9bcd10d0.ctex"
+uid="uid://blfsuj5736guw"
+path="res://.godot/imported/Drawer.png-0b1b1ee4f5b848bf1d85848c836cb9cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Banana.png"
-dest_files=["res://.godot/imported/Banana.png-a6cf324c4716202646385e6f9bcd10d0.ctex"]
+source_file="res://textures/environment/Drawer.png"
+dest_files=["res://.godot/imported/Drawer.png-0b1b1ee4f5b848bf1d85848c836cb9cb.ctex"]
 
 [params]
 

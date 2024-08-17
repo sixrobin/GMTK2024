@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rsu55qnuw8fs"
-path="res://.godot/imported/Couch.png-c9d2c525891c1beb2965681f86b089e7.ctex"
+uid="uid://bwj0ubd0rayai"
+path="res://.godot/imported/Tomatoes.png-2d8040cbf69132e88865db612aa26f26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Couch.png"
-dest_files=["res://.godot/imported/Couch.png-c9d2c525891c1beb2965681f86b089e7.ctex"]
+source_file="res://textures/environment/Tomatoes.png"
+dest_files=["res://.godot/imported/Tomatoes.png-2d8040cbf69132e88865db612aa26f26.ctex"]
 
 [params]
 

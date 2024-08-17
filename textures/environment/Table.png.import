@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccux7i0pbrb3l"
-path="res://.godot/imported/Oven.png-47503d63cbbab098e21da94a77e4a3d8.ctex"
+uid="uid://c0cdhfde3huxx"
+path="res://.godot/imported/Table.png-943b3e2978e9aa7b81640a1916d5bbf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Oven.png"
-dest_files=["res://.godot/imported/Oven.png-47503d63cbbab098e21da94a77e4a3d8.ctex"]
+source_file="res://textures/environment/Table.png"
+dest_files=["res://.godot/imported/Table.png-943b3e2978e9aa7b81640a1916d5bbf7.ctex"]
 
 [params]
 

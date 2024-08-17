@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bodgh4maa0shs"
-path="res://.godot/imported/TeddyBear.png-93c82fa7d6f54ebffc18c3415319117a.ctex"
+uid="uid://6x4j5kuio2o2"
+path="res://.godot/imported/Toaster.png-fd243daa8f1d1a17e2367066acc7926d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/TeddyBear.png"
-dest_files=["res://.godot/imported/TeddyBear.png-93c82fa7d6f54ebffc18c3415319117a.ctex"]
+source_file="res://textures/environment/Toaster.png"
+dest_files=["res://.godot/imported/Toaster.png-fd243daa8f1d1a17e2367066acc7926d.ctex"]
 
 [params]
 

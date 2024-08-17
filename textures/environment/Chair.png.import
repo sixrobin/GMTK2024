@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwj0ubd0rayai"
-path="res://.godot/imported/Tomatoes.png-d81e0bd4350246ef7e39120ba6a292ed.ctex"
+uid="uid://bnoaojmcl46v6"
+path="res://.godot/imported/Chair.png-7e23c08ae6ff168c0d30e50b331aa5d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Tomatoes.png"
-dest_files=["res://.godot/imported/Tomatoes.png-d81e0bd4350246ef7e39120ba6a292ed.ctex"]
+source_file="res://textures/environment/Chair.png"
+dest_files=["res://.godot/imported/Chair.png-7e23c08ae6ff168c0d30e50b331aa5d5.ctex"]
 
 [params]
 

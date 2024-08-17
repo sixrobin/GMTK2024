@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n7uakyn7nhbw"
-path="res://.godot/imported/MouseTrap.png-f0d1ce0e2033ec5d2e85361fff2053d6.ctex"
+uid="uid://bodgh4maa0shs"
+path="res://.godot/imported/TeddyBear.png-9ef3a8b69ed984d410753962d0edf3ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/MouseTrap.png"
-dest_files=["res://.godot/imported/MouseTrap.png-f0d1ce0e2033ec5d2e85361fff2053d6.ctex"]
+source_file="res://textures/environment/TeddyBear.png"
+dest_files=["res://.godot/imported/TeddyBear.png-9ef3a8b69ed984d410753962d0edf3ee.ctex"]
 
 [params]
 

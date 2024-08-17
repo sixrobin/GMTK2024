@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cen3f0e1bl780"
-path="res://.godot/imported/Toast.png-d045f817c6b4d4ebf6787defde8121e3.ctex"
+uid="uid://rsu55qnuw8fs"
+path="res://.godot/imported/Couch.png-dbe3488b60b5e9da06efa8096dd963b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Toast.png"
-dest_files=["res://.godot/imported/Toast.png-d045f817c6b4d4ebf6787defde8121e3.ctex"]
+source_file="res://textures/environment/Couch.png"
+dest_files=["res://.godot/imported/Couch.png-dbe3488b60b5e9da06efa8096dd963b9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu0xahxl6ruxf"
-path="res://.godot/imported/TV.png-aa21426a0976ea8ec529c5a8261218a3.ctex"
+uid="uid://h307qyi721p3"
+path="res://.godot/imported/monster_placeholder.png-282c9951bd542022ff9df7f12c2ffabf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/TV.png"
-dest_files=["res://.godot/imported/TV.png-aa21426a0976ea8ec529c5a8261218a3.ctex"]
+source_file="res://textures/monster/monster_placeholder.png"
+dest_files=["res://.godot/imported/monster_placeholder.png-282c9951bd542022ff9df7f12c2ffabf.ctex"]
 
 [params]
 
