@@ -10,6 +10,7 @@ signal hunger_modified(old_hunger, new_hunger)
 @export var max_hunger: float = 100
 @export var hunger_drain: float = 1
 @export var hunger_drain_interval: float = 0.5
+@export var nav_agent: NavigationAgent2D = null
 
 var target_object: ObjectOfInterest = null
 var is_interacting: bool = false
@@ -33,7 +34,8 @@ func _process(delta: float):
 	if target_object == null:
 		target_object = ObjectManager.get_best_object()
 	if target_object != null:
-		self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
+		self.nav_agent.target_position = target_object.global_position
+		#self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
 
 # INTERACT
 func interact(object: ObjectOfInterest):
@@ -107,3 +109,13 @@ func modify_hunger(hunger_value):
 	
 	if old_hunger - hunger != 0:
 		hunger_modified.emit(old_hunger,hunger)
+		
+func _physics_process(_delta):
+	if self.nav_agent.is_navigation_finished():
+		return
+
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = self.nav_agent.get_next_path_position()
+
+	velocity = current_agent_position.direction_to(next_path_position) * SMOOTH_SPEED * speed_boost
+	move_and_slide()
