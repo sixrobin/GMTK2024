@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5w20knbajgvs"]
+
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_lbwer"]
+[ext_resource type="Texture2D" uid="uid://cth7oaq5g1xgb" path="res://textures/environment/Egg.png" id="2_dd1uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
+size = Vector2(6, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
+radius = 5.0
+
+[node name="Object" type="RigidBody2D"]
+script = ExtResource("1_lbwer")
+interact_duration = 1.0
+disabled_during_interaction = true
+scale_factor = 1.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+rotation = 0.785398
+texture = ExtResource("2_dd1uc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_kfbe5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_702al")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
