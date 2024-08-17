@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cw1e63d2mpduj"]
 
-[ext_resource type="PackedScene" path="res://prefabs/creature.tscn" id="1_ilet3"]
+[ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_ilet3"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_g34v0"]
