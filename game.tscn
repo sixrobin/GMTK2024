@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
-[ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="7_uu4n0"]
-[ext_resource type="PackedScene" path="res://prefabs/timer.tscn" id="8_r884m"]
-[ext_resource type="PackedScene" uid="uid://caldx3sud3h0v" path="res://prefabs/time_score.tscn" id="10_x7x1e"]
+[ext_resource type="PackedScene" uid="uid://bfuklq0fuc6e" path="res://prefabs/timer.tscn" id="8_r884m"]
+[ext_resource type="PackedScene" uid="uid://c8oopuy4vxqkf" path="res://prefabs/environment/tamagotchi_background.tscn" id="10_kx7gb"]
+[ext_resource type="PackedScene" path="res://prefabs/time_score.tscn" id="10_x7x1e"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
 [ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
 [ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
@@ -18,32 +18,32 @@ script = ExtResource("3_ixshh")
 
 [node name="Creature" parent="." instance=ExtResource("1_3mugn")]
 
-[node name="TamagotchiBackground" type="Sprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-scale = Vector2(16, 16)
-texture = ExtResource("7_uu4n0")
-
 [node name="Cursor" parent="." instance=ExtResource("11_05pgy")]
 
-[node name="Wall" parent="." instance=ExtResource("12_u6lta")]
-position = Vector2(-344, -9.53674e-07)
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallLeft" parent="Walls" instance=ExtResource("12_u6lta")]
+visible = false
+position = Vector2(-270, 0)
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
 
-[node name="Wall2" parent="." instance=ExtResource("12_u6lta")]
-position = Vector2(343, -2)
+[node name="WallRight" parent="Walls" instance=ExtResource("12_u6lta")]
+visible = false
+position = Vector2(280, -2)
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
 
-[node name="Wall3" parent="." instance=ExtResource("12_u6lta")]
-position = Vector2(-1, -343)
+[node name="WallUp" parent="Walls" instance=ExtResource("12_u6lta")]
+visible = false
+position = Vector2(-1, -270)
 rotation = -1.5708
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
 
-[node name="Wall4" parent="." instance=ExtResource("12_u6lta")]
-position = Vector2(1, 338)
+[node name="WallBottom" parent="Walls" instance=ExtResource("12_u6lta")]
+visible = false
+position = Vector2(4, 277)
 rotation = -1.5708
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
@@ -64,3 +64,5 @@ offset_bottom = -277.0
 
 [node name="TimeScore" parent="." instance=ExtResource("10_x7x1e")]
 position = Vector2(0, -215)
+
+[node name="TamagotchiBackground" parent="." instance=ExtResource("10_kx7gb")]
