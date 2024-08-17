@@ -12,6 +12,7 @@ var is_being_interacted: bool = false
 @export var stun_resource: StunResource = null
 
 @export var growth_value: float = 0
+@export var restored_hunger: float = 0
 @export var speed_modifier: SpeedModifier = null
 
 func _ready() -> void:
@@ -32,6 +33,8 @@ func apply():
 		CreatureSingleton.creature.stun(stun_resource)
 	if growth_value > 0:
 		CreatureSingleton.creature.grow(growth_value)
+	if restored_hunger >0:
+		CreatureSingleton.creature.modify_hunger(restored_hunger)
 	if speed_modifier:
 		CreatureSingleton.creature.speedBoost(speed_modifier)
 	on_applied()

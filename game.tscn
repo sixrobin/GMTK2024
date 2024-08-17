@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cw1e63d2mpduj"]
+[gd_scene load_steps=14 format=3 uid="uid://cw1e63d2mpduj"]
 
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="8_kajkh"]
 [ext_resource type="PackedScene" uid="uid://bogsjx7shaanv" path="res://prefabs/objects/foods/plantes.tscn" id="9_knke4"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
-[ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="12_u6lta"]
+[ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
+[ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
 
 [node name="Game" type="Node2D"]
 
@@ -53,3 +54,9 @@ position = Vector2(1, 338)
 rotation = -1.55215
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
+
+[node name="HungerGauge" parent="." instance=ExtResource("13_jthj5")]
+offset_left = -574.0
+offset_top = -321.0
+offset_right = -574.0
+offset_bottom = -321.0

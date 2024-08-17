@@ -1,10 +1,15 @@
 extends CharacterBody2D
 class_name Creature
 
+signal hunger_modified(old_hunger, new_hunger)
+
 @export var SMOOTH_SPEED: float = 5
 @export var stun_timer: Timer = null
 #@export var growth_meter_max: float = 100
 @export var growth_stages: Array[GrowthStage]
+@export var max_hunger: float = 100
+@export var hunger_drain: float = 1
+@export var hunger_drain_interval: float = 0.5
 
 var target_object: ObjectOfInterest = null
 var is_interacting: bool = false
@@ -12,9 +17,15 @@ var is_stunned: bool = false
 var speed_boost: float = 1
 var current_growth_stage: int = 0
 var growth_meter: float = 0
+var hunger: float = 0
+var hunger_drain_timer: Timer = Timer.new()
 
 func _ready() -> void:
+	hunger = max_hunger
 	CreatureSingleton.creature = self
+	add_child(hunger_drain_timer)
+	hunger_drain_timer.timeout.connect(func(): modify_hunger(-hunger_drain))
+	hunger_drain_timer.start(hunger_drain_interval)
 
 func _process(delta: float):
 	if is_stunned or is_interacting:
@@ -88,3 +99,11 @@ func grow(growth_value: int):
 	
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		self.grow(0)
+
+func modify_hunger(hunger_value):
+	var old_hunger: float = hunger
+	hunger += hunger_value
+	hunger = clamp(hunger,0,max_hunger)
+	
+	if old_hunger - hunger != 0:
+		hunger_modified.emit(old_hunger,hunger)

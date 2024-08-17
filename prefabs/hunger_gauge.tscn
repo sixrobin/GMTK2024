@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bss616n6gsc8e"]
+
+[ext_resource type="Script" path="res://scripts/UI/hunger_gauge.gd" id="1_ix3n3"]
+
+[node name="HungerGauge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ix3n3")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 30.0
+offset_right = 836.0
+offset_bottom = 99.0
+show_percentage = false
