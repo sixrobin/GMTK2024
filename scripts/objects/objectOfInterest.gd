@@ -16,7 +16,7 @@ var is_being_interacted: bool = false
 func _ready() -> void:
 	if attractive:
 		ObjectManager.register_object(self)
-		
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_being_interacted == true:
 		return
