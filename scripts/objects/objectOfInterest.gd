@@ -19,7 +19,9 @@ func _ready() -> void:
 		ObjectManager.register_object(self)
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if is_enabled == false:
+		return
+	if body is Player: 
 		body.interact(self)
 
 func before_apply():

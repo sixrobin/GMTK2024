@@ -22,6 +22,7 @@ func interact(object: ObjectOfInterest):
 		var interaction_timer: Timer = Timer.new()
 		add_child(interaction_timer)
 		interaction_timer.timeout.connect(func():object.apply(self))
+		interaction_timer.timeout.connect(func():interaction_timer.queue_free())
 		interaction_timer.start(object.interact_duration)
 	else:
 		object.apply(self)
