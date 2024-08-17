@@ -8,7 +8,11 @@ func register_object(object: ObjectOfInterest):
 	refresh_highest_priority()
 	
 func unregister_object(object: ObjectOfInterest):
+	if !dictionary.has(object.priority):
+		return
 	var array = dictionary[object.priority] as Array[ObjectOfInterest]
+	if !array.has(object):
+		return
 	array.erase(object)
 	if array.size() == 0:
 		dictionary.erase(object.priority)
