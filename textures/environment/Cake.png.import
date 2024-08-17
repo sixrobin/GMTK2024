@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rsu55qnuw8fs"
-path="res://.godot/imported/Couch.png-dbe3488b60b5e9da06efa8096dd963b9.ctex"
+uid="uid://b7xwjvfiy4lqq"
+path="res://.godot/imported/Cake.png-6bf2fc8b7f5064bca626ea088a6ab2ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/environment/Couch.png"
-dest_files=["res://.godot/imported/Couch.png-dbe3488b60b5e9da06efa8096dd963b9.ctex"]
+source_file="res://textures/environment/Cake.png"
+dest_files=["res://.godot/imported/Cake.png-6bf2fc8b7f5064bca626ea088a6ab2ad.ctex"]
 
 [params]
 
