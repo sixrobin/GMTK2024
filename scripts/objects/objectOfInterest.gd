@@ -1,13 +1,12 @@
 extends Node2D
 class_name ObjectOfInterest
 
-var is_enabled: bool = true
+var is_being_interacted: bool = false
 
 @export var attractive: bool = true
 @export var delete_on_applied: bool = true
 
 @export var interact_duration: float = 0
-@export var disabled_during_interaction: bool = false
 
 @export var stun_resource: StunResource = null
 
@@ -19,14 +18,13 @@ func _ready() -> void:
 		ObjectManager.register_object(self)
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if is_enabled == false:
+	if is_being_interacted == true:
 		return
 	if body is Player: 
 		body.interact(self)
 
 func before_apply():
-	if disabled_during_interaction:
-		is_enabled = false
+	is_being_interacted = true
 
 func apply(player: Player):
 	if stun_resource:
@@ -38,7 +36,7 @@ func apply(player: Player):
 	on_applied()
 
 func on_applied():
-	is_enabled = true
+	is_being_interacted = false
 	if attractive:
 		ObjectManager.unregister_object(self)
 	if delete_on_applied:

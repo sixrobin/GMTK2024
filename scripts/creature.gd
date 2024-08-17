@@ -2,31 +2,40 @@ extends CharacterBody2D
 class_name Player
 
 @export var SMOOTH_SPEED: float = 5
-var speed_boost: float = 1
 @export var stun_timer: Timer = null
 
 var target_object: ObjectOfInterest = null
+var is_interacting: bool = false
 var is_stunned: bool = false
+var speed_boost: float = 1
 
 func _process(delta: float):
-	if is_stunned:
+	if is_stunned or is_interacting:
 		return
 	if target_object == null:
 		target_object = ObjectManager.get_first_object()
 	if target_object != null:
 		self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
 
+# INTERACT
 func interact(object: ObjectOfInterest):
+	is_interacting = true
 	object.before_apply()
-	if object.interact_duration >0:
+	if object.interact_duration > 0:
 		var interaction_timer: Timer = Timer.new()
 		add_child(interaction_timer)
-		interaction_timer.timeout.connect(func():object.apply(self))
-		interaction_timer.timeout.connect(func():interaction_timer.queue_free())
+		interaction_timer.timeout.connect(func(): on_interaction_end(object))
+		interaction_timer.timeout.connect(func(): interaction_timer.queue_free())
 		interaction_timer.start(object.interact_duration)
 	else:
-		object.apply(self)
+		on_interaction_end(object)
+		
+func on_interaction_end(object: ObjectOfInterest):
+	print("end of interaction")
+	is_interacting = false
+	object.apply(self)
 
+# STUN
 func stun(stun_resource: StunResource) -> Timer:
 	if is_stunned:
 		return
