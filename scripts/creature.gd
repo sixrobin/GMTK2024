@@ -11,6 +11,10 @@ signal hunger_modified(old_hunger, new_hunger)
 @export var hunger_drain: float = 1
 @export var hunger_drain_interval: float = 0.5
 @export var nav_agent: NavigationAgent2D = null
+@export var max_sleep: float = 100
+@export var sleep_increase: float = 1
+@export var sleep_increase_interval: float = 0.5
+@export var sleep_duration: float = 5
 
 var target_object: ObjectOfInterest = null
 var is_interacting: bool = false
@@ -20,13 +24,22 @@ var current_growth_stage: int = 0
 var growth_meter: float = 0
 var hunger: float = 0
 var hunger_drain_timer: Timer = Timer.new()
+var sleep_meter: float = 0
+var sleep_increase_timer: Timer = Timer.new()
 
 func _ready() -> void:
-	hunger = max_hunger
 	CreatureSingleton.creature = self
+	
+	#Hunger initialisation
+	hunger = max_hunger
 	add_child(hunger_drain_timer)
 	hunger_drain_timer.timeout.connect(func(): modify_hunger(-hunger_drain))
 	hunger_drain_timer.start(hunger_drain_interval)
+	
+	#Sleep initialisation
+	add_child(sleep_increase_timer)
+	sleep_increase_timer.timeout.connect(func(): increase_sleep(sleep_increase))
+	sleep_increase_timer.start(sleep_increase_interval)
 
 func _process(delta: float):
 	if is_stunned or is_interacting:
@@ -36,6 +49,16 @@ func _process(delta: float):
 	if target_object != null:
 		self.nav_agent.target_position = target_object.global_position
 		#self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
+
+func _physics_process(_delta):
+	if self.nav_agent.is_navigation_finished() or is_stunned or is_interacting:
+		return
+
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = self.nav_agent.get_next_path_position()
+
+	velocity = current_agent_position.direction_to(next_path_position) * SMOOTH_SPEED * speed_boost
+	move_and_slide()
 
 # INTERACT
 func interact(object: ObjectOfInterest):
@@ -83,7 +106,9 @@ func endSpeedBoost(timer: Timer, speed_modifier: SpeedModifier):
 	timer.queue_free()
 
 func _on_stun_timer_timeout() -> void:
+	sleep_increase_timer.paused = false
 	is_stunned = false
+	print("stun ended")
 
 func grow(growth_value: int):
 	if current_growth_stage >= growth_stages.size() - 1:
@@ -109,13 +134,11 @@ func modify_hunger(hunger_value):
 	
 	if old_hunger - hunger != 0:
 		hunger_modified.emit(old_hunger,hunger)
-		
-func _physics_process(_delta):
-	if self.nav_agent.is_navigation_finished():
-		return
 
-	var current_agent_position: Vector2 = global_position
-	var next_path_position: Vector2 = self.nav_agent.get_next_path_position()
-
-	velocity = current_agent_position.direction_to(next_path_position) * SMOOTH_SPEED * speed_boost
-	move_and_slide()
+func increase_sleep(sleep_value):
+	sleep_meter += sleep_value
+	if sleep_meter >= max_sleep:
+		var sleep_stun_resource: StunResource = StunResource.new(sleep_duration, StunResource.E_stun_mode.SLEEP)
+		stun(sleep_stun_resource)
+		sleep_increase_timer.paused = true
+		sleep_meter = 0
