@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw1e63d2mpduj"]
+[gd_scene load_steps=10 format=3 uid="uid://cw1e63d2mpduj"]
 
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="7_uu4n0"]
+[ext_resource type="PackedScene" uid="uid://bfuklq0fuc6e" path="res://prefabs/timer.tscn" id="8_r884m"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
 [ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
 [ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
@@ -51,5 +52,11 @@ offset_left = -574.0
 offset_top = -321.0
 offset_right = -574.0
 offset_bottom = -321.0
+
+[node name="Timer" parent="." instance=ExtResource("8_r884m")]
+offset_left = -307.0
+offset_top = -277.0
+offset_right = -307.0
+offset_bottom = -277.0
 
 [node name="NavRegion" parent="." instance=ExtResource("13_yglgy")]
