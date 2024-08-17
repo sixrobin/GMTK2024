@@ -13,6 +13,7 @@ size = Vector2(31.8198, 40.3051)
 radius = 34.0
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+rotation = -0.769262
 script = ExtResource("1_lbwer")
 priority = 10
 attractive = false

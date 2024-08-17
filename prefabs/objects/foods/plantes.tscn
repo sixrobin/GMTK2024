@@ -10,6 +10,7 @@ size = Vector2(61.5183, 74.2462)
 radius = 89.6772
 
 [node name="Object" type="RigidBody2D"]
+rotation = -0.807103
 script = ExtResource("1_2dc0o")
 interact_duration = 1.0
 growth_value = 25.0

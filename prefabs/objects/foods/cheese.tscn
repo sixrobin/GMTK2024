@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5yorlh5s1xfc"]
+[gd_scene load_steps=5 format=3 uid="uid://bno5xi0brflac"]
 
-[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_6wwaf"]
-[ext_resource type="Texture2D" uid="uid://bwj0ubd0rayai" path="res://textures/environment/Tomatoes.png" id="2_awnix"]
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_2ivh8"]
+[ext_resource type="Texture2D" uid="uid://sslwuinjo344" path="res://textures/environment/Cheese.png" id="2_yi8ut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(92.631, 55.8614)
@@ -10,14 +10,15 @@ size = Vector2(92.631, 55.8614)
 radius = 71.1126
 
 [node name="Object" type="RigidBody2D"]
-rotation = -0.916991
-script = ExtResource("1_6wwaf")
+rotation = -0.778882
+script = ExtResource("1_2ivh8")
 growth_value = 25.0
+restored_hunger = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
-texture = ExtResource("2_awnix")
+texture = ExtResource("2_yi8ut")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -4.76837e-06)
@@ -27,7 +28,6 @@ shape = SubResource("RectangleShape2D_kfbe5")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-rotation = -0.700545
 shape = SubResource("CircleShape2D_702al")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
