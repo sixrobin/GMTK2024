@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2jdgkrrtq7gp"]
+[gd_scene load_steps=49 format=3 uid="uid://b2jdgkrrtq7gp"]
 
 [ext_resource type="Script" path="res://scripts/creature.gd" id="1_qoasn"]
 [ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="2_g73dj"]
@@ -6,11 +6,202 @@
 [ext_resource type="Resource" uid="uid://csuheocu743v0" path="res://resources/growth_stages/stage_2.tres" id="4_34unq"]
 [ext_resource type="Resource" uid="uid://dqtqnlvlvp033" path="res://resources/growth_stages/stage_3.tres" id="5_0omj0"]
 [ext_resource type="Resource" uid="uid://xbwsrjemcexr" path="res://resources/growth_stages/stage_4.tres" id="6_0kc5i"]
+[ext_resource type="Texture2D" uid="uid://bwte1n4cut48b" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_00.png" id="7_6bix6"]
+[ext_resource type="Texture2D" uid="uid://23yyl08gtfqt" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_01.png" id="8_f50hh"]
+[ext_resource type="Texture2D" uid="uid://g53nvpxrvxxm" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_02.png" id="9_m4kwo"]
+[ext_resource type="Texture2D" uid="uid://bf704usqo6s5x" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_03.png" id="10_j6njr"]
+[ext_resource type="Texture2D" uid="uid://oec638nvj0id" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_04.png" id="11_ei82u"]
+[ext_resource type="Texture2D" uid="uid://cgmyk4s60h4pn" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_05.png" id="12_hxrpt"]
+[ext_resource type="Texture2D" uid="uid://c2qoagmihk0ro" path="res://textures/creature/Creature_Size01_Eating/Creature_Size01_Eating_00.png" id="13_xkt2c"]
+[ext_resource type="Texture2D" uid="uid://bnllf64n2ql4o" path="res://textures/creature/Creature_Size01_Eating/Creature_Size01_Eating_01.png" id="14_kn82x"]
+[ext_resource type="Texture2D" uid="uid://ca627402r2ugd" path="res://textures/creature/Creature_Size01_Hungry/Creature_Size01_Hungry.png" id="15_5tk8s"]
+[ext_resource type="Texture2D" uid="uid://dxvr1uw4t4jkt" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_00.png" id="16_1am6c"]
+[ext_resource type="Texture2D" uid="uid://dcsm2vqjxbjaj" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_01.png" id="17_yasyf"]
+[ext_resource type="Texture2D" uid="uid://bcf5hvugq65yf" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_02.png" id="18_quhm3"]
+[ext_resource type="Texture2D" uid="uid://ck3c4k0a53gsi" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_03.png" id="19_sdeep"]
+[ext_resource type="Texture2D" uid="uid://12tibn1twidm" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_04.png" id="20_i6e81"]
+[ext_resource type="Texture2D" uid="uid://bspbnsr0sqf5j" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_05.png" id="21_s5y1l"]
+[ext_resource type="Texture2D" uid="uid://cvxuyf3a8b7o" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_06.png" id="22_ah856"]
+[ext_resource type="Texture2D" uid="uid://c0so6rbynmkyo" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_07.png" id="23_56ih6"]
+[ext_resource type="Texture2D" uid="uid://dtgmauo2ukr6w" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_08.png" id="24_1g1e1"]
+[ext_resource type="Texture2D" uid="uid://b0wqfm2fmgkwn" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_09.png" id="25_mvogy"]
+[ext_resource type="Texture2D" uid="uid://dymilwv1s68be" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_10.png" id="26_mqmt3"]
+[ext_resource type="Texture2D" uid="uid://cibmbbk70agef" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_11.png" id="27_dgwn8"]
+[ext_resource type="Texture2D" uid="uid://dn45cicao2tav" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_12.png" id="28_2umda"]
+[ext_resource type="Texture2D" uid="uid://dmqpk7xrrkiif" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_13.png" id="29_ykuj4"]
+[ext_resource type="Texture2D" uid="uid://bhxdteu3tmqsx" path="res://textures/creature/Creature_Size02_Eating/Creature_Size02_Eating_00.png" id="30_kqrmy"]
+[ext_resource type="Texture2D" uid="uid://drj03lt73dxns" path="res://textures/creature/Creature_Size02_Eating/Creature_Size02_Eating_01.png" id="31_1k64k"]
+[ext_resource type="Texture2D" uid="uid://btsltagpubk2j" path="res://textures/creature/Creature_Size02_Hungry/Creature_Size02_Hungry.png" id="32_46new"]
+[ext_resource type="Texture2D" uid="uid://c57pwfjt5ppgh" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_00.png" id="33_a44vt"]
+[ext_resource type="Texture2D" uid="uid://3ubp2t8hehen" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_01.png" id="34_0kqqi"]
+[ext_resource type="Texture2D" uid="uid://dahpuu2pat8ga" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_02.png" id="35_0apcn"]
+[ext_resource type="Texture2D" uid="uid://ctltngw63ai43" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_03.png" id="36_s5xv0"]
+[ext_resource type="Texture2D" uid="uid://buwngdrk31qqo" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_04.png" id="37_mgre0"]
+[ext_resource type="Texture2D" uid="uid://clj8vsocvrdhs" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_05.png" id="38_juy5d"]
+[ext_resource type="Texture2D" uid="uid://b5geosvwmj03w" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_06.png" id="39_703sb"]
+[ext_resource type="Texture2D" uid="uid://cb35m3uwryahh" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_07.png" id="40_kb0vv"]
+[ext_resource type="Texture2D" uid="uid://bd3aa3c1d80pd" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_08.png" id="41_q20bn"]
+[ext_resource type="Texture2D" uid="uid://cv4iejintaxkk" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_09.png" id="42_e44ts"]
+[ext_resource type="Texture2D" uid="uid://dkjveu4u7bnau" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_10.png" id="43_nvqi7"]
+[ext_resource type="Texture2D" uid="uid://bvfrox0vjeyj7" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_11.png" id="44_itr3y"]
+[ext_resource type="Script" path="res://scripts/creature_animation.gd" id="45_oyrkc"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kmpkd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6dok"]
 radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdo1n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6bix6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f50hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_m4kwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j6njr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ei82u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hxrpt")
+}],
+"loop": true,
+"name": &"Egg_Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_xkt2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kn82x")
+}],
+"loop": true,
+"name": &"Size1_Eating",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_5tk8s")
+}],
+"loop": true,
+"name": &"Size1_Hungry",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_1am6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yasyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_quhm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sdeep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i6e81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s5y1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ah856")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_56ih6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1g1e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mvogy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_mqmt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dgwn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2umda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ykuj4")
+}],
+"loop": true,
+"name": &"Size1_Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_kqrmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1k64k")
+}],
+"loop": true,
+"name": &"Size2_Eating",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_46new")
+}],
+"loop": true,
+"name": &"Size2_Hungry",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_a44vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0kqqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0apcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_s5xv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_mgre0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_juy5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_703sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_kb0vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_q20bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_e44ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_nvqi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_itr3y")
+}],
+"loop": true,
+"name": &"Size2_Idle",
+"speed": 6.0
+}]
 
 [node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent")]
 gravity_scale = 0.0
@@ -23,6 +214,7 @@ growth_stages = Array[ExtResource("2_g73dj")]([ExtResource("3_dd8mf"), ExtResour
 nav_agent = NodePath("NavigationAgent2D")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(8, 8)
 texture = SubResource("PlaceholderTexture2D_kmpkd")
 
@@ -34,4 +226,15 @@ wait_time = 0.872
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rdo1n")
+animation = &"Egg_Idle"
+script = ExtResource("45_oyrkc")
+
+[node name="FrameTimer" type="Timer" parent="AnimatedSprite2D"]
+wait_time = 0.001
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="AnimatedSprite2D/FrameTimer" to="AnimatedSprite2D" method="_on_frame_timer_timeout"]
