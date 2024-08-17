@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpkjl0jejj4r0"]
+[gd_scene load_steps=5 format=3 uid="uid://bpkjl0jejj4r0"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_32v3t"]
-[ext_resource type="Resource" uid="uid://c6wbk57cburla" path="res://resources/small_speed_boost.tres" id="2_imn8c"]
 [ext_resource type="Texture2D" uid="uid://bhu7ssde6f2dy" path="res://textures/environment/Banana.png" id="3_r6se0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
@@ -12,10 +11,9 @@ radius = 43.0465
 
 [node name="Object" type="RigidBody2D"]
 script = ExtResource("1_32v3t")
-interact_duration = 3.0
+interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
-speed_modifier = ExtResource("2_imn8c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
