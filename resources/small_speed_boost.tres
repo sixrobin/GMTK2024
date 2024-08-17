@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpeedModifier" load_steps=2 format=3 uid="uid://c6wbk57cburla"]
+
+[ext_resource type="Script" path="res://scripts/utils/speed_modifier.gd" id="1_rj241"]
+
+[resource]
+script = ExtResource("1_rj241")
+duration = 5.0
+modifier = 10.0
