@@ -28,6 +28,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func before_apply():
 	is_being_interacted = true
 
+func on_click():
+	print("Clicked!")
+
 func apply():
 	if stun_resource:
 		CreatureSingleton.creature.stun(stun_resource)

@@ -1,19 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cw1e63d2mpduj"]
+[gd_scene load_steps=9 format=3 uid="uid://cw1e63d2mpduj"]
 
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_g34v0"]
-[ext_resource type="PackedScene" uid="uid://bpkjl0jejj4r0" path="res://prefabs/objects/banana.tscn" id="5_uvkc5"]
-[ext_resource type="PackedScene" uid="uid://b5yorlh5s1xfc" path="res://prefabs/objects/tomato.tscn" id="6_hnsuf"]
-[ext_resource type="PackedScene" uid="uid://c5w20knbajgvs" path="res://prefabs/objects/foods/egg.tscn" id="7_ldkag"]
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="7_uu4n0"]
-[ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="8_kajkh"]
-[ext_resource type="PackedScene" uid="uid://bogsjx7shaanv" path="res://prefabs/objects/foods/plantes.tscn" id="9_knke4"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
-[ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
-[ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
-[ext_resource type="PackedScene" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
+[ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="12_u6lta"]
+[ext_resource type="PackedScene" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
+[ext_resource type="PackedScene" uid="uid://1a380hv31a01" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
 
 [node name="Game" type="Node2D"]
 
@@ -22,10 +16,6 @@ script = ExtResource("3_ixshh")
 
 [node name="Creature" parent="." instance=ExtResource("1_3mugn")]
 SMOOTH_SPEED = 100.0
-
-[node name="ObjectSpawner" type="Node2D" parent="."]
-script = ExtResource("4_g34v0")
-OBJECT_PREFABS = Array[PackedScene]([ExtResource("5_uvkc5"), ExtResource("6_hnsuf"), ExtResource("7_ldkag"), ExtResource("8_kajkh"), ExtResource("9_knke4")])
 
 [node name="TamagotchiBackground" type="Sprite2D" parent="."]
 z_index = -1

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhpyndspvoo28"]
+[gd_scene load_steps=3 format=3 uid="uid://bhpyndspvoo28"]
 
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="1_udoxx"]
+[ext_resource type="PackedScene" uid="uid://bmjbq1lnvltth" path="res://prefabs/debug_object_spawner.tscn" id="2_jkmac"]
 
-[node name="Cursor" type="Node2D"]
+[node name="Cursor" type="Node2D" node_paths=PackedStringArray("debug_object_spawner")]
 script = ExtResource("1_udoxx")
+debug_object_spawner = NodePath("DebugObjectSpawner")
+
+[node name="DebugObjectSpawner" parent="." instance=ExtResource("2_jkmac")]
