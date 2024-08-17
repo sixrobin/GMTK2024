@@ -11,6 +11,8 @@ radius = 5.0
 
 [node name="Object" type="RigidBody2D"]
 script = ExtResource("1_12mxu")
+stun_duration = 0.2
+scale_factor = 1.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
