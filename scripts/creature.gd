@@ -17,13 +17,28 @@ func _process(delta: float):
 		self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
 
 func interact(object: ObjectOfInterest):
-	object.apply(self)
+	object.before_apply()
+	if object.interact_duration >0:
+		var interaction_timer: Timer = Timer.new()
+		add_child(interaction_timer)
+		interaction_timer.timeout.connect(func():object.apply(self))
+		interaction_timer.start(object.interact_duration)
+	else:
+		object.apply(self)
 
-func stun(duration: float):
+func stun(stun_resource: StunResource) -> Timer:
 	if is_stunned:
 		return
 	is_stunned = true
-	stun_timer.start(duration)
+	match stun_resource.mode:
+		StunResource.E_stun_mode.STUN:
+			print("stun type is stun")
+		StunResource.E_stun_mode.SLEEP:
+			print("stun type is sleep")
+		_:
+			print("stun type is not handled")
+	stun_timer.start(stun_resource.duration)
+	return stun_timer
 
 #Speed Boost
 func speedBoost(speed_modifier: SpeedModifier):
