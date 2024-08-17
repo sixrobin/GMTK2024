@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://jwxeec00u57g"]
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FastScoresLayout" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 576.0
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="FastScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]TMP Text rigolo speed run[/center]"
+
+[node name="FastestScore1" type="RichTextLabel" parent="FastScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 135.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]00:02:37[/center]"
+
+[node name="FastestScore2" type="RichTextLabel" parent="FastScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 135.0
+offset_bottom = 170.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]00:05:48[/center]"
+
+[node name="FastestScore3" type="RichTextLabel" parent="FastScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 170.0
+offset_bottom = 205.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]00:09:12[/center]"
+
+[node name="SlowScoresLayout" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="SlowScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]TMP Text rigolo slow run[/center]"
+
+[node name="SlowestScore1" type="RichTextLabel" parent="SlowScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 101.0
+offset_bottom = 136.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]00:02:37[/center]"
+
+[node name="SlowestScore2" type="RichTextLabel" parent="SlowScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 135.0
+offset_bottom = 170.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]00:05:48[/center]"
+
+[node name="SlowestScore3" type="RichTextLabel" parent="SlowScoresLayout"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 170.0
+offset_bottom = 205.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]00:09:12[/center]"
