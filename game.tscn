@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw1e63d2mpduj"]
+[gd_scene load_steps=12 format=3 uid="uid://cw1e63d2mpduj"]
 
-[ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_ilet3"]
+[ext_resource type="PackedScene" path="res://prefabs/creature.tscn" id="1_ilet3"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_g34v0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="7_uu4n0"]
 [ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="8_kajkh"]
 [ext_resource type="PackedScene" uid="uid://bogsjx7shaanv" path="res://prefabs/objects/foods/plantes.tscn" id="9_knke4"]
+[ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
 
 [node name="Game" type="Node2D"]
 
@@ -28,3 +29,5 @@ z_index = -1
 texture_filter = 1
 scale = Vector2(16, 16)
 texture = ExtResource("7_uu4n0")
+
+[node name="Cursor" parent="." instance=ExtResource("11_05pgy")]
