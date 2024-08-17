@@ -51,4 +51,8 @@ func on_applied():
 	if attractive:
 		ObjectManager.unregister_object(self)
 	if delete_on_applied:
-		queue_free()
+		destroy()
+		
+func destroy():
+	ObjectManager.unregister_object(self)
+	queue_free()

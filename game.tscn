@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw1e63d2mpduj"]
+[gd_scene load_steps=10 format=3 uid="uid://cw1e63d2mpduj"]
 
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
-[ext_resource type="PackedScene" uid="uid://bfuklq0fuc6e" path="res://prefabs/timer.tscn" id="8_r884m"]
+[ext_resource type="PackedScene" uid="uid://dtsoo4kxpn27f" path="res://prefabs/timer.tscn" id="8_r884m"]
 [ext_resource type="PackedScene" uid="uid://c8oopuy4vxqkf" path="res://prefabs/environment/tamagotchi_background.tscn" id="10_kx7gb"]
-[ext_resource type="PackedScene" path="res://prefabs/time_score.tscn" id="10_x7x1e"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
 [ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
 [ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
@@ -61,8 +60,5 @@ offset_right = -307.0
 offset_bottom = -277.0
 
 [node name="NavRegion" parent="." instance=ExtResource("13_yglgy")]
-
-[node name="TimeScore" parent="." instance=ExtResource("10_x7x1e")]
-position = Vector2(0, -215)
 
 [node name="TamagotchiBackground" parent="." instance=ExtResource("10_kx7gb")]

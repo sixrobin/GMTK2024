@@ -40,6 +40,7 @@ shape = SubResource("CircleShape2D_702al")
 [node name="ClickHandler" type="Node" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_ycjpr")
 parent = NodePath("..")
+destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
 
 [node name="ObjectSpawner" type="Node" parent="ClickHandler"]
