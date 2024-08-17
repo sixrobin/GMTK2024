@@ -7,9 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6dok"]
 radius = 5.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stun_timer")]
 motion_mode = 1
 script = ExtResource("1_qoasn")
+stun_timer = NodePath("Timer")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
@@ -17,3 +18,8 @@ texture = SubResource("PlaceholderTexture2D_kmpkd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o6dok")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.872
+
+[connection signal="timeout" from="Timer" to="." method="_on_stun_timer_timeout"]

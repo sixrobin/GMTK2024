@@ -1,8 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpkjl0jejj4r0"]
 
 [ext_resource type="Script" path="res://scripts/food/food.gd" id="1_a6tc5"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fg7ti"]
+[ext_resource type="Texture2D" uid="uid://bhu7ssde6f2dy" path="res://textures/Banana.png" id="2_1jprv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(6, 6)
@@ -12,12 +11,13 @@ radius = 5.0
 
 [node name="Food" type="RigidBody2D"]
 script = ExtResource("1_a6tc5")
+stun_duration = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
 scale = Vector2(6, 6)
-texture = SubResource("PlaceholderTexture2D_fg7ti")
+texture = ExtResource("2_1jprv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398
