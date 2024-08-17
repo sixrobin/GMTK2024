@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b2jdgkrrtq7gp"]
+[gd_scene load_steps=58 format=3 uid="uid://b2jdgkrrtq7gp"]
 
 [ext_resource type="Script" path="res://scripts/creature.gd" id="1_qoasn"]
 [ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="2_g73dj"]
@@ -44,7 +44,16 @@
 [ext_resource type="Texture2D" uid="uid://cv4iejintaxkk" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_09.png" id="42_e44ts"]
 [ext_resource type="Texture2D" uid="uid://dkjveu4u7bnau" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_10.png" id="43_nvqi7"]
 [ext_resource type="Texture2D" uid="uid://bvfrox0vjeyj7" path="res://textures/creature/Creature_Size02_Idle/Creature_Size02_Idle_11.png" id="44_itr3y"]
+[ext_resource type="Texture2D" uid="uid://brod6uu610omd" path="res://textures/creature/Creature_Size03_Eating/Creature_Size03_Eating_00.png" id="45_1784n"]
 [ext_resource type="Script" path="res://scripts/creature_animation.gd" id="45_oyrkc"]
+[ext_resource type="Texture2D" uid="uid://cydoqoaeltkjp" path="res://textures/creature/Creature_Size03_Eating/Creature_Size03_Eating_01.png" id="46_62wwc"]
+[ext_resource type="Texture2D" uid="uid://b736w0hb2sirs" path="res://textures/creature/Creature_Size03_Hungry/Creature_Size03_Hungry.png" id="47_rbblv"]
+[ext_resource type="Texture2D" uid="uid://b44ows1gcnsll" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_00.png" id="48_v07dm"]
+[ext_resource type="Texture2D" uid="uid://cydmjb14vr2w6" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_01.png" id="49_8pr7l"]
+[ext_resource type="Texture2D" uid="uid://cr1vrmk16krqr" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_02.png" id="50_yrq52"]
+[ext_resource type="Texture2D" uid="uid://c8ppjyp8eu0yy" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_03.png" id="51_36agi"]
+[ext_resource type="Texture2D" uid="uid://f2cp5s53iuwj" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_04.png" id="52_5ug6i"]
+[ext_resource type="Texture2D" uid="uid://wnrco3xjeua8" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_05.png" id="53_fm2ko"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kmpkd"]
 
@@ -201,6 +210,48 @@ animations = [{
 "loop": true,
 "name": &"Size2_Idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_1784n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_62wwc")
+}],
+"loop": true,
+"name": &"Size3_Eating",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_rbblv")
+}],
+"loop": true,
+"name": &"Size3_Hungry",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_v07dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_8pr7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_yrq52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_36agi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_5ug6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_fm2ko")
+}],
+"loop": true,
+"name": &"Size3_Idle",
+"speed": 6.0
 }]
 
 [node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent")]
@@ -229,7 +280,7 @@ wait_time = 0.872
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rdo1n")
-animation = &"Egg_Idle"
+animation = &"Size3_Eating"
 script = ExtResource("45_oyrkc")
 
 [node name="FrameTimer" type="Timer" parent="AnimatedSprite2D"]
