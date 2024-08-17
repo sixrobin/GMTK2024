@@ -12,10 +12,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6dok"]
 radius = 4.0
 
-[node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent")]
-motion_mode = 1
+[node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent")]
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 10.0
 script = ExtResource("1_qoasn")
-SMOOTH_SPEED = 0.1
+SMOOTH_SPEED = 1000.0
 stun_timer = NodePath("Timer")
 growth_stages = Array[ExtResource("2_g73dj")]([ExtResource("3_dd8mf"), ExtResource("4_34unq"), ExtResource("5_0omj0"), ExtResource("6_0kc5i")])
 nav_agent = NodePath("NavigationAgent2D")

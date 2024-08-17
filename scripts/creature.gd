@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends RigidBody2D
 class_name Creature
 
 signal hunger_modified(old_hunger, new_hunger)
@@ -109,13 +109,13 @@ func modify_hunger(hunger_value):
 	
 	if old_hunger - hunger != 0:
 		hunger_modified.emit(old_hunger,hunger)
-		
+
 func _physics_process(_delta):
 	if self.nav_agent.is_navigation_finished():
 		return
-
+	
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = self.nav_agent.get_next_path_position()
-
-	velocity = current_agent_position.direction_to(next_path_position) * SMOOTH_SPEED * speed_boost
-	move_and_slide()
+	var force_direction: Vector2 = next_path_position - current_agent_position
+	force_direction = force_direction.normalized()
+	self.apply_impulse(force_direction * _delta * SMOOTH_SPEED * speed_boost)
