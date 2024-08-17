@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8oopuy4vxqkf"]
+[gd_scene load_steps=4 format=3 uid="uid://c8oopuy4vxqkf"]
 
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="1_88ki1"]
 [ext_resource type="Texture2D" uid="uid://dm3ery2m4khxh" path="res://textures/tamagotchi/Tamagotchi_Device.png" id="2_ka38p"]
+[ext_resource type="Texture2D" uid="uid://csotv14nfiaij" path="res://textures/tamagotchi/Wood.png" id="3_hu4xo"]
 
 [node name="TamagotchiBackground" type="Sprite2D"]
 z_index = -1
@@ -13,3 +14,11 @@ texture = ExtResource("1_88ki1")
 position = Vector2(0.75, -35.1875)
 scale = Vector2(0.108, 0.113)
 texture = ExtResource("2_ka38p")
+
+[node name="Wood" type="Sprite2D" parent="."]
+z_index = -10
+texture_repeat = 2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_hu4xo")
+region_enabled = true
+region_rect = Rect2(0, 0, 5000, 3000)
