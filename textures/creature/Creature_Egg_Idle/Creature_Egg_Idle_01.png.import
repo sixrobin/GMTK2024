@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h307qyi721p3"
-path="res://.godot/imported/monster_placeholder.png-282c9951bd542022ff9df7f12c2ffabf.ctex"
+uid="uid://dbou80d502w23"
+path="res://.godot/imported/Creature_Egg_Idle_01.png-cf11cd6a35c43ce150f3aa11dc03da75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/monster/monster_placeholder.png"
-dest_files=["res://.godot/imported/monster_placeholder.png-282c9951bd542022ff9df7f12c2ffabf.ctex"]
+source_file="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_01.png"
+dest_files=["res://.godot/imported/Creature_Egg_Idle_01.png-cf11cd6a35c43ce150f3aa11dc03da75.ctex"]
 
 [params]
 
