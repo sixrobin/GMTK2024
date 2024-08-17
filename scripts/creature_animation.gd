@@ -1,3 +1,4 @@
+class_name CreatureAnimation
 extends AnimatedSprite2D
 
 @export var frame_rate: int = 6

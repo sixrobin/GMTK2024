@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="7_uu4n0"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
-[ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="12_u6lta"]
-[ext_resource type="PackedScene" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
-[ext_resource type="PackedScene" uid="uid://1a380hv31a01" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
+[ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
+[ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
+[ext_resource type="PackedScene" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
 
 [node name="Game" type="Node2D"]
 
@@ -15,7 +15,6 @@
 script = ExtResource("3_ixshh")
 
 [node name="Creature" parent="." instance=ExtResource("1_3mugn")]
-SMOOTH_SPEED = 100.0
 
 [node name="TamagotchiBackground" type="Sprite2D" parent="."]
 z_index = -1
