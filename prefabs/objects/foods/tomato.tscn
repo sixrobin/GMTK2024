@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5yorlh5s1xfc"]
 
-[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_ws00s"]
-[ext_resource type="Texture2D" uid="uid://bwj0ubd0rayai" path="res://textures/environment/Tomatoes.png" id="2_nqgha"]
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_6wwaf"]
+[ext_resource type="Texture2D" uid="uid://bwj0ubd0rayai" path="res://textures/environment/Tomatoes.png" id="2_awnix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(92.631, 55.8614)
@@ -10,13 +10,13 @@ size = Vector2(92.631, 55.8614)
 radius = 71.1126
 
 [node name="Object" type="RigidBody2D"]
-script = ExtResource("1_ws00s")
+script = ExtResource("1_6wwaf")
 growth_value = 25.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
-texture = ExtResource("2_nqgha")
+texture = ExtResource("2_awnix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -4.76837e-06)

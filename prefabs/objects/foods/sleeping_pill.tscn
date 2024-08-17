@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://f80dvsad2odt"]
+[gd_scene load_steps=6 format=3 uid="uid://boso43ucxkpki"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_d8lsa"]
 [ext_resource type="Resource" uid="uid://b4ou5garcy602" path="res://resources/stun resources/sleeping_pill_stun.tres" id="2_y1vjp"]

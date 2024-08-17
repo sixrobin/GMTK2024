@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 class_name ObjectOfInterest
 
 var is_being_interacted: bool = false
@@ -32,7 +32,8 @@ func before_apply():
 	is_being_interacted = true
 
 func on_click():
-	self.on_click_handler.onClick()
+	if self.on_click_handler != null:
+		self.on_click_handler.onClick()
 
 func apply():
 	if stun_resource:
