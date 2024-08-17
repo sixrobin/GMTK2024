@@ -3,11 +3,15 @@ class_name Player
 
 @export var SMOOTH_SPEED: float = 5
 @export var stun_timer: Timer = null
+#@export var growth_meter_max: float = 100
+@export var growth_stages: Array[GrowthStage]
 
 var target_object: ObjectOfInterest = null
 var is_interacting: bool = false
 var is_stunned: bool = false
 var speed_boost: float = 1
+var current_growth_stage: int = 0
+var growth_meter: float = 0
 
 func _process(delta: float):
 	if is_stunned or is_interacting:
@@ -63,3 +67,19 @@ func endSpeedBoost(timer: Timer, speed_modifier: SpeedModifier):
 
 func _on_stun_timer_timeout() -> void:
 	is_stunned = false
+
+func grow(growth_value: int):
+	if current_growth_stage >= growth_stages.size() - 1:
+		return
+	
+	growth_meter += growth_value
+	
+	#Si le growth meter est rempli, on passe au prochain stage et on update la scale & le sprite
+	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
+		current_growth_stage += 1
+		self.scale.x = growth_stages[current_growth_stage].scale_factor
+		self.scale.y = growth_stages[current_growth_stage].scale_factor
+		#updater le sprite
+	
+	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
+		self.grow(0)

@@ -10,7 +10,7 @@ var is_being_interacted: bool = false
 
 @export var stun_resource: StunResource = null
 
-@export var scale_factor: float = 1
+@export var growth_value: float = 0
 @export var speed_modifier: SpeedModifier = null
 
 func _ready() -> void:
@@ -28,9 +28,9 @@ func before_apply():
 
 func apply(player: Player):
 	if stun_resource:
-		player.stun(stun_resource) 
-	if scale_factor != 1:
-		player.scale *= scale_factor
+		player.stun(stun_resource)
+	if growth_value >0:
+		player.grow(growth_value)
 	if speed_modifier:
 		player.speedBoost(speed_modifier)
 	on_applied()

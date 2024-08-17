@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GrowthStage" load_steps=2 format=3 uid="uid://cedcui75gd0sr"]
+
+[ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="1_hyqbk"]
+
+[resource]
+script = ExtResource("1_hyqbk")
+meter_to_next_stage = 100.0
+scale_factor = 1.0
