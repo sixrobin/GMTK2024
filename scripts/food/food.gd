@@ -2,9 +2,12 @@ extends Node2D
 class_name Food
 
 @export var stun_duration: float = 0
+@export var scalefactor: float = 1
+@export var attractive: bool = true
 
 func _ready() -> void:
-	FoodManager.register_food(self)
+	if attractive:
+		FoodManager.register_food(self)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -14,9 +17,10 @@ func apply_eat(player: Player):
 	if stun_duration != 0:
 		player.stun(stun_duration)
 	print("super apply eat")
-	player.scale *= 1.1
+	player.scale *= scalefactor
 	destroy()
 
 func destroy():
-	FoodManager.unregister_food(self)
+	if attractive:
+		FoodManager.unregister_food(self)
 	queue_free()
