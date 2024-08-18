@@ -19,6 +19,7 @@ angular_damp = 5.0
 script = ExtResource("1_d8lsa")
 interact_duration = 1.0
 stun_resource = ExtResource("2_y1vjp")
+growth_value = 10.0
 speed_modifier = ExtResource("3_lk7wk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
