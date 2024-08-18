@@ -68,8 +68,12 @@ func _physics_process(_delta):
 
 # INTERACT
 func interact(object: ObjectOfInterest):
+	if CursorSingleton.cursor.draggedObject == object:
+		CursorSingleton.cursor.tryReleaseObject()
+		
 	is_interacting = true
 	object.before_apply()
+	
 	if object.interact_duration > 0:
 		var interaction_timer: Timer = Timer.new()
 		add_child(interaction_timer)
