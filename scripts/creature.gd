@@ -84,7 +84,7 @@ func interact(object: ObjectOfInterest):
 	
 	if CursorSingleton.cursor.draggedObject == object:
 		CursorSingleton.cursor.tryReleaseObject()
-		
+	
 	is_interacting = true
 	$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.EATING)
 	object.before_apply()
