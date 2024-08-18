@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://b2jdgkrrtq7gp"]
+[gd_scene load_steps=96 format=3 uid="uid://b2jdgkrrtq7gp"]
 
 [ext_resource type="Script" path="res://scripts/creature.gd" id="1_qoasn"]
 [ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="2_g73dj"]
@@ -60,6 +60,38 @@
 [ext_resource type="Texture2D" uid="uid://f2cp5s53iuwj" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_04.png" id="52_5ug6i"]
 [ext_resource type="Texture2D" uid="uid://dgvxeda0bme4o" path="res://textures/creature/Creature_Size03_Growing/Creature_Size03_Growing_05.png" id="52_bxntr"]
 [ext_resource type="Texture2D" uid="uid://wnrco3xjeua8" path="res://textures/creature/Creature_Size03_Idle/Creature_Size03_Idle_05.png" id="53_fm2ko"]
+[ext_resource type="Texture2D" uid="uid://dp6tv7q5nv75w" path="res://textures/creature/Creature_Size4_Eating/Creature_Size4_Eating_00.png" id="60_4g26b"]
+[ext_resource type="Texture2D" uid="uid://y8d15m5jmq5d" path="res://textures/creature/Creature_Size4_Eating/Creature_Size4_Eating_01.png" id="61_yqghg"]
+[ext_resource type="Texture2D" uid="uid://e5a8q2mtl852" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_00.png" id="62_rb3ak"]
+[ext_resource type="Texture2D" uid="uid://t2qehp6sgpt2" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_01.png" id="63_k8skr"]
+[ext_resource type="Texture2D" uid="uid://ca3cha752s2h" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_02.png" id="64_k2wgo"]
+[ext_resource type="Texture2D" uid="uid://dtjarwen2mwrt" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_03.png" id="65_ljvmy"]
+[ext_resource type="Texture2D" uid="uid://dk10nmutx5s0y" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_04.png" id="66_ioowl"]
+[ext_resource type="Texture2D" uid="uid://cj08vragaa86l" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_05.png" id="67_b1qtx"]
+[ext_resource type="Texture2D" uid="uid://dbfkplwsxdje" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_06.png" id="68_yrwgs"]
+[ext_resource type="Texture2D" uid="uid://ch82lbjlbnhnl" path="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_07.png" id="69_o72hl"]
+[ext_resource type="Texture2D" uid="uid://rclkpmhde036" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_00.png" id="70_saw7m"]
+[ext_resource type="Texture2D" uid="uid://bvxdk4agoius3" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_01.png" id="71_geaot"]
+[ext_resource type="Texture2D" uid="uid://b8rlhgsfdoqsa" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_02.png" id="72_s2ybx"]
+[ext_resource type="Texture2D" uid="uid://c1poycwsvgsef" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_03.png" id="73_hlfq4"]
+[ext_resource type="Texture2D" uid="uid://db525txt51tmk" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_04.png" id="74_q5bru"]
+[ext_resource type="Texture2D" uid="uid://00bfjypx4itu" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_05.png" id="75_ky2pg"]
+[ext_resource type="Texture2D" uid="uid://xprkyoiru6a3" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_06.png" id="76_orkvg"]
+[ext_resource type="Texture2D" uid="uid://w5efb7d6wkag" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_07.png" id="77_fjqu5"]
+[ext_resource type="Texture2D" uid="uid://b6s7irqt6sbhu" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_08.png" id="78_ej5uf"]
+[ext_resource type="Texture2D" uid="uid://d3pvtiaatpres" path="res://textures/creature/Creature_Size04_Sleeping/Creature_Size04_Sleeping_09.png" id="79_kdjrr"]
+[ext_resource type="Texture2D" uid="uid://vd2tb7yuy3br" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_00.png" id="80_rxjv7"]
+[ext_resource type="Texture2D" uid="uid://bwkjcqtynqg1h" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_01.png" id="81_jf37d"]
+[ext_resource type="Texture2D" uid="uid://dklun05smxy6t" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_02.png" id="82_xftlv"]
+[ext_resource type="Texture2D" uid="uid://4d2i04ygm614" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_03.png" id="83_6338h"]
+[ext_resource type="Texture2D" uid="uid://c4vlxbvjgm003" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_04.png" id="84_ynmcb"]
+[ext_resource type="Texture2D" uid="uid://dddw7uxkvonv2" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_05.png" id="85_cm507"]
+[ext_resource type="Texture2D" uid="uid://chi3823fvchhe" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_06.png" id="86_bm7k4"]
+[ext_resource type="Texture2D" uid="uid://cv74a5hjr6ihe" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_07.png" id="87_fuqvj"]
+[ext_resource type="Texture2D" uid="uid://qjq8wvl7fjx1" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_08.png" id="88_0g84c"]
+[ext_resource type="Texture2D" uid="uid://bt6vdadacw2p2" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_09.png" id="89_fs8fb"]
+[ext_resource type="Texture2D" uid="uid://qgbs2mv6bhin" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_10.png" id="90_orlo7"]
+[ext_resource type="Texture2D" uid="uid://clt561k5wx43q" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_11.png" id="91_4fotb"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kmpkd"]
 
@@ -249,7 +281,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Size3_Growing",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -281,6 +313,122 @@ animations = [{
 "loop": true,
 "name": &"Size3_Idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_4g26b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_yqghg")
+}],
+"loop": true,
+"name": &"Size4_Eating",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_rb3ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_k8skr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_k2wgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_ljvmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ioowl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_b1qtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_yrwgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_o72hl")
+}],
+"loop": true,
+"name": &"Size4_Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_saw7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_geaot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_s2ybx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_hlfq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_q5bru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ky2pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_orkvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_fjqu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_ej5uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_kdjrr")
+}],
+"loop": true,
+"name": &"Size4_Sleeping",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_rxjv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_jf37d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_xftlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_6338h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_ynmcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_cm507")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_bm7k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_fuqvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_0g84c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_fs8fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_orlo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_4fotb")
+}],
+"loop": true,
+"name": &"Size4_Walk",
+"speed": 6.0
 }]
 
 [node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent")]
@@ -309,7 +457,7 @@ wait_time = 0.872
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rdo1n")
-animation = &"Size1_Idle"
+animation = &"Egg_Idle"
 script = ExtResource("45_oyrkc")
 
 [node name="FrameTimer" type="Timer" parent="AnimatedSprite2D"]
