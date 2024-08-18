@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw1e63d2mpduj"]
+[gd_scene load_steps=12 format=3 uid="uid://cw1e63d2mpduj"]
 
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
 [ext_resource type="Script" path="res://scripts/scenes/scene_manager.gd" id="4_2ks51"]
 [ext_resource type="PackedScene" uid="uid://doutoksvepjsi" path="res://prefabs/rooms.tscn" id="6_kp7y2"]
+[ext_resource type="Script" path="res://scripts/scenes/level_transition.gd" id="7_drjhk"]
 [ext_resource type="PackedScene" path="res://prefabs/hunger_gauge_house.tscn" id="7_flanj"]
-[ext_resource type="PackedScene" uid="uid://dtsoo4kxpn27f" path="res://prefabs/timer.tscn" id="8_r884m"]
+[ext_resource type="PackedScene" uid="uid://bfuklq0fuc6e" path="res://prefabs/timer.tscn" id="8_r884m"]
 [ext_resource type="PackedScene" uid="uid://c8oopuy4vxqkf" path="res://prefabs/environment/tamagotchi_background.tscn" id="10_kx7gb"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
 [ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
@@ -41,5 +42,9 @@ offset_bottom = -176.0
 [node name="SceneManager" type="Node2D" parent="."]
 script = ExtResource("4_2ks51")
 scenes = Array[PackedScene]([ExtResource("10_kx7gb"), ExtResource("6_kp7y2")])
+
+[node name="LevelTransition" type="Node2D" parent="SceneManager" node_paths=PackedStringArray("_camera")]
+script = ExtResource("7_drjhk")
+_camera = NodePath("../../Camera")
 
 [node name="Cursor" parent="." instance=ExtResource("11_05pgy")]
