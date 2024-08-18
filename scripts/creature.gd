@@ -54,10 +54,11 @@ func _process(delta: float):
 		return
 	if target_object == null:
 		target_object = ObjectManager.get_best_object()
+		if target_object != null:
+			is_walking = true
+			set_anim_walk_or_idle()
 	if target_object != null:
 		self.nav_agent.target_position = target_object.global_position
-		is_walking = true
-		set_anim_walk_or_idle()
 		#self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
 
 func reset_target():
