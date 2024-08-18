@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxxvkx6871phr"
-path="res://.godot/imported/Tamagotchi_Icon_Food_High.png-9a92b2690183c856f78e3d85138de1fc.ctex"
+uid="uid://c2dfvd20bnlri"
+path="res://.godot/imported/Fridge_Open_Empty.png-05ace4478f0c5026ee71fd3cf8564d5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/UI/Tamagotchi_Icon_Food_High.png"
-dest_files=["res://.godot/imported/Tamagotchi_Icon_Food_High.png-9a92b2690183c856f78e3d85138de1fc.ctex"]
+source_file="res://textures/environment/Fridge_Open_Empty.png"
+dest_files=["res://.godot/imported/Fridge_Open_Empty.png-05ace4478f0c5026ee71fd3cf8564d5f.ctex"]
 
 [params]
 
