@@ -25,7 +25,7 @@ func refresh_highest_priority():
 	for key in dictionary:
 		if key > highest_priority:
 			highest_priority = key
-	if highest_priority > old_priority:
+	if highest_priority != old_priority:
 		new_highest_priority.emit(old_priority, highest_priority)
 		
 	
