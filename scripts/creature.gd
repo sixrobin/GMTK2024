@@ -68,6 +68,12 @@ func _physics_process(_delta):
 	var force_direction: Vector2 = next_path_position - current_agent_position
 	force_direction = force_direction.normalized()
 	self.apply_impulse(force_direction * _delta * SMOOTH_SPEED * speed_boost)
+	
+	#Flip sprite in the direction of movement
+	if force_direction.x >0:
+		$AnimatedSprite2D.flip_h = true
+	elif force_direction.x <0:
+		$AnimatedSprite2D.flip_h = false
 
 # INTERACT
 func interact(object: ObjectOfInterest):
