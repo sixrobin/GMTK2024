@@ -12,6 +12,9 @@ size = Vector2(331.932, 244.065)
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
 rotation = -0.769262
+lock_rotation = true
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_et2gu")
 priority = 10
 attractive = false
@@ -30,12 +33,11 @@ position = Vector2(2.14121, -0.641215)
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_kfbe5")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_rhqcx")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_t738f")
