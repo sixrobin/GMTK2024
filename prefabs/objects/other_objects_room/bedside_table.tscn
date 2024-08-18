@@ -11,10 +11,12 @@
 size = Vector2(145.069, 193.374)
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+collision_layer = 2
+collision_mask = 2
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_o00gb")
-priority = 10
+priority = -1
 attractive = false
 interact_duration = 1.0
 growth_value = 30.0
