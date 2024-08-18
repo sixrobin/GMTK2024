@@ -2,13 +2,20 @@ extends Node
 
 signal new_highest_priority(previous_highest, new_highest)
 var dictionary = {}
+var all_objects: Array[ObjectOfInterest]
 var highest_priority = -INF
 
-func register_object(object: ObjectOfInterest, priority: int):
+func register_object(object: ObjectOfInterest):
+	all_objects.append(object)
+
+func unregister_object(object: ObjectOfInterest):
+	all_objects.erase(object)
+
+func register_object_priority(object: ObjectOfInterest, priority: int):
 	dictionary.get_or_add(priority, []).append(object)
 	refresh_highest_priority()
 	
-func unregister_object(object: ObjectOfInterest, priority: int):
+func unregister_object_priority(object: ObjectOfInterest, priority: int):
 	if !dictionary.has(priority):
 		return
 	var array = dictionary[priority] as Array[ObjectOfInterest]
@@ -27,8 +34,11 @@ func refresh_highest_priority():
 			highest_priority = key
 	if highest_priority != old_priority:
 		new_highest_priority.emit(old_priority, highest_priority)
-		
-	
+
+func get_any_random():
+	all_objects.sort_custom(sort_by_distance)
+	return all_objects.front()
+
 func get_best_object() -> ObjectOfInterest:
 	if dictionary.size() == 0:
 		return null
