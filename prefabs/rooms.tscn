@@ -1,0 +1,124 @@
+[gd_scene load_steps=20 format=3 uid="uid://doutoksvepjsi"]
+
+[ext_resource type="Texture2D" uid="uid://csianulto2otu" path="res://textures/environment/Rooms.png" id="1_to5mr"]
+[ext_resource type="PackedScene" uid="uid://cfg5e01751w0k" path="res://prefabs/objects/other_objects_room/wardrobe.tscn" id="2_7jjnv"]
+[ext_resource type="PackedScene" uid="uid://br1211h5s8ow" path="res://prefabs/objects/other_objects_room/bed.tscn" id="3_jjj1r"]
+[ext_resource type="PackedScene" uid="uid://6ulbh1oip77i" path="res://prefabs/objects/other_objects_room/bedside_table.tscn" id="4_002dc"]
+[ext_resource type="PackedScene" uid="uid://cm4lwmp8l74s3" path="res://prefabs/objects/other_objects_room/toy_chest.tscn" id="5_8lbs8"]
+[ext_resource type="PackedScene" uid="uid://ujjguu1kkqxq" path="res://prefabs/objects/other_objects_room/clock.tscn" id="6_sda2c"]
+[ext_resource type="PackedScene" uid="uid://tfuvf7eilaur" path="res://prefabs/objects/other_objects_room/desk.tscn" id="7_2r5o3"]
+[ext_resource type="PackedScene" uid="uid://bf6pk38t7bbc3" path="res://prefabs/objects/other_objects_room/gaming_chair.tscn" id="8_bkku5"]
+[ext_resource type="PackedScene" uid="uid://do0u1scl6a52d" path="res://prefabs/objects/other_objects_room/couch.tscn" id="9_ya0gk"]
+[ext_resource type="PackedScene" uid="uid://bno40kb882wim" path="res://prefabs/objects/other_objects_room/livingroom_table.tscn" id="10_1st25"]
+[ext_resource type="PackedScene" uid="uid://bk3vegugdwmqi" path="res://prefabs/objects/other_objects_room/chair.tscn" id="11_sjwj0"]
+[ext_resource type="PackedScene" uid="uid://cn2tvd0lhu8sd" path="res://prefabs/objects/other_objects_room/aquarium.tscn" id="12_6f8r3"]
+[ext_resource type="PackedScene" uid="uid://5mpm6u3ac3he" path="res://prefabs/objects/other_objects_room/shoe.tscn" id="13_tg5t5"]
+[ext_resource type="PackedScene" uid="uid://yoapedawm1ss" path="res://prefabs/objects/other_objects_room/kitchen.tscn" id="14_0580l"]
+[ext_resource type="PackedScene" uid="uid://bu2578tc8nejm" path="res://prefabs/objects/other_objects_room/fridge.tscn" id="15_h0vcn"]
+[ext_resource type="PackedScene" uid="uid://cyh3vs3qls345" path="res://prefabs/objects/other_objects_room/TV_sidetable.tscn" id="16_sf3lw"]
+[ext_resource type="PackedScene" path="res://prefabs/objects/other_objects_room/television.tscn" id="17_4qrb8"]
+[ext_resource type="PackedScene" uid="uid://bqtm4wvgynvcc" path="res://prefabs/objects/other_objects_room/chair_flipped.tscn" id="18_u1cow"]
+[ext_resource type="PackedScene" uid="uid://bogsjx7shaanv" path="res://prefabs/objects/foods/plantes.tscn" id="19_n8f48"]
+
+[node name="Rooms" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(-190, -11)
+texture = ExtResource("1_to5mr")
+
+[node name="Wardrobe" parent="." instance=ExtResource("2_7jjnv")]
+position = Vector2(606, -441)
+
+[node name="Bed" parent="." instance=ExtResource("3_jjj1r")]
+position = Vector2(1608, 40.0001)
+
+[node name="Sidebed table" parent="." instance=ExtResource("4_002dc")]
+position = Vector2(1833, 313)
+
+[node name="Sidebed table2" parent="." instance=ExtResource("4_002dc")]
+position = Vector2(-809, 572)
+
+[node name="Toy chest" parent="." instance=ExtResource("5_8lbs8")]
+position = Vector2(1237, 19.0001)
+
+[node name="Clock" parent="." instance=ExtResource("6_sda2c")]
+z_index = 1
+position = Vector2(1837, 284)
+
+[node name="Desk" parent="." instance=ExtResource("7_2r5o3")]
+position = Vector2(116, 412)
+
+[node name="Gaming chair" parent="." instance=ExtResource("8_bkku5")]
+position = Vector2(386, 376)
+
+[node name="Couch" parent="." instance=ExtResource("9_ya0gk")]
+position = Vector2(-604, 479)
+
+[node name="Aquarium" parent="." instance=ExtResource("12_6f8r3")]
+z_index = 1
+position = Vector2(-808, 546)
+
+[node name="Livingroom table" parent="." instance=ExtResource("10_1st25")]
+position = Vector2(-1180, 111)
+
+[node name="Livingroom table2" parent="." instance=ExtResource("10_1st25")]
+position = Vector2(-1305, -352)
+
+[node name="Chair" parent="." instance=ExtResource("11_sjwj0")]
+position = Vector2(-910, 81)
+
+[node name="Chair2" parent="." instance=ExtResource("11_sjwj0")]
+position = Vector2(-1160, 227)
+
+[node name="Shoe" parent="." instance=ExtResource("13_tg5t5")]
+position = Vector2(-2033, 33.0001)
+
+[node name="Shoe2" parent="." instance=ExtResource("13_tg5t5")]
+position = Vector2(-1977, 32)
+
+[node name="Shoe3" parent="." instance=ExtResource("13_tg5t5")]
+position = Vector2(-2033, 149)
+
+[node name="Shoe4" parent="." instance=ExtResource("13_tg5t5")]
+position = Vector2(-1977, 148)
+
+[node name="Kitchen" parent="." instance=ExtResource("14_0580l")]
+position = Vector2(-1702, -277)
+
+[node name="Fridge" parent="." instance=ExtResource("15_h0vcn")]
+position = Vector2(-1826, -70.0001)
+
+[node name="TV sidetable" parent="." instance=ExtResource("16_sf3lw")]
+position = Vector2(-72, 488)
+
+[node name="TV" parent="." instance=ExtResource("17_4qrb8")]
+z_index = 1
+position = Vector2(-61, 452)
+
+[node name="Chair flipped" parent="." instance=ExtResource("18_u1cow")]
+position = Vector2(-1444, 83)
+
+[node name="Chair flipped2" parent="." instance=ExtResource("18_u1cow")]
+position = Vector2(-1170, -98)
+
+[node name="Plant" parent="." instance=ExtResource("19_n8f48")]
+z_index = 1
+position = Vector2(-1315, -449)
+
+[node name="Plant2" parent="." instance=ExtResource("19_n8f48")]
+z_index = 1
+position = Vector2(100, 581)
+
+[node name="Plant3" parent="." instance=ExtResource("19_n8f48")]
+z_index = 1
+position = Vector2(382, -370)
+
+[node name="Plant4" parent="." instance=ExtResource("19_n8f48")]
+z_index = 1
+position = Vector2(-2215, 582)
+
+[node name="Chair flipped3" parent="." instance=ExtResource("18_u1cow")]
+position = Vector2(-1444, 83)

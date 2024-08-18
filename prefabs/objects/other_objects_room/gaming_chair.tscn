@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://bf6pk38t7bbc3"]
+
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_4w8pe"]
+[ext_resource type="Texture2D" uid="uid://dos4eba886ttg" path="res://textures/environment/GamingChair.png" id="2_bpy73"]
+[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ebh7k"]
+[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_j5bc6"]
+[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_d5j6p"]
+[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_6e70x"]
+[ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_hd6mm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
+size = Vector2(31.8198, 40.3051)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
+radius = 34.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skbxg"]
+radius = 124.004
+
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+rotation = -0.769262
+script = ExtResource("1_4w8pe")
+priority = 10
+attractive = false
+interact_duration = 1.0
+growth_value = 25.0
+restored_hunger = 50.0
+on_click_handler = NodePath("ClickHandler")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+rotation = 0.785398
+texture = ExtResource("2_bpy73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_kfbe5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_702al")
+
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+script = ExtResource("3_ebh7k")
+parent = NodePath("..")
+destroy_after_x_click = 1
+object_spawner = NodePath("ObjectSpawner")
+explosion_handler = NodePath("ExplosionHandler")
+
+[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
+script = ExtResource("4_j5bc6")
+quantity = 1
+prefabs = Array[PackedScene]([ExtResource("5_d5j6p")])
+
+[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
+script = ExtResource("6_6e70x")
+timer = NodePath("AttractionTimer")
+
+[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
+wait_time = 5.0
+
+[node name="ExplosionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("area")]
+script = ExtResource("7_hd6mm")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="ClickHandler/ExplosionHandler"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
+shape = SubResource("CircleShape2D_skbxg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
