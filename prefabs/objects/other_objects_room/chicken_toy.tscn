@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx5fduok7c2jc"]
+[gd_scene load_steps=11 format=3 uid="uid://bqvmknwbr21ya"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_tn1vr"]
 [ext_resource type="Texture2D" uid="uid://cqsdxn3hnt38c" path="res://textures/environment/ChickenToy.png" id="2_i0tns"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ebvq1"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_ymij6"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_5xkxg"]
+[ext_resource type="PackedScene" uid="uid://cg0e7nsa1py2s" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_5xkxg"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_r3req"]
 [ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_nkqi6"]
 

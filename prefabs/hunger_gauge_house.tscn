@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpxlvg3rpf0ak"]
+
+[ext_resource type="Script" path="res://scripts/UI/hunger_gauge.gd" id="1_6mdlj"]
+[ext_resource type="Texture2D" uid="uid://df3mf6k45vm57" path="res://textures/UI/Tamagotchi_Icons/Tamagotchi_Icon_Food_Low.png" id="2_u208h"]
+[ext_resource type="Texture2D" uid="uid://cxxvkx6871phr" path="res://textures/UI/Tamagotchi_Icons/Tamagotchi_Icon_Food_High.png" id="3_0216a"]
+[ext_resource type="Texture2D" uid="uid://dykf0jil7ok7y" path="res://textures/UI/ProgresBar/House_Progressbar_Under.png" id="4_rvao0"]
+[ext_resource type="Texture2D" uid="uid://cthhyg7yt5obo" path="res://textures/UI/ProgresBar/House_Progressbar_Over.png" id="5_evmwp"]
+[ext_resource type="Texture2D" uid="uid://kykhgcsoq2ph" path="res://textures/UI/ProgresBar/House_Progressbar_Progress.png" id="6_hy54o"]
+
+[node name="HungerGauge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6mdlj")
+
+[node name="LowFoodIcon" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = -87.0
+offset_top = -1.0
+offset_right = -35.0
+offset_bottom = 60.0
+scale = Vector2(1.635, 1.635)
+texture = ExtResource("2_u208h")
+stretch_mode = 2
+
+[node name="HighFoodIcon" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 652.0
+offset_top = -1.0
+offset_right = 707.0
+offset_bottom = 66.0
+scale = Vector2(1.635, 1.635)
+texture = ExtResource("3_0216a")
+stretch_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_right = 26.0
+offset_bottom = 6.0
+scale = Vector2(10, 10)
+value = 43.0
+texture_under = ExtResource("4_rvao0")
+texture_over = ExtResource("5_evmwp")
+texture_progress = ExtResource("6_hy54o")
