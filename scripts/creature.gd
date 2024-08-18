@@ -121,8 +121,10 @@ func grow(growth_value: int):
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		current_growth_stage += 1
 		self.scale.x = growth_stages[current_growth_stage].scale_factor
-		self.scale.y = growth_stages[current_growth_stage].scale_factor
-		#updater le sprite
+		#self.scale.x = growth_stages[current_growth_stage].scale_factor
+		#self.scale.y = growth_stages[current_growth_stage].scale_factor
+		change_creature_scale(growth_stages[current_growth_stage].scale_factor)
+		#TODO updater le sprite
 	
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		self.grow(0)
@@ -142,3 +144,9 @@ func increase_sleep(sleep_value):
 		stun(sleep_stun_resource)
 		sleep_increase_timer.paused = true
 		sleep_meter = 0
+
+func change_creature_scale(scale):
+	$AnimatedSprite2D.scale.x = scale
+	$AnimatedSprite2D.scale.y = scale
+	$CollisionShape2D.scale.x = scale
+	$CollisionShape2D.scale.y = scale
