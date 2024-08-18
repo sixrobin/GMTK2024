@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xotit38nwecc"]
+[gd_scene load_steps=10 format=3 uid="uid://xotit38nwecc"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_8g3fb"]
 [ext_resource type="Texture2D" uid="uid://dseouikhkshr" path="res://textures/environment/TrashBag.png" id="2_k1lpi"]
@@ -8,11 +8,8 @@
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_j4b8r"]
 [ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_2ev51"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(31.8198, 40.3051)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 34.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_houv3"]
+radius = 73.5476
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_skbxg"]
 radius = 124.004
@@ -36,12 +33,7 @@ texture = ExtResource("2_k1lpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_kfbe5")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_702al")
+shape = SubResource("CircleShape2D_houv3")
 
 [node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
 script = ExtResource("3_5rjg5")
@@ -70,5 +62,3 @@ area = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
 shape = SubResource("CircleShape2D_skbxg")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
