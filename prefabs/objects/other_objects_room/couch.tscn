@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://do0u1scl6a52d"]
+[gd_scene load_steps=5 format=3 uid="uid://do0u1scl6a52d"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_em3ka"]
 [ext_resource type="Texture2D" uid="uid://mfms1h1ibebt" path="res://textures/environment/Couch_Side.png" id="2_7wirr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(211, 416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbbii"]
+size = Vector2(242, 447)
 
 [node name="Object" type="RigidBody2D"]
 collision_layer = 2
@@ -26,3 +29,11 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_kfbe5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_lbbii")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

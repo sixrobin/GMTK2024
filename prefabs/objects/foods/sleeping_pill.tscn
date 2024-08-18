@@ -24,6 +24,7 @@ restored_hunger = 8.0
 speed_modifier = ExtResource("3_lk7wk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
 texture = ExtResource("3_siaib")
