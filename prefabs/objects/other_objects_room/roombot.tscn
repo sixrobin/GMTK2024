@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://qni7ep7xerv0"]
+[gd_scene load_steps=5 format=3 uid="uid://qni7ep7xerv0"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_xdf2i"]
 [ext_resource type="Texture2D" uid="uid://cg1tkgpl5nq55" path="res://textures/environment/Roombot.png" id="2_wfeaw"]
-[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_n0st1"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_mwfwl"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_w0jm0"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_q455t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qol67"]
 radius = 94.023
@@ -24,7 +20,7 @@ attractive = false
 interact_duration = 1.0
 growth_value = 30.0
 restored_hunger = 25.0
-on_click_handler = NodePath("ClickHandler")
+on_click_handler = NodePath("")
 random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,23 +38,5 @@ shape = SubResource("CircleShape2D_qol67")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_702al")
-
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
-script = ExtResource("3_n0st1")
-parent = NodePath("..")
-destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_mwfwl")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_w0jm0")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_q455t")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

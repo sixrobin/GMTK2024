@@ -41,7 +41,6 @@ shape = SubResource("CircleShape2D_houv3")
 [node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
 script = ExtResource("3_5rjg5")
 parent = NodePath("..")
-destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
 explosion_handler = NodePath("ExplosionHandler")
 

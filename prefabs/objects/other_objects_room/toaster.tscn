@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6x4j5kuio2o2" path="res://textures/environment/Toaster.png" id="2_lchlg"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_n2jrd"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_kgkl2"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_aw27m"]
+[ext_resource type="PackedScene" uid="uid://5155mgcfmu8l" path="res://prefabs/objects/foods/toast.tscn" id="5_ubpbf"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_r6xvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmi70"]
@@ -19,6 +19,7 @@ linear_damp = 5.0
 script = ExtResource("1_on7dn")
 priority = -1
 attractive = false
+delete_on_applied = false
 interact_duration = 1.0
 growth_value = 30.0
 restored_hunger = 25.0
@@ -43,13 +44,12 @@ shape = SubResource("RectangleShape2D_ovbar")
 [node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_n2jrd")
 parent = NodePath("..")
-destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_kgkl2")
 quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_aw27m")])
+prefabs = Array[PackedScene]([ExtResource("5_ubpbf")])
 
 [node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
 script = ExtResource("6_r6xvk")

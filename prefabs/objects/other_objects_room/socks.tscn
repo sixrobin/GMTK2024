@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://crucmdm7bd1px"]
+[gd_scene load_steps=5 format=3 uid="uid://crucmdm7bd1px"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_kdph5"]
 [ext_resource type="Texture2D" uid="uid://dj7c41wqslysw" path="res://textures/environment/Sock.png" id="2_debcu"]
-[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_uy5ov"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_ks478"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_58fwh"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_uor6n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1mnj"]
 radius = 44.0142
@@ -25,7 +21,7 @@ attractive = false
 interact_duration = 1.0
 growth_value = 10.0
 restored_hunger = 8.0
-on_click_handler = NodePath("ClickHandler")
+on_click_handler = NodePath("")
 random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,23 +38,5 @@ shape = SubResource("CapsuleShape2D_s1mnj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4, 0)
 shape = SubResource("CapsuleShape2D_m47jk")
-
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
-script = ExtResource("3_uy5ov")
-parent = NodePath("..")
-destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_ks478")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_58fwh")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_uor6n")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
