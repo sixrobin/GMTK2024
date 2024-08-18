@@ -30,6 +30,7 @@ freeze_mode = 1
 script = ExtResource("1_020rh")
 attractive = false
 delete_on_applied = false
+growth_value = 30.0
 on_click_handler = NodePath("ClickHandler")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -20,7 +20,7 @@ script = ExtResource("1_rlmdb")
 priority = 10
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 10.0
 restored_hunger = 50.0
 speed_modifier = ExtResource("2_kt3u0")
 

@@ -43,6 +43,9 @@ func spawn_object(position: Vector2, orientation: float, parent: Node2D):
 			
 		spawned_amount += 1
 
+	var PUFF_VFX = preload("res://prefabs/VFX/puff.tscn")
+	ParticlesHandler.spawn(PUFF_VFX, position)
+	
 func on_opening_timer_end():
 	if on_click_handler.has_uses_left():
 		on_click_handler.parent.sprite.texture = previous_texture

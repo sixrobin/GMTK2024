@@ -16,7 +16,7 @@ linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_w8jxp")
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 40.0
 restored_hunger = 50.0
 random_rotate_on_spawn = true
 

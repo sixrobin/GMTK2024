@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7ob0sk7n1jbo"]
+[gd_scene load_steps=11 format=3 uid="uid://17s68y4epscg"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_3j1m2"]
 [ext_resource type="Texture2D" uid="uid://cvs7s6js7smq1" path="res://textures/environment/Screen.png" id="2_x84kx"]
@@ -25,7 +25,7 @@ script = ExtResource("1_3j1m2")
 priority = 10
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 30.0
 restored_hunger = 50.0
 on_click_handler = NodePath("ClickHandler")
 

@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=3 uid="uid://do43roeqly6ri"]
+
+[ext_resource type="Texture2D" uid="uid://c3y1mkaii0150" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_00.png" id="1_lptsn"]
+[ext_resource type="Texture2D" uid="uid://e08gt50e232" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_01.png" id="2_180yx"]
+[ext_resource type="Texture2D" uid="uid://dojpi8uf8jybr" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_02.png" id="3_nobo4"]
+[ext_resource type="Texture2D" uid="uid://ef4xvp0t02o0" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_03.png" id="4_tcwgg"]
+[ext_resource type="Texture2D" uid="uid://cubwhp8b3dkiv" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_04.png" id="5_csfi4"]
+[ext_resource type="Texture2D" uid="uid://0yb53uqtttrf" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_05.png" id="6_vlo0q"]
+[ext_resource type="Texture2D" uid="uid://51p1hxb5hix6" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_06.png" id="7_rfhga"]
+[ext_resource type="Texture2D" uid="uid://c3wgs6kc0oas6" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_07.png" id="8_5gu1l"]
+[ext_resource type="Texture2D" uid="uid://cm07ojlulrmvb" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_08.png" id="9_gllwo"]
+[ext_resource type="Texture2D" uid="uid://cq8ayousvxvy8" path="res://textures/Vfx/Vfx_Puff_Apparition/Vfx_Puff_Apparition_09.png" id="10_42dqq"]
+[ext_resource type="Script" path="res://scripts/utils/one_shot_animation.gd" id="11_puxon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p4ye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lptsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_180yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nobo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tcwgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_csfi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vlo0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rfhga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5gu1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gllwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_42dqq")
+}],
+"loop": true,
+"name": &"puff",
+"speed": 12.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+z_index = 50
+sprite_frames = SubResource("SpriteFrames_4p4ye")
+animation = &"puff"
+script = ExtResource("11_puxon")
+frame_rate = 18
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_frame_timer_timeout"]
