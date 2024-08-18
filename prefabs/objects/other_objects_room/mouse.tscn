@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsjssl486svwn"]
+[gd_scene load_steps=5 format=3 uid="uid://dv4mgfe1req60"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_wtotv"]
 [ext_resource type="Texture2D" uid="uid://dl70b6tpn7isk" path="res://textures/environment/Mouse.png" id="2_jb37y"]
@@ -17,7 +17,7 @@ mass = 0.05
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_wtotv")
-priority = 10
+priority = 0
 attractive = false
 interact_duration = 1.0
 growth_value = 10.0
