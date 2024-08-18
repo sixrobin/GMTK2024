@@ -211,6 +211,7 @@ func modify_hunger(hunger_value):
 	
 	if old_hunger - hunger != 0:
 		if old_starving != is_starving():
+			print("starving mode changed!")
 			reset_target()
 		hunger_modified.emit(old_hunger,hunger)
 

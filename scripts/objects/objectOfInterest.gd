@@ -38,8 +38,9 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_being_interacted || !eatable:
 		return
-	if body is Creature:
-		CreatureSingleton.creature.interact(self)
+	if body is Creature and !body.is_stunned:
+		if body.is_starving() or priority >= 0:
+			body.interact(self)
 
 func set_attractive(value: bool, specific_priority: int):
 	if current_attractive == value:
