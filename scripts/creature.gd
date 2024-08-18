@@ -179,6 +179,10 @@ func grow(growth_value: int):
 	#Si le growth meter est rempli, on passe au prochain stage et on update la scale & le sprite
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		current_growth_stage += 1
+		if current_growth_stage == 3:
+			SceneManagerSingleton.instance.next_scene()
+			reset_target()
+			_stun(StunResource.E_stun_mode.NONE, 0.5)
 		change_creature_scale(growth_stages[current_growth_stage].scale_factor)
 		$AnimatedSprite2D.change_size(current_growth_stage+1)
 	

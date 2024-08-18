@@ -9,37 +9,37 @@
 [ext_resource type="PackedScene" uid="uid://dtsoo4kxpn27f" path="res://prefabs/timer.tscn" id="8_r884m"]
 [ext_resource type="PackedScene" uid="uid://c8oopuy4vxqkf" path="res://prefabs/environment/tamagotchi_background.tscn" id="10_kx7gb"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
-[ext_resource type="PackedScene" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
+[ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Creature" parent="." instance=ExtResource("1_3mugn")]
 
 [node name="Camera" parent="." node_paths=PackedStringArray("TARGET") instance=ExtResource("2_juggh")]
 script = ExtResource("3_ixshh")
 TARGET = NodePath("../Creature")
 
-[node name="Creature" parent="." instance=ExtResource("1_3mugn")]
-
-[node name="SceneManager" type="Node2D" parent="."]
-script = ExtResource("4_2ks51")
-scenes = Array[PackedScene]([ExtResource("10_kx7gb"), ExtResource("6_kp7y2")])
-
-[node name="Cursor" parent="." instance=ExtResource("11_05pgy")]
-
-[node name="HungerGauge" parent="." instance=ExtResource("13_jthj5")]
+[node name="HungerGauge" parent="Camera" instance=ExtResource("13_jthj5")]
 offset_left = -123.0
 offset_top = -235.0
 offset_right = -123.0
 offset_bottom = -235.0
 
-[node name="HungerGauge_House" parent="." instance=ExtResource("7_flanj")]
+[node name="HungerGauge_House" parent="Camera" instance=ExtResource("7_flanj")]
 visible = false
 offset_left = -328.0
 offset_top = -300.0
 offset_right = -328.0
 offset_bottom = -300.0
 
-[node name="Timer" parent="." instance=ExtResource("8_r884m")]
-offset_left = -307.0
-offset_top = -277.0
-offset_right = -307.0
-offset_bottom = -277.0
+[node name="Timer" parent="Camera" instance=ExtResource("8_r884m")]
+offset_left = -30.0
+offset_top = -176.0
+offset_right = -30.0
+offset_bottom = -176.0
+
+[node name="SceneManager" type="Node2D" parent="."]
+script = ExtResource("4_2ks51")
+scenes = Array[PackedScene]([ExtResource("10_kx7gb"), ExtResource("6_kp7y2")])
+
+[node name="Cursor" parent="." instance=ExtResource("11_05pgy")]
