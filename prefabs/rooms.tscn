@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://doutoksvepjsi"]
 
-[ext_resource type="Texture2D" uid="uid://csianulto2otu" path="res://textures/environment/Rooms.png" id="1_to5mr"]
+[ext_resource type="PackedScene" uid="uid://cxib4i1ge2esi" path="res://prefabs/rooms_background.tscn" id="1_jteum"]
 [ext_resource type="PackedScene" uid="uid://cfg5e01751w0k" path="res://prefabs/objects/other_objects_room/wardrobe.tscn" id="2_7jjnv"]
 [ext_resource type="PackedScene" uid="uid://br1211h5s8ow" path="res://prefabs/objects/other_objects_room/bed.tscn" id="3_jjj1r"]
 [ext_resource type="PackedScene" uid="uid://6ulbh1oip77i" path="res://prefabs/objects/other_objects_room/bedside_table.tscn" id="4_002dc"]
@@ -32,12 +32,12 @@
 [ext_resource type="PackedScene" uid="uid://b3ghytbfvweta" path="res://prefabs/objects/other_objects_room/paper_ball.tscn" id="31_6ld3d"]
 [ext_resource type="PackedScene" uid="uid://bdsqbbiyqqftm" path="res://prefabs/objects/foods/can.tscn" id="32_0r146"]
 [ext_resource type="PackedScene" uid="uid://boso43ucxkpki" path="res://prefabs/objects/foods/sleeping_pill.tscn" id="33_73y5t"]
-[ext_resource type="PackedScene" uid="uid://cuin8mdl0226d" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="34_yjl2o"]
+[ext_resource type="PackedScene" uid="uid://c8257wjed8ayq" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="34_yjl2o"]
 [ext_resource type="PackedScene" uid="uid://bno5xi0brflac" path="res://prefabs/objects/foods/cheese.tscn" id="35_xw4xl"]
 [ext_resource type="PackedScene" uid="uid://ijp2fbynh0fq" path="res://prefabs/objects/foods/leaf.tscn" id="36_gwjrb"]
 [ext_resource type="PackedScene" uid="uid://bqvmknwbr21ya" path="res://prefabs/objects/other_objects_room/chicken_toy.tscn" id="37_k2gn7"]
 [ext_resource type="PackedScene" uid="uid://bo7fmssmk8wyf" path="res://prefabs/objects/other_objects_room/mouse_trap.tscn" id="38_g6x3m"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
+[ext_resource type="PackedScene" uid="uid://33d84wy1ecy7" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
 [ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="40_f2tm0"]
 [ext_resource type="PackedScene" uid="uid://ciofi5avvq48e" path="res://prefabs/objects/foods/bananas.tscn" id="41_3dgs0"]
 [ext_resource type="PackedScene" uid="uid://c2aa7xpvryk3f" path="res://prefabs/objects/foods/cake.tscn" id="42_j2e8k"]
@@ -54,10 +54,7 @@ agent_radius = 50.0
 y_sort_enabled = true
 position = Vector2(6.11, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -100
-position = Vector2(978.89, -355.5)
-texture = ExtResource("1_to5mr")
+[node name="RoomsBackground" parent="." instance=ExtResource("1_jteum")]
 
 [node name="Wardrobe" parent="." instance=ExtResource("2_7jjnv")]
 position = Vector2(1774.89, -785.5)
@@ -80,6 +77,7 @@ position = Vector2(3005.89, -55.5)
 
 [node name="Desk" parent="." instance=ExtResource("7_2r5o3")]
 position = Vector2(1284.89, 67.5)
+rotation = -0.785397
 
 [node name="Gaming chair" parent="." instance=ExtResource("8_bkku5")]
 position = Vector2(1554.89, 31.5)
