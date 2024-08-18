@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck2tq46orv1t0"
-path="res://.godot/imported/Creature_Size3_Growing_04.png-f3262f889dc1a864f94d56abea0e9ba8.ctex"
+uid="uid://e5a8q2mtl852"
+path="res://.godot/imported/Creature_Size4_Idle_00.png-e5d881f2080fc807330c1ff5ef6d2441.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/creature/Creature_Size3_Growing/Creature_Size3_Growing_04.png"
-dest_files=["res://.godot/imported/Creature_Size3_Growing_04.png-f3262f889dc1a864f94d56abea0e9ba8.ctex"]
+source_file="res://textures/creature/Creature_Size04_Idle/Creature_Size4_Idle_00.png"
+dest_files=["res://.godot/imported/Creature_Size4_Idle_00.png-e5d881f2080fc807330c1ff5ef6d2441.ctex"]
 
 [params]
 
