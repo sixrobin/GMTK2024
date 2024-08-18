@@ -3,6 +3,7 @@ class_name ObjectOfInterest
 
 @export var priority: int = 1
 @export var attractive: bool = true
+@export var eatable: bool = true
 @export var delete_on_applied: bool = true
 
 @export var interact_duration: float = 0
@@ -29,7 +30,7 @@ func _ready() -> void:
 		self.global_rotation = deg_to_rad(randf_range(0, 360))
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if is_being_interacted == true:
+	if is_being_interacted || !eatable:
 		return
 	if body is Creature:
 		CreatureSingleton.creature.interact(self)

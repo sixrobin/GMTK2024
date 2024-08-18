@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name Creature
 
-signal hunger_modified(old_hunger, new_hunger)
+signal hunger_modified(old_hunger: float, new_hunger: float)
 
 @export var SMOOTH_SPEED: float = 5
 @export var stun_timer: Timer = null
@@ -26,6 +26,7 @@ var hunger: float = 0
 var hunger_drain_timer: Timer = Timer.new()
 var sleep_meter: float = 0
 var sleep_increase_timer: Timer = Timer.new()
+var cursor_eaten: bool
 
 func _ready() -> void:
 	CreatureSingleton.creature = self
@@ -77,6 +78,10 @@ func _physics_process(_delta):
 
 # INTERACT
 func interact(object: ObjectOfInterest):
+	var cursor: Cursor = object.get_parent() as Cursor
+	if cursor != null:
+		eat_cursor(cursor)
+	
 	if CursorSingleton.cursor.draggedObject == object:
 		CursorSingleton.cursor.tryReleaseObject()
 		
@@ -117,6 +122,9 @@ func _stun(mode: StunResource.E_stun_mode, duration: float) -> Timer:
 	stun_timer.start(duration)
 	return stun_timer
 
+func eat_cursor(cursor: Cursor):
+	cursor.destroyCursor()
+	cursor_eaten = true
 
 #Speed Boost
 func speedBoost(speed_modifier: SpeedModifier):
@@ -135,6 +143,11 @@ func _on_stun_timer_timeout() -> void:
 	is_stunned = false
 
 func grow(growth_value: int):
+	# move in poop method
+	if cursor_eaten:
+		cursor_eaten = false
+		CursorSingleton.cursor.respawnCursor(self.get_global_transform_with_canvas().get_origin())
+	
 	if current_growth_stage >= growth_stages.size() - 1:
 		return
 	
