@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cilug5ynrbtsw"]
+[gd_scene load_steps=5 format=3 uid="uid://cilug5ynrbtsw"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_x78e5"]
 [ext_resource type="Texture2D" uid="uid://dbb7u7ltb74il" path="res://textures/environment/Pillow.png" id="2_srrco"]
-[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_l7h41"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_gq0dh"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_7jjp4"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_jls7h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xaejs"]
 radius = 76.8485
@@ -25,7 +21,7 @@ attractive = false
 interact_duration = 1.0
 growth_value = 30.0
 restored_hunger = 25.0
-on_click_handler = NodePath("ClickHandler")
+on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -40,23 +36,5 @@ shape = SubResource("CapsuleShape2D_xaejs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_l0x6j")
-
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
-script = ExtResource("3_l7h41")
-parent = NodePath("..")
-destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_gq0dh")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_7jjp4")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_jls7h")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

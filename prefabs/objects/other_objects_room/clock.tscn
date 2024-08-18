@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ujjguu1kkqxq"]
+[gd_scene load_steps=8 format=3 uid="uid://ujjguu1kkqxq"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_vysbs"]
 [ext_resource type="Texture2D" uid="uid://xor6eny6dygt" path="res://textures/environment/Clock.png" id="2_17li6"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_oy324"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_q4p0n"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_yx0g8"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_eu8sr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
@@ -47,7 +46,6 @@ object_spawner = NodePath("ObjectSpawner")
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_q4p0n")
 quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_yx0g8")])
 
 [node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
 script = ExtResource("6_eu8sr")

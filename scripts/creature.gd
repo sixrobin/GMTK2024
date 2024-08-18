@@ -18,6 +18,8 @@ signal hunger_modified(old_hunger: float, new_hunger: float)
 @export var sleep_duration: float = 5
 @export var status_icon: CreatureStatusIcon = null
 
+@export var area: Area2D
+
 var target_object: ObjectOfInterest = null
 var is_interacting: bool = false
 var is_stunned: bool = false
@@ -57,16 +59,28 @@ func _process(delta: float):
 	if is_stunned or is_interacting:
 		return
 	if target_object == null:
-		if is_starving():
-			target_object = ObjectManager.get_any_random()
-		else:
-			target_object = ObjectManager.get_best_object()
-		if target_object != null:
-			is_walking = true
-			set_anim_walk_or_idle()
+		try_assign_new_target()
 	if target_object != null:
 		self.nav_agent.target_position = target_object.global_position
-		#self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
+
+func try_assign_new_target():
+	if is_starving():
+		target_object = ObjectManager.get_any_random()
+	else:
+		target_object = ObjectManager.get_best_object()
+	if target_object != null:
+		on_new_target_assigned()
+
+func on_new_target_assigned():
+	print("new target")
+	is_walking = true
+	set_anim_walk_or_idle()
+	var areas = area.get_overlapping_areas()
+	for x in areas:
+		if x.get_parent() == target_object:
+			print("is already on target!")
+			self.interact(target_object)
+			return
 
 func reset_target():
 	target_object = null

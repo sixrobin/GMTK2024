@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://b2jdgkrrtq7gp"]
+[gd_scene load_steps=132 format=3 uid="uid://b2jdgkrrtq7gp"]
 
 [ext_resource type="Script" path="res://scripts/creature.gd" id="1_qoasn"]
 [ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="2_g73dj"]
@@ -584,7 +584,10 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent", "status_icon")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uico"]
+radius = 4.12311
+
+[node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent", "status_icon", "area")]
 collision_layer = 3
 collision_mask = 3
 gravity_scale = 0.0
@@ -597,6 +600,7 @@ stun_timer = NodePath("Timer")
 growth_stages = Array[ExtResource("2_g73dj")]([ExtResource("3_dd8mf"), ExtResource("4_34unq"), ExtResource("5_0omj0"), ExtResource("6_0kc5i"), ExtResource("7_31mni"), ExtResource("8_dkgk5"), ExtResource("9_6ohlt")])
 nav_agent = NodePath("NavigationAgent2D")
 status_icon = NodePath("StatusIcon")
+area = NodePath("Area2D")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 visible = false
@@ -625,6 +629,11 @@ autostart = true
 [node name="StatusIcon" parent="." instance=ExtResource("93_0owaf")]
 position = Vector2(0, -48)
 scale = Vector2(0.28, 0.28)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8uico")
 
 [connection signal="timeout" from="Timer" to="." method="_on_stun_timer_timeout"]
 [connection signal="timeout" from="AnimatedSprite2D/FrameTimer" to="AnimatedSprite2D" method="_on_frame_timer_timeout"]
