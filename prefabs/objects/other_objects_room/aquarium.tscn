@@ -36,13 +36,13 @@ position = Vector2(2.38133, -1.82463)
 rotation = -0.700545
 shape = SubResource("CircleShape2D_702al")
 
-[node name="ClickHandler" type="Node" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_a1p6k")
 parent = NodePath("..")
 destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
+object_spawner = NodePath("")
 
-[node name="ObjectSpawner" type="Node" parent="ClickHandler"]
+[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_kakii")
 amount_to_spawn = 3
 prefabs = Array[PackedScene]([ExtResource("5_vdkqi")])
