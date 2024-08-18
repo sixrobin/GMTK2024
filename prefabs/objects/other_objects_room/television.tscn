@@ -1,14 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqbaaumqev5tn"]
+[gd_scene load_steps=11 format=3 uid="uid://bsir4lgtk611e"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_020rh"]
 [ext_resource type="Texture2D" uid="uid://bmkendjaxhm1i" path="res://textures/environment/TV_Side.png" id="2_dmtf7"]
-[ext_resource type="Shader" path="res://shaders/additive.gdshader" id="3_qt4hw"]
+[ext_resource type="Shader" path="res://shaders/tv_light.gdshader" id="3_2ua2b"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_x7rro"]
 [ext_resource type="Texture2D" uid="uid://di2vhku8g68jp" path="res://textures/environment/TV_Side_Light.png" id="4_ygvsj"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_lsjx7"]
 
+[sub_resource type="Gradient" id="Gradient_hsdws"]
+offsets = PackedFloat32Array(0, 0.303754, 0.641638, 1)
+colors = PackedColorArray(0.232546, 0.408322, 0.42226, 1, 0.388235, 0.513726, 0.619608, 1, 0.545098, 0.768627, 0.737255, 1, 0.248115, 0.418863, 0.441995, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_de1y6"]
+gradient = SubResource("Gradient_hsdws")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ego7f"]
-shader = ExtResource("3_qt4hw")
+shader = ExtResource("3_2ua2b")
+shader_parameter/flicker_speed = 10.0
+shader_parameter/gradient = SubResource("GradientTexture1D_de1y6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85cyc"]
 size = Vector2(32.5, 158)
@@ -28,8 +37,10 @@ texture = ExtResource("2_dmtf7")
 
 [node name="TV Light" type="Sprite2D" parent="Sprite2D"]
 visible = false
+modulate = Color(1, 1, 1, 0.639216)
 material = SubResource("ShaderMaterial_ego7f")
-position = Vector2(-105, 6)
+position = Vector2(-76, 7)
+scale = Vector2(0.7, 1)
 texture = ExtResource("4_ygvsj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
