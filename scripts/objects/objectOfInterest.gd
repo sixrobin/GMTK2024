@@ -85,3 +85,4 @@ func _notification(notification):
 		set_attractive(false, current_priority)
 		if interaction_timer:
 			interaction_timer.stop()
+			interaction_timer.timeout.emit()

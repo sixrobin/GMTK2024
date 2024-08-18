@@ -39,8 +39,6 @@ func spawn_object(position: Vector2, orientation: float, parent: Node2D):
 		if spawn_force > 0:
 			var random: float = randf_range(random_angle.x, random_angle.y)
 			var direction = Vector2.RIGHT.rotated(orientation + deg_to_rad(random))
-			print(rad_to_deg(orientation))
-			print(rad_to_deg(orientation + deg_to_rad(random)))
 			object.apply_impulse(direction * spawn_force)
 			
 		spawned_amount += 1
