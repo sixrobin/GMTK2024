@@ -1,24 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu2578tc8nejm"]
+[gd_scene load_steps=15 format=3 uid="uid://b80g2knt0cwde"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_0rcxj"]
 [ext_resource type="Texture2D" uid="uid://bmkkdugbx3h6b" path="res://textures/environment/Fridge.png" id="2_cw6ig"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_uctc0"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_o3jvj"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_277wr"]
+[ext_resource type="PackedScene" uid="uid://c5w20knbajgvs" path="res://prefabs/objects/foods/egg.tscn" id="5_hnu41"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_hg02o"]
+[ext_resource type="PackedScene" path="res://prefabs/objects/foods/cheese.tscn" id="6_wsp5k"]
+[ext_resource type="PackedScene" path="res://prefabs/objects/foods/can.tscn" id="7_74vj7"]
 [ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_hftae"]
+[ext_resource type="PackedScene" path="res://prefabs/objects/foods/cake.tscn" id="8_4gpdh"]
+[ext_resource type="PackedScene" uid="uid://b5yorlh5s1xfc" path="res://prefabs/objects/foods/tomato.tscn" id="9_jymfl"]
+[ext_resource type="Texture2D" uid="uid://c2dfvd20bnlri" path="res://textures/environment/Fridge_Open_Empty.png" id="10_6t38e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(31.8198, 40.3051)
+size = Vector2(176, 295)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 34.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl48o"]
+size = Vector2(101, 264)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_skbxg"]
-radius = 124.004
-
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
-rotation = -0.769262
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler", "sprite")]
 script = ExtResource("1_0rcxj")
 priority = 10
 attractive = false
@@ -26,34 +27,36 @@ interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
 on_click_handler = NodePath("ClickHandler")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-1.19209e-07, 0)
-rotation = 0.785398
 texture = ExtResource("2_cw6ig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
-rotation = 0.785398
+position = Vector2(-47, 11.5)
 shape = SubResource("RectangleShape2D_kfbe5")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_702al")
-
 [node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+position = Vector2(50, 50)
 script = ExtResource("3_uctc0")
 parent = NodePath("..")
-destroy_after_x_click = 1
+max_uses = 1
 object_spawner = NodePath("ObjectSpawner")
 explosion_handler = NodePath("ExplosionHandler")
 
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
+[node name="ObjectSpawner" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("opening_timer")]
 script = ExtResource("4_o3jvj")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_277wr")])
+amount_to_spawn = 5
+prefabs = Array[PackedScene]([ExtResource("5_hnu41"), ExtResource("6_wsp5k"), ExtResource("7_74vj7"), ExtResource("8_4gpdh"), ExtResource("9_jymfl")])
+random_angle = Vector2(-45, 45)
+spawn_force = 300.0
+opening_timer = NodePath("Timer")
+opened_texture = ExtResource("10_6t38e")
+
+[node name="Timer" type="Timer" parent="ClickHandler/ObjectSpawner"]
+wait_time = 0.5
 
 [node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
 script = ExtResource("6_hg02o")
@@ -69,6 +72,5 @@ area = NodePath("Area2D")
 [node name="Area2D" type="Area2D" parent="ClickHandler/ExplosionHandler"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
-shape = SubResource("CircleShape2D_skbxg")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+position = Vector2(40.5, -31)
+shape = SubResource("RectangleShape2D_bl48o")
