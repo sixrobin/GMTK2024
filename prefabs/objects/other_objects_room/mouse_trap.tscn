@@ -18,7 +18,7 @@ radius = 34.0
 radius = 124.004
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
-rotation = -0.769262
+rotation = -0.785398
 script = ExtResource("1_orkjc")
 priority = 10
 attractive = false
@@ -32,6 +32,7 @@ y_sort_enabled = true
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
 texture = ExtResource("2_3f764")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://6h3nvjfa4akn"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_gtjsm"]
-[ext_resource type="Texture2D" uid="uid://cg1tkgpl5nq55" path="res://textures/environment/Roombot.png" id="2_ktf0f"]
+[ext_resource type="Texture2D" uid="uid://c7gw3q87y0ag8" path="res://textures/environment/Pants.png" id="2_uiiji"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_cqbnr"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_pd8r3"]
 [ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_urnjg"]
@@ -31,7 +31,7 @@ on_click_handler = NodePath("ClickHandler")
 y_sort_enabled = true
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
-texture = ExtResource("2_ktf0f")
+texture = ExtResource("2_uiiji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)

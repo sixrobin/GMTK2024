@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://doutoksvepjsi"]
+[gd_scene load_steps=44 format=3 uid="uid://doutoksvepjsi"]
 
 [ext_resource type="Texture2D" uid="uid://csianulto2otu" path="res://textures/environment/Rooms.png" id="1_to5mr"]
 [ext_resource type="PackedScene" uid="uid://cfg5e01751w0k" path="res://prefabs/objects/other_objects_room/wardrobe.tscn" id="2_7jjnv"]
@@ -19,6 +19,30 @@
 [ext_resource type="PackedScene" path="res://prefabs/objects/other_objects_room/television.tscn" id="17_4qrb8"]
 [ext_resource type="PackedScene" uid="uid://bqtm4wvgynvcc" path="res://prefabs/objects/other_objects_room/chair_flipped.tscn" id="18_u1cow"]
 [ext_resource type="PackedScene" uid="uid://bogsjx7shaanv" path="res://prefabs/objects/foods/plantes.tscn" id="19_n8f48"]
+[ext_resource type="PackedScene" uid="uid://brx6qifl8otl1" path="res://prefabs/objects/other_objects_room/trashcan.tscn" id="20_5h7fn"]
+[ext_resource type="PackedScene" uid="uid://bwgtajsur72qu" path="res://prefabs/objects/other_objects_room/toaster.tscn" id="21_t5hk6"]
+[ext_resource type="PackedScene" uid="uid://xotit38nwecc" path="res://prefabs/objects/other_objects_room/trashbag.tscn" id="22_e1vhf"]
+[ext_resource type="PackedScene" uid="uid://b52vo7447klmy" path="res://prefabs/objects/other_objects_room/keyboard.tscn" id="23_jb1ik"]
+[ext_resource type="PackedScene" uid="uid://clq7ifi4e2x6h" path="res://prefabs/objects/other_objects_room/lamp.tscn" id="24_4kg8e"]
+[ext_resource type="PackedScene" uid="uid://17s68y4epscg" path="res://prefabs/objects/other_objects_room/screen.tscn" id="25_14ydl"]
+[ext_resource type="PackedScene" uid="uid://dsjssl486svwn" path="res://prefabs/objects/other_objects_room/mouse.tscn" id="26_bqjfi"]
+[ext_resource type="PackedScene" uid="uid://cilug5ynrbtsw" path="res://prefabs/objects/other_objects_room/pillow.tscn" id="27_kjovo"]
+[ext_resource type="PackedScene" uid="uid://qni7ep7xerv0" path="res://prefabs/objects/other_objects_room/roombot.tscn" id="28_1oofn"]
+[ext_resource type="PackedScene" uid="uid://6h3nvjfa4akn" path="res://prefabs/objects/other_objects_room/pants.tscn" id="29_8g6x8"]
+[ext_resource type="PackedScene" uid="uid://crucmdm7bd1px" path="res://prefabs/objects/other_objects_room/socks.tscn" id="30_2ywhj"]
+[ext_resource type="PackedScene" uid="uid://b3ghytbfvweta" path="res://prefabs/objects/other_objects_room/paper_ball.tscn" id="31_6ld3d"]
+[ext_resource type="PackedScene" uid="uid://bdsqbbiyqqftm" path="res://prefabs/objects/foods/can.tscn" id="32_0r146"]
+[ext_resource type="PackedScene" uid="uid://boso43ucxkpki" path="res://prefabs/objects/foods/sleeping_pill.tscn" id="33_73y5t"]
+[ext_resource type="PackedScene" uid="uid://cuin8mdl0226d" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="34_yjl2o"]
+[ext_resource type="PackedScene" uid="uid://bno5xi0brflac" path="res://prefabs/objects/foods/cheese.tscn" id="35_xw4xl"]
+[ext_resource type="PackedScene" uid="uid://ijp2fbynh0fq" path="res://prefabs/objects/foods/leaf.tscn" id="36_gwjrb"]
+[ext_resource type="PackedScene" uid="uid://bx5fduok7c2jc" path="res://prefabs/objects/other_objects_room/chicken_toy.tscn" id="37_k2gn7"]
+[ext_resource type="PackedScene" uid="uid://bo7fmssmk8wyf" path="res://prefabs/objects/other_objects_room/mouse_trap.tscn" id="38_g6x3m"]
+[ext_resource type="PackedScene" uid="uid://33d84wy1ecy7" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
+[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="40_f2tm0"]
+[ext_resource type="PackedScene" uid="uid://ciofi5avvq48e" path="res://prefabs/objects/foods/bananas.tscn" id="41_3dgs0"]
+[ext_resource type="PackedScene" uid="uid://c2aa7xpvryk3f" path="res://prefabs/objects/foods/cake.tscn" id="42_j2e8k"]
+[ext_resource type="PackedScene" uid="uid://byedv7uirqp22" path="res://prefabs/objects/foods/burger.tscn" id="43_qwi1b"]
 
 [node name="Rooms" type="Node2D"]
 y_sort_enabled = true
@@ -37,19 +61,21 @@ position = Vector2(1608, 40.0001)
 
 [node name="Sidebed table" parent="." instance=ExtResource("4_002dc")]
 position = Vector2(1833, 313)
+rotation = -0.785819
 
 [node name="Sidebed table2" parent="." instance=ExtResource("4_002dc")]
-position = Vector2(-809, 572)
+position = Vector2(-776, 352)
 
 [node name="Toy chest" parent="." instance=ExtResource("5_8lbs8")]
 position = Vector2(1237, 19.0001)
 
 [node name="Clock" parent="." instance=ExtResource("6_sda2c")]
 z_index = 1
-position = Vector2(1837, 284)
+position = Vector2(1837, 289)
 
 [node name="Desk" parent="." instance=ExtResource("7_2r5o3")]
 position = Vector2(116, 412)
+rotation = -0.785397
 
 [node name="Gaming chair" parent="." instance=ExtResource("8_bkku5")]
 position = Vector2(386, 376)
@@ -59,7 +85,7 @@ position = Vector2(-604, 479)
 
 [node name="Aquarium" parent="." instance=ExtResource("12_6f8r3")]
 z_index = 1
-position = Vector2(-808, 546)
+position = Vector2(-775, 326)
 
 [node name="Livingroom table" parent="." instance=ExtResource("10_1st25")]
 position = Vector2(-1180, 111)
@@ -74,22 +100,22 @@ position = Vector2(-910, 81)
 position = Vector2(-1160, 227)
 
 [node name="Shoe" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-2033, 33.0001)
+position = Vector2(-2033, 112)
 
 [node name="Shoe2" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-1977, 32)
+position = Vector2(-1977, 111)
 
 [node name="Shoe3" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-2033, 149)
+position = Vector2(-2033, 228)
 
 [node name="Shoe4" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-1977, 148)
+position = Vector2(-1977, 227)
 
 [node name="Kitchen" parent="." instance=ExtResource("14_0580l")]
 position = Vector2(-1702, -277)
 
 [node name="Fridge" parent="." instance=ExtResource("15_h0vcn")]
-position = Vector2(-1826, -70.0001)
+position = Vector2(-1788, -71)
 
 [node name="TV sidetable" parent="." instance=ExtResource("16_sf3lw")]
 position = Vector2(-72, 488)
@@ -122,3 +148,120 @@ position = Vector2(-2215, 582)
 
 [node name="Chair flipped3" parent="." instance=ExtResource("18_u1cow")]
 position = Vector2(-1444, 83)
+
+[node name="Trashcan" parent="." instance=ExtResource("20_5h7fn")]
+position = Vector2(-1075, -405)
+
+[node name="Toaster" parent="." instance=ExtResource("21_t5hk6")]
+z_index = 1
+position = Vector2(-1816, -474)
+
+[node name="Trashbag" parent="." instance=ExtResource("22_e1vhf")]
+position = Vector2(-2016, -82.9999)
+
+[node name="Keybord" parent="." instance=ExtResource("23_jb1ik")]
+z_index = 1
+position = Vector2(168, 340)
+
+[node name="Lamp" parent="." instance=ExtResource("24_4kg8e")]
+position = Vector2(108, 43)
+
+[node name="Lamp2" parent="." instance=ExtResource("24_4kg8e")]
+position = Vector2(-776, 525)
+
+[node name="Screen" parent="." instance=ExtResource("25_14ydl")]
+z_index = 1
+position = Vector2(75, 329)
+
+[node name="Mouse" parent="." instance=ExtResource("26_bqjfi")]
+z_index = 1
+position = Vector2(166, 220)
+
+[node name="Pillow" parent="." instance=ExtResource("27_kjovo")]
+z_index = 1
+position = Vector2(1841, -105)
+
+[node name="Pillow2" parent="." instance=ExtResource("27_kjovo")]
+z_index = 1
+position = Vector2(1841, 92.0001)
+
+[node name="Roombot" parent="." instance=ExtResource("28_1oofn")]
+position = Vector2(-1636, 483)
+
+[node name="Pants" parent="." instance=ExtResource("29_8g6x8")]
+z_index = 1
+position = Vector2(1399, 123)
+
+[node name="Socks" parent="." instance=ExtResource("30_2ywhj")]
+position = Vector2(1342, 371)
+
+[node name="Socks2" parent="." instance=ExtResource("30_2ywhj")]
+position = Vector2(1126, 284)
+rotation = 0.523598
+
+[node name="Paperball" parent="." instance=ExtResource("31_6ld3d")]
+position = Vector2(359, 196)
+
+[node name="Paperball2" parent="." instance=ExtResource("31_6ld3d")]
+position = Vector2(563, 512)
+
+[node name="Can" parent="." instance=ExtResource("32_0r146")]
+z_index = 1
+position = Vector2(68, 193)
+
+[node name="Can2" parent="." instance=ExtResource("32_0r146")]
+z_index = 1
+position = Vector2(97, 216)
+
+[node name="Can3" parent="." instance=ExtResource("32_0r146")]
+z_index = 1
+position = Vector2(103, 178)
+
+[node name="Pill" parent="." instance=ExtResource("33_73y5t")]
+z_index = 1
+position = Vector2(1856, 252)
+
+[node name="Stuffed animal" parent="." instance=ExtResource("34_yjl2o")]
+z_index = 1
+position = Vector2(1740, -14)
+
+[node name="Cheese" parent="." instance=ExtResource("35_xw4xl")]
+position = Vector2(1796, 571)
+
+[node name="Cheese2" parent="." instance=ExtResource("35_xw4xl")]
+position = Vector2(1739, 623)
+
+[node name="Leaf2" parent="." instance=ExtResource("36_gwjrb")]
+position = Vector2(-2101, 632)
+rotation = -1.309
+
+[node name="Chicken toy" parent="." instance=ExtResource("37_k2gn7")]
+position = Vector2(-433, 11)
+rotation = -0.261799
+
+[node name="Mouse trap" parent="." instance=ExtResource("38_g6x3m")]
+position = Vector2(1689, 574)
+
+[node name="Chocolate bar" parent="." instance=ExtResource("39_4bmu3")]
+z_index = 1
+position = Vector2(-570, 472)
+rotation = -0.261799
+
+[node name="Spill egg" parent="." instance=ExtResource("40_f2tm0")]
+position = Vector2(-993, -238)
+
+[node name="Bananas" parent="." instance=ExtResource("41_3dgs0")]
+z_index = 1
+position = Vector2(-1834, -312)
+
+[node name="Cake" parent="." instance=ExtResource("42_j2e8k")]
+z_index = 1
+position = Vector2(-1173, 60)
+
+[node name="Leaf" parent="." instance=ExtResource("36_gwjrb")]
+position = Vector2(-1314, -255)
+
+[node name="Burger" parent="." instance=ExtResource("43_qwi1b")]
+z_index = 1
+position = Vector2(162, 452)
+rotation = -0.785397

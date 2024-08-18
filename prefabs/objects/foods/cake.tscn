@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnxh5h33o8ijh"]
+[gd_scene load_steps=5 format=3 uid="uid://c2aa7xpvryk3f"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_f6oag"]
 [ext_resource type="Texture2D" uid="uid://b7xwjvfiy4lqq" path="res://textures/environment/Cake.png" id="3_2cpa6"]
