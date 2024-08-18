@@ -21,6 +21,7 @@ restored_hunger = 33.0
 random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-1.19209e-07, 0)
 texture = ExtResource("2_rojrc")
 

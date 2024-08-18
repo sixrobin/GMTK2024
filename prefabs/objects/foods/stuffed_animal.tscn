@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuin8mdl0226d"]
+[gd_scene load_steps=5 format=3 uid="uid://c8257wjed8ayq"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_yhf2o"]
 [ext_resource type="Texture2D" uid="uid://bodgh4maa0shs" path="res://textures/environment/TeddyBear.png" id="2_70al6"]
@@ -19,6 +19,7 @@ growth_value = 30.0
 restored_hunger = 25.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.104326
 texture = ExtResource("2_70al6")
