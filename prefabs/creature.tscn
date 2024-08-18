@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://b2jdgkrrtq7gp"]
+[gd_scene load_steps=100 format=3 uid="uid://b2jdgkrrtq7gp"]
 
 [ext_resource type="Script" path="res://scripts/creature.gd" id="1_qoasn"]
 [ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="2_g73dj"]
@@ -7,7 +7,10 @@
 [ext_resource type="Resource" uid="uid://dqtqnlvlvp033" path="res://resources/growth_stages/stage_3.tres" id="5_0omj0"]
 [ext_resource type="Resource" uid="uid://xbwsrjemcexr" path="res://resources/growth_stages/stage_4.tres" id="6_0kc5i"]
 [ext_resource type="Texture2D" uid="uid://bwte1n4cut48b" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_00.png" id="7_6bix6"]
+[ext_resource type="Resource" uid="uid://dopeeytmf112f" path="res://resources/growth_stages/stage_5.tres" id="7_31mni"]
+[ext_resource type="Resource" uid="uid://b0a8t5ov5n02h" path="res://resources/growth_stages/stage_6.tres" id="8_dkgk5"]
 [ext_resource type="Texture2D" uid="uid://23yyl08gtfqt" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_01.png" id="8_f50hh"]
+[ext_resource type="Resource" uid="uid://drtf1hamc70l1" path="res://resources/growth_stages/stage_7.tres" id="9_6ohlt"]
 [ext_resource type="Texture2D" uid="uid://g53nvpxrvxxm" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_02.png" id="9_m4kwo"]
 [ext_resource type="Texture2D" uid="uid://bf704usqo6s5x" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_03.png" id="10_j6njr"]
 [ext_resource type="Texture2D" uid="uid://oec638nvj0id" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_04.png" id="11_ei82u"]
@@ -92,7 +95,7 @@
 [ext_resource type="Texture2D" uid="uid://bt6vdadacw2p2" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_09.png" id="89_fs8fb"]
 [ext_resource type="Texture2D" uid="uid://qgbs2mv6bhin" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_10.png" id="90_orlo7"]
 [ext_resource type="Texture2D" uid="uid://clt561k5wx43q" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_11.png" id="91_4fotb"]
-[ext_resource type="PackedScene" uid="uid://capdple7xq7u0" path="res://prefabs/status_icon.tscn" id="93_0owaf"]
+[ext_resource type="PackedScene" path="res://prefabs/status_icon.tscn" id="93_0owaf"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kmpkd"]
 
@@ -440,7 +443,7 @@ linear_damp = 10.0
 script = ExtResource("1_qoasn")
 SMOOTH_SPEED = 1000.0
 stun_timer = NodePath("Timer")
-growth_stages = Array[ExtResource("2_g73dj")]([ExtResource("3_dd8mf"), ExtResource("4_34unq"), ExtResource("5_0omj0"), ExtResource("6_0kc5i")])
+growth_stages = Array[ExtResource("2_g73dj")]([ExtResource("3_dd8mf"), ExtResource("4_34unq"), ExtResource("5_0omj0"), ExtResource("6_0kc5i"), ExtResource("7_31mni"), ExtResource("8_dkgk5"), ExtResource("9_6ohlt")])
 nav_agent = NodePath("NavigationAgent2D")
 status_icon = NodePath("StatusIcon")
 
