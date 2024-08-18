@@ -36,6 +36,6 @@ func _tween_step_in(value: float):
 
 
 func _tween_step_out(value: float):
-	self._camera.zoom = Vector2.ONE * remap(value, 1.0, 0.0, 0.2, 0.015)
+	self._camera.zoom = Vector2.ONE * remap(value, 1.0, 0.0, 0.5, 0.4)
 	self._radialBlur.material.set_shader_parameter("blur_power", value * 0.1)
 	self._whiteScreen.modulate.a = value

@@ -21,10 +21,10 @@ func load_current_scene():
 	var previous_scene = current_scene
 	
 	current_scene = scenes[scene_index].instantiate() as Node2D
+	self.add_child(current_scene)
 	
-	if scene_index > 1:
+	if scene_index > 0:
 		current_scene.visible = false
 		$LevelTransition.transition(previous_scene, current_scene)
 	
-	self.add_child(current_scene)
 	current_scene.global_position = CreatureSingleton.creature.global_position
