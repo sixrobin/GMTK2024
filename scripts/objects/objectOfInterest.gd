@@ -83,6 +83,6 @@ func destroy():
 func _notification(notification):
 	if notification == NOTIFICATION_PREDELETE:
 		set_attractive(false, current_priority)
-		if interaction_timer:
+		if interaction_timer and !interaction_timer.is_stopped():
 			interaction_timer.stop()
 			interaction_timer.timeout.emit()
