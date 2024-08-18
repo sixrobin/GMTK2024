@@ -1,12 +1,21 @@
-[gd_scene format=3 uid="uid://jwxeec00u57g"]
+[gd_scene load_steps=2 format=3 uid="uid://jwxeec00u57g"]
 
-[node name="Leaderboard" type="Control"]
+[ext_resource type="Script" path="res://scripts/leaderboard.gd" id="1_fwujh"]
+
+[node name="Leaderboard" type="Control" node_paths=PackedStringArray("fast_score_1", "fast_score_2", "fast_score_3", "slow_score_1", "slow_score_2", "slow_score_3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fwujh")
+fast_score_1 = NodePath("FastScoresLayout/FastestScore1")
+fast_score_2 = NodePath("FastScoresLayout/FastestScore2")
+fast_score_3 = NodePath("FastScoresLayout/FastestScore3")
+slow_score_1 = NodePath("SlowScoresLayout/SlowestScore1")
+slow_score_2 = NodePath("SlowScoresLayout/SlowestScore2")
+slow_score_3 = NodePath("SlowScoresLayout/SlowestScore3")
 
 [node name="FastScoresLayout" type="Control" parent="."]
 layout_mode = 1
