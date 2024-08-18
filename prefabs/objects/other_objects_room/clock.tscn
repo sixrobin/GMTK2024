@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ujjguu1kkqxq"]
+[gd_scene load_steps=9 format=3 uid="uid://ujjguu1kkqxq"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_vysbs"]
 [ext_resource type="Texture2D" uid="uid://xor6eny6dygt" path="res://textures/environment/Clock.png" id="2_17li6"]
@@ -6,19 +6,14 @@
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_q4p0n"]
 [ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_yx0g8"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_eu8sr"]
-[ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_1ua8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(31.8198, 40.3051)
+size = Vector2(95.9627, 43.9175)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 34.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_skbxg"]
-radius = 124.004
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3stb"]
+size = Vector2(108, 52)
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
-rotation = -0.769262
 script = ExtResource("1_vysbs")
 priority = 10
 attractive = false
@@ -29,25 +24,23 @@ on_click_handler = NodePath("ClickHandler")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
-rotation = 0.785398
 texture = ExtResource("2_17li6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
-rotation = 0.785398
+position = Vector2(0.77716, 0.72284)
 shape = SubResource("RectangleShape2D_kfbe5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_702al")
+shape = SubResource("RectangleShape2D_r3stb")
 
 [node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
 script = ExtResource("3_oy324")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("ExplosionHandler")
+explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_q4p0n")
@@ -60,14 +53,5 @@ timer = NodePath("AttractionTimer")
 
 [node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
 wait_time = 5.0
-
-[node name="ExplosionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("area")]
-script = ExtResource("7_1ua8h")
-area = NodePath("Area2D")
-
-[node name="Area2D" type="Area2D" parent="ClickHandler/ExplosionHandler"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
-shape = SubResource("CircleShape2D_skbxg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

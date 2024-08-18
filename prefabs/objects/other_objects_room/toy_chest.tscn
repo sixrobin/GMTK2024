@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6nnh12ihck0l"]
+[gd_scene load_steps=12 format=3 uid="uid://c6nnh12ihck0l"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_ryc47"]
 [ext_resource type="Texture2D" uid="uid://6daxtrthfgcs" path="res://textures/environment/ToyChest.png" id="2_oas4v"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ti2pf"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_lwhon"]
 [ext_resource type="PackedScene" uid="uid://bqvmknwbr21ya" path="res://prefabs/objects/other_objects_room/chicken_toy.tscn" id="5_ondnr"]
+[ext_resource type="PackedScene" uid="uid://cuin8mdl0226d" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="6_44557"]
 [ext_resource type="Texture2D" uid="uid://1ju1jeu7fnwe" path="res://textures/environment/ToyChest_Open.png" id="6_wcnoi"]
+[ext_resource type="PackedScene" path="res://prefabs/objects/foods/chocolate.tscn" id="7_28hoe"]
 [ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_hn71x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
@@ -46,7 +48,7 @@ explosion_handler = NodePath("ExplosionHandler")
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("opening_timer")]
 script = ExtResource("4_lwhon")
 amount_to_spawn = 3
-prefabs = Array[PackedScene]([ExtResource("5_ondnr")])
+prefabs = Array[PackedScene]([ExtResource("5_ondnr"), ExtResource("6_44557"), ExtResource("7_28hoe")])
 random_angle = Vector2(-45, 45)
 spawn_force = 300.0
 opening_timer = NodePath("Timer")
@@ -65,7 +67,7 @@ scale = Vector2(9.995, 9.995)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
 position = Vector2(1.4007, 0.30015)
-rotation = -1.50343
+rotation = -1.5708
 scale = Vector2(1, 1.465)
 shape = SubResource("CircleShape2D_jv02n")
 
