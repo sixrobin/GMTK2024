@@ -18,6 +18,7 @@ script = ExtResource("1_4ef7e")
 attractive = false
 delete_on_applied = false
 growth_value = 10.0
+restored_hunger = 8.0
 on_click_handler = NodePath("ClickHandler")
 sprite = NodePath("Sprite2D")
 

@@ -14,6 +14,7 @@ priority = -1
 attractive = false
 delete_on_applied = false
 growth_value = 60.0
+restored_hunger = 50.0
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
