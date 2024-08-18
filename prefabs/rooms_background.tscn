@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxib4i1ge2esi"]
+
+[ext_resource type="Texture2D" uid="uid://csianulto2otu" path="res://textures/environment/Rooms.png" id="1_0cp0c"]
+[ext_resource type="Texture2D" uid="uid://djuroxelr76fb" path="res://textures/environment/Rooms_Roof.png" id="2_m1mqa"]
+
+[node name="RoomsBackground" type="Sprite2D"]
+z_index = -100
+position = Vector2(978.89, -355.5)
+texture = ExtResource("1_0cp0c")
+
+[node name="Roof" type="Sprite2D" parent="."]
+z_index = 100
+z_as_relative = false
+texture = ExtResource("2_m1mqa")

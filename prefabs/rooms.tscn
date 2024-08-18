@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://doutoksvepjsi"]
 
-[ext_resource type="Texture2D" uid="uid://csianulto2otu" path="res://textures/environment/Rooms.png" id="1_to5mr"]
+[ext_resource type="PackedScene" uid="uid://cxib4i1ge2esi" path="res://prefabs/rooms_background.tscn" id="1_jteum"]
 [ext_resource type="PackedScene" uid="uid://cfg5e01751w0k" path="res://prefabs/objects/other_objects_room/wardrobe.tscn" id="2_7jjnv"]
 [ext_resource type="PackedScene" uid="uid://br1211h5s8ow" path="res://prefabs/objects/other_objects_room/bed.tscn" id="3_jjj1r"]
 [ext_resource type="PackedScene" uid="uid://6ulbh1oip77i" path="res://prefabs/objects/other_objects_room/bedside_table.tscn" id="4_002dc"]
@@ -54,10 +54,7 @@ agent_radius = 50.0
 y_sort_enabled = true
 position = Vector2(6.11, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -100
-position = Vector2(978.89, -355.5)
-texture = ExtResource("1_to5mr")
+[node name="RoomsBackground" parent="." instance=ExtResource("1_jteum")]
 
 [node name="Wardrobe" parent="." instance=ExtResource("2_7jjnv")]
 position = Vector2(1774.89, -785.5)
