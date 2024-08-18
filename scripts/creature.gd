@@ -224,3 +224,4 @@ func set_anim_walk_or_idle():
 func on_scene_loaded():
 	change_creature_scale(growth_stages[current_growth_stage].scale_factor)
 	$AnimatedSprite2D.change_size(current_growth_stage+1)
+	self.freeze = false
