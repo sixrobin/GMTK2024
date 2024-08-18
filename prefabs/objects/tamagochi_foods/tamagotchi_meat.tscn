@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://clp64ybbq7ry7" path="res://textures/tamagotchi/Tamagotchi_Meat.png" id="2_us6sh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(92.631, 55.8614)
+size = Vector2(5.38442, 6.05747)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 71.1126
+radius = 6.04152
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.916991
+scale = Vector2(6, 6)
 mass = 0.2
 linear_damp = 5.0
 angular_damp = 5.0
@@ -25,7 +26,7 @@ rotation = 0.785398
 texture = ExtResource("2_us6sh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -4.76837e-06)
+position = Vector2(0.55065, 2.57289)
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_kfbe5")
 
