@@ -17,10 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ObjectManager="*res://scripts/objects/objectManager.gd"
 CreatureSingleton="*res://prefabs/creatureSingleton.tscn"
+ObjectManager="*res://scripts/objects/objectManager.gd"
 GameScoreSingleton="*res://scripts/game_score_singleton.gd"
 CursorSingleton="*res://scripts/cursor_singleton.gd"
+SceneManagerSingleton="*res://scripts/scenes/scene_manager_singleton.gd"
 
 [dotnet]
 

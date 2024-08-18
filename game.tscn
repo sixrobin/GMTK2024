@@ -3,51 +3,28 @@
 [ext_resource type="PackedScene" uid="uid://b2jdgkrrtq7gp" path="res://prefabs/creature.tscn" id="1_3mugn"]
 [ext_resource type="PackedScene" uid="uid://brnlpkcmj084h" path="res://prefabs/camera_2d.tscn" id="2_juggh"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_ixshh"]
-[ext_resource type="PackedScene" uid="uid://dpxlvg3rpf0ak" path="res://prefabs/hunger_gauge_house.tscn" id="7_flanj"]
+[ext_resource type="Script" path="res://scripts/scenes/scene_manager.gd" id="4_2ks51"]
+[ext_resource type="PackedScene" uid="uid://doutoksvepjsi" path="res://prefabs/rooms.tscn" id="6_kp7y2"]
+[ext_resource type="PackedScene" path="res://prefabs/hunger_gauge_house.tscn" id="7_flanj"]
 [ext_resource type="PackedScene" uid="uid://dtsoo4kxpn27f" path="res://prefabs/timer.tscn" id="8_r884m"]
-[ext_resource type="PackedScene" uid="uid://bqbaaumqev5tn" path="res://prefabs/objects/other_objects_room/television.tscn" id="9_gm5vb"]
 [ext_resource type="PackedScene" uid="uid://c8oopuy4vxqkf" path="res://prefabs/environment/tamagotchi_background.tscn" id="10_kx7gb"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
-[ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
-[ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
-[ext_resource type="PackedScene" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
+[ext_resource type="PackedScene" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
+[ext_resource type="PackedScene" uid="uid://1a380hv31a01" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Camera" parent="." instance=ExtResource("2_juggh")]
+[node name="Camera" parent="." node_paths=PackedStringArray("TARGET") instance=ExtResource("2_juggh")]
 script = ExtResource("3_ixshh")
+TARGET = NodePath("../Creature")
 
 [node name="Creature" parent="." instance=ExtResource("1_3mugn")]
 
+[node name="SceneManager" type="Node2D" parent="."]
+script = ExtResource("4_2ks51")
+scenes = Array[PackedScene]([ExtResource("10_kx7gb"), ExtResource("6_kp7y2")])
+
 [node name="Cursor" parent="." instance=ExtResource("11_05pgy")]
-
-[node name="Walls" type="Node2D" parent="."]
-
-[node name="WallLeft" parent="Walls" instance=ExtResource("12_u6lta")]
-visible = false
-position = Vector2(-270, 0)
-scale = Vector2(0.551646, 6.45975)
-collision_priority = 2.0
-
-[node name="WallRight" parent="Walls" instance=ExtResource("12_u6lta")]
-visible = false
-position = Vector2(280, -2)
-scale = Vector2(0.551646, 6.45975)
-collision_priority = 2.0
-
-[node name="WallUp" parent="Walls" instance=ExtResource("12_u6lta")]
-visible = false
-position = Vector2(-1, -270)
-rotation = -1.5708
-scale = Vector2(0.551646, 6.45975)
-collision_priority = 2.0
-
-[node name="WallBottom" parent="Walls" instance=ExtResource("12_u6lta")]
-visible = false
-position = Vector2(4, 277)
-rotation = -1.5708
-scale = Vector2(0.551646, 6.45975)
-collision_priority = 2.0
 
 [node name="HungerGauge" parent="." instance=ExtResource("13_jthj5")]
 offset_left = -123.0
@@ -69,8 +46,3 @@ offset_right = -307.0
 offset_bottom = -277.0
 
 [node name="NavRegion" parent="." instance=ExtResource("13_yglgy")]
-
-[node name="Object" parent="." instance=ExtResource("9_gm5vb")]
-position = Vector2(229, 0)
-
-[node name="TamagotchiBackground" parent="." instance=ExtResource("10_kx7gb")]
