@@ -27,6 +27,7 @@ var hunger_drain_timer: Timer = Timer.new()
 var sleep_meter: float = 0
 var sleep_increase_timer: Timer = Timer.new()
 var cursor_eaten: bool
+var is_walking: bool = false
 
 func _ready() -> void:
 	CreatureSingleton.creature = self
@@ -55,10 +56,14 @@ func _process(delta: float):
 		target_object = ObjectManager.get_best_object()
 	if target_object != null:
 		self.nav_agent.target_position = target_object.global_position
+		is_walking = true
+		set_anim_walk_or_idle()
 		#self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
 
 func reset_target():
 	target_object = null
+	is_walking = false
+	set_anim_walk_or_idle()
 
 func _physics_process(_delta):
 	if self.nav_agent.is_navigation_finished() or is_stunned or is_interacting:
@@ -103,6 +108,7 @@ func on_interaction_end(object: ObjectOfInterest):
 	$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.IDLE)
 	object.apply()
 	target_object = null
+	set_anim_walk_or_idle()
 
 # STUN
 func stun(stun_resource: StunResource) -> Timer:
@@ -141,6 +147,7 @@ func endSpeedBoost(timer: Timer, speed_modifier: SpeedModifier):
 func _on_stun_timer_timeout() -> void:
 	sleep_increase_timer.paused = false
 	is_stunned = false
+	set_anim_walk_or_idle()
 
 func grow(growth_value: int):
 	# move in poop method
@@ -183,3 +190,10 @@ func change_creature_scale(scale):
 	$AnimatedSprite2D.scale.y = scale
 	$CollisionShape2D.scale.x = scale
 	$CollisionShape2D.scale.y = scale
+
+func set_anim_walk_or_idle():
+	if  is_interacting == false and is_stunned == false:
+		if is_walking == true and current_growth_stage >= 3:
+			$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.WALK)
+		else:
+			$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.IDLE)
