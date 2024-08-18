@@ -23,6 +23,7 @@ GameScoreSingleton="*res://scripts/game_score_singleton.gd"
 CursorSingleton="*res://scripts/cursor_singleton.gd"
 SceneManagerSingleton="*res://scripts/scenes/scene_manager_singleton.gd"
 ParticlesHandler="*res://scripts/particles_handler.gd"
+CameraShakeBus="*res://scripts/camera_shake_bus.gd"
 
 [dotnet]
 
