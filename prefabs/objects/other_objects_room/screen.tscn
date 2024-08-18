@@ -26,7 +26,7 @@ priority = -1
 attractive = false
 interact_duration = 1.0
 growth_value = 30.0
-restored_hunger = 50.0
+restored_hunger = 25.0
 on_click_handler = NodePath("ClickHandler")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
