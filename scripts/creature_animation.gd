@@ -7,7 +7,7 @@ var next_animation: String = ""
 var loop: bool = true
 
 var size: int = 1
-enum E_animation_type {IDLE, HUNGRY, EATING}
+enum E_animation_type {IDLE, HUNGRY, EATING, WALK}
 var animation_type: E_animation_type = E_animation_type.IDLE
 
 func _ready():
@@ -49,3 +49,5 @@ func update_anim():
 			self.play_animation("Size%s_Hungry" % [size])
 		E_animation_type.EATING:
 			self.play_animation("Size%s_Eating" % [size])
+		E_animation_type.WALK:
+			self.play_animation("Size%s_Walk" % [size])
