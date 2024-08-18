@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name ObjectSpawner
 
 @export var amount_to_spawn: int = 1

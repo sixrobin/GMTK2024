@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5w20knbajgvs"]
+[gd_scene load_steps=12 format=3 uid="uid://c5w20knbajgvs"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_lbwer"]
 [ext_resource type="Texture2D" uid="uid://cth7oaq5g1xgb" path="res://textures/environment/Egg.png" id="2_dd1uc"]
@@ -6,12 +6,18 @@
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ycjpr"]
 [ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="4_smhqx"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_f70is"]
+[ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_rhjyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(31.8198, 40.3051)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 34.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skbxg"]
+radius = 124.004
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4wkbt"]
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
 rotation = -0.769262
@@ -38,23 +44,36 @@ shape = SubResource("RectangleShape2D_kfbe5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_702al")
 
-[node name="ClickHandler" type="Node" parent="." node_paths=PackedStringArray("parent", "attraction_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "explosion_handler")]
 script = ExtResource("3_ycjpr")
 parent = NodePath("..")
-attraction_handler = NodePath("AttractionHandler")
+explosion_handler = NodePath("ExplosionHandler")
 
-[node name="ObjectSpawner" type="Node" parent="ClickHandler"]
+[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("3_ctchy")
 amount_to_spawn = 3
 prefabs = Array[PackedScene]([ExtResource("4_smhqx")])
 random_angle = Vector2(-30, 30)
 spawn_force = 300.0
 
-[node name="AttractionHandler" type="Node" parent="ClickHandler" node_paths=PackedStringArray("timer")]
+[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
 script = ExtResource("6_f70is")
 timer = NodePath("AttractionTimer")
 
 [node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
 wait_time = 5.0
+
+[node name="ExplosionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("area")]
+script = ExtResource("7_rhjyx")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="ClickHandler/ExplosionHandler"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
+shape = SubResource("CircleShape2D_skbxg")
+
+[node name="Sprite2D" type="Sprite2D" parent="ClickHandler/ExplosionHandler/Area2D"]
+scale = Vector2(19.075, 19.075)
+texture = SubResource("PlaceholderTexture2D_4wkbt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
