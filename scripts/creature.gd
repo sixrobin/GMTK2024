@@ -126,9 +126,6 @@ func grow(growth_value: int):
 	#Si le growth meter est rempli, on passe au prochain stage et on update la scale & le sprite
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		current_growth_stage += 1
-		self.scale.x = growth_stages[current_growth_stage].scale_factor
-		#self.scale.x = growth_stages[current_growth_stage].scale_factor
-		#self.scale.y = growth_stages[current_growth_stage].scale_factor
 		change_creature_scale(growth_stages[current_growth_stage].scale_factor)
 		#TODO updater le sprite
 	
