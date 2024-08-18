@@ -11,8 +11,8 @@ height = 148.0
 radius = 55.0
 height = 192.0
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
-mass = 0.05
+[node name="Object" type="RigidBody2D"]
+mass = 0.1
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_c34ec")
@@ -21,7 +21,6 @@ attractive = false
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
-on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)

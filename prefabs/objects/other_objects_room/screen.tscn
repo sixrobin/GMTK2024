@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://17s68y4epscg"]
+[gd_scene load_steps=11 format=3 uid="uid://b7ob0sk7n1jbo"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_3j1m2"]
 [ext_resource type="Texture2D" uid="uid://cvs7s6js7smq1" path="res://textures/environment/Screen.png" id="2_x84kx"]
@@ -19,6 +19,8 @@ radius = 124.004
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
 rotation = -0.769262
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_3j1m2")
 priority = 10
 attractive = false

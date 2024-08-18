@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://xotit38nwecc" path="res://prefabs/objects/other_objects_room/trashbag.tscn" id="22_e1vhf"]
 [ext_resource type="PackedScene" uid="uid://b52vo7447klmy" path="res://prefabs/objects/other_objects_room/keyboard.tscn" id="23_jb1ik"]
 [ext_resource type="PackedScene" uid="uid://yaw3bw00yao6" path="res://prefabs/objects/other_objects_room/lamp.tscn" id="24_4kg8e"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/other_objects_room/screen.tscn" id="25_14ydl"]
+[ext_resource type="PackedScene" uid="uid://b7ob0sk7n1jbo" path="res://prefabs/objects/other_objects_room/screen.tscn" id="25_14ydl"]
 [ext_resource type="PackedScene" uid="uid://dv4mgfe1req60" path="res://prefabs/objects/other_objects_room/mouse.tscn" id="26_bqjfi"]
 [ext_resource type="PackedScene" uid="uid://cilug5ynrbtsw" path="res://prefabs/objects/other_objects_room/pillow.tscn" id="27_kjovo"]
 [ext_resource type="PackedScene" uid="uid://qni7ep7xerv0" path="res://prefabs/objects/other_objects_room/roombot.tscn" id="28_1oofn"]

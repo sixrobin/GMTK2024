@@ -16,6 +16,9 @@ radius = 96.0
 height = 240.0
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+mass = 0.5
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_x78e5")
 priority = 10
 attractive = false
@@ -38,12 +41,11 @@ shape = SubResource("CapsuleShape2D_xaejs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_l0x6j")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_l7h41")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_gq0dh")

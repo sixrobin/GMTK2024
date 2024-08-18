@@ -14,6 +14,9 @@ size = Vector2(95.9627, 43.9175)
 size = Vector2(108, 52)
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+mass = 0.1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_vysbs")
 priority = 10
 attractive = false
@@ -35,12 +38,11 @@ shape = SubResource("RectangleShape2D_kfbe5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_r3stb")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_oy324")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_q4p0n")

@@ -15,6 +15,9 @@ radius = 119.817
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
 rotation = -0.769262
+mass = 0.5
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_xdf2i")
 priority = 10
 attractive = false
@@ -22,6 +25,7 @@ interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
 on_click_handler = NodePath("ClickHandler")
+random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -39,12 +43,11 @@ shape = SubResource("CircleShape2D_qol67")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_702al")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_n0st1")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_mwfwl")

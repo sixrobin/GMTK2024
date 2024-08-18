@@ -10,7 +10,7 @@ size = Vector2(157.94, 90.0143)
 size = Vector2(186, 120)
 
 [node name="Object" type="RigidBody2D"]
-mass = 0.1
+mass = 0.2
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_jci00")

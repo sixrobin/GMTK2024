@@ -16,6 +16,9 @@ radius = 63.0
 height = 180.0
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+mass = 0.05
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_kdph5")
 priority = 10
 attractive = false
@@ -23,6 +26,7 @@ interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
 on_click_handler = NodePath("ClickHandler")
+random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -39,12 +43,11 @@ shape = SubResource("CapsuleShape2D_s1mnj")
 position = Vector2(-4, 0)
 shape = SubResource("CapsuleShape2D_m47jk")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_uy5ov")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_ks478")
