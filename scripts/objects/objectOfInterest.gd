@@ -17,6 +17,7 @@ class_name ObjectOfInterest
 @export var on_click_handler : ObjectOnClickHandler
 
 @export var sprite: Sprite2D
+@export var random_rotate_on_spawn: bool = false
 
 var is_being_interacted: bool = false
 var current_attractive: bool = false
@@ -24,6 +25,8 @@ var current_priority: int = 0
 
 func _ready() -> void:
 	set_attractive(attractive, priority)
+	if random_rotate_on_spawn:
+		self.global_rotation = deg_to_rad(randf_range(0, 360))
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_being_interacted == true:
