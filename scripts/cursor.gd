@@ -36,7 +36,9 @@ func tryReleaseObject():
 	draggedObject = null
 	
 func tryClickObject() -> bool:
-	var obj = self.getObjectAtMousePosition()
+	var obj = self.draggedObject
+	if obj == null:
+		obj = self.getObjectAtMousePosition()
 	if obj:
 		self.clickObject(obj)
 		return true

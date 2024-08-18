@@ -40,6 +40,9 @@ func _ready() -> void:
 	add_child(sleep_increase_timer)
 	sleep_increase_timer.timeout.connect(func(): increase_sleep(sleep_increase))
 	sleep_increase_timer.start(sleep_increase_interval)
+	
+	# hook on priority change
+	ObjectManager.new_highest_priority.connect(func(a, b): reset_target())
 
 func _process(delta: float):
 	if is_stunned or is_interacting:
@@ -49,6 +52,9 @@ func _process(delta: float):
 	if target_object != null:
 		self.nav_agent.target_position = target_object.global_position
 		#self.position = lerp(self.position, target_object.position, delta * SMOOTH_SPEED * speed_boost)
+
+func reset_target():
+	target_object = null
 
 func _physics_process(_delta):
 	if self.nav_agent.is_navigation_finished() or is_stunned or is_interacting:

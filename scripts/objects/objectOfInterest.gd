@@ -1,8 +1,6 @@
 extends RigidBody2D
 class_name ObjectOfInterest
 
-var is_being_interacted: bool = false
-
 @export var priority: int = 1
 @export var attractive: bool = true
 @export var delete_on_applied: bool = true
@@ -18,15 +16,28 @@ var is_being_interacted: bool = false
 #ON CLICK
 @export var on_click_handler : ObjectOnClickHandler
 
+var is_being_interacted: bool = false
+var current_attractive: bool = false
+var current_priority: int = 0
+
 func _ready() -> void:
-	if attractive:
-		ObjectManager.register_object(self)
+	set_attractive(attractive, priority)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_being_interacted == true:
 		return
 	if body is Creature:
 		CreatureSingleton.creature.interact(self)
+
+func set_attractive(value: bool, specific_priority: int):
+	if current_attractive == value:
+		return
+	current_attractive = value
+	current_priority = specific_priority
+	if current_attractive:
+		ObjectManager.register_object(self, current_priority)
+	else:
+		ObjectManager.unregister_object(self, current_priority)
 
 func before_apply():
 	is_being_interacted = true
@@ -40,7 +51,7 @@ func apply():
 		CreatureSingleton.creature.stun(stun_resource)
 	if growth_value > 0:
 		CreatureSingleton.creature.grow(growth_value)
-	if restored_hunger >0:
+	if restored_hunger > 0:
 		CreatureSingleton.creature.modify_hunger(restored_hunger)
 	if speed_modifier:
 		CreatureSingleton.creature.speedBoost(speed_modifier)
@@ -48,11 +59,9 @@ func apply():
 
 func on_applied():
 	is_being_interacted = false
-	if attractive:
-		ObjectManager.unregister_object(self)
 	if delete_on_applied:
 		destroy()
 		
 func destroy():
-	ObjectManager.unregister_object(self)
+	set_attractive(false, current_priority)
 	queue_free()
