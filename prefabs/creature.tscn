@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://b2jdgkrrtq7gp"]
+[gd_scene load_steps=131 format=3 uid="uid://b2jdgkrrtq7gp"]
 
 [ext_resource type="Script" path="res://scripts/creature.gd" id="1_qoasn"]
 [ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="2_g73dj"]
@@ -13,24 +13,43 @@
 [ext_resource type="Resource" uid="uid://drtf1hamc70l1" path="res://resources/growth_stages/stage_7.tres" id="9_6ohlt"]
 [ext_resource type="Texture2D" uid="uid://g53nvpxrvxxm" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_02.png" id="9_m4kwo"]
 [ext_resource type="Texture2D" uid="uid://bf704usqo6s5x" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_03.png" id="10_j6njr"]
+[ext_resource type="Texture2D" uid="uid://cmju855eatcvi" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_00.png" id="10_wa28u"]
 [ext_resource type="Texture2D" uid="uid://oec638nvj0id" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_04.png" id="11_ei82u"]
+[ext_resource type="Texture2D" uid="uid://b63int5d17ed8" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_01.png" id="11_il18r"]
 [ext_resource type="Texture2D" uid="uid://cgmyk4s60h4pn" path="res://textures/creature/Creature_Egg_Idle/Creature_Egg_Idle_05.png" id="12_hxrpt"]
+[ext_resource type="Texture2D" uid="uid://bfwlxrqb4mqyi" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_02.png" id="12_t811e"]
+[ext_resource type="Texture2D" uid="uid://b41iq6ll8nrk4" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_03.png" id="13_b24dn"]
 [ext_resource type="Texture2D" uid="uid://c2qoagmihk0ro" path="res://textures/creature/Creature_Size01_Eating/Creature_Size01_Eating_00.png" id="13_xkt2c"]
+[ext_resource type="Texture2D" uid="uid://fivscm0ewip7" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_04.png" id="14_3p64r"]
 [ext_resource type="Texture2D" uid="uid://bnllf64n2ql4o" path="res://textures/creature/Creature_Size01_Eating/Creature_Size01_Eating_01.png" id="14_kn82x"]
 [ext_resource type="Texture2D" uid="uid://ca627402r2ugd" path="res://textures/creature/Creature_Size01_Hungry/Creature_Size01_Hungry.png" id="15_5tk8s"]
+[ext_resource type="Texture2D" uid="uid://uqfhcjgpu4yu" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_05.png" id="15_dslxj"]
 [ext_resource type="Texture2D" uid="uid://dxvr1uw4t4jkt" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_00.png" id="16_1am6c"]
+[ext_resource type="Texture2D" uid="uid://btmcyxxi5r25y" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_06.png" id="16_lwaqf"]
+[ext_resource type="Texture2D" uid="uid://lvx8nlqf82xq" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_07.png" id="17_cg0s7"]
 [ext_resource type="Texture2D" uid="uid://dcsm2vqjxbjaj" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_01.png" id="17_yasyf"]
+[ext_resource type="Texture2D" uid="uid://cdsedn730f38n" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_08.png" id="18_pw2tq"]
 [ext_resource type="Texture2D" uid="uid://bcf5hvugq65yf" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_02.png" id="18_quhm3"]
+[ext_resource type="Texture2D" uid="uid://dtboalndm2klh" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_09.png" id="19_avxuu"]
 [ext_resource type="Texture2D" uid="uid://ck3c4k0a53gsi" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_03.png" id="19_sdeep"]
+[ext_resource type="Texture2D" uid="uid://h6f5os5nvfph" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_10.png" id="20_ccy8y"]
 [ext_resource type="Texture2D" uid="uid://12tibn1twidm" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_04.png" id="20_i6e81"]
+[ext_resource type="Texture2D" uid="uid://cs1dqqxucllnp" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_11.png" id="21_hxphp"]
 [ext_resource type="Texture2D" uid="uid://bspbnsr0sqf5j" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_05.png" id="21_s5y1l"]
 [ext_resource type="Texture2D" uid="uid://cvxuyf3a8b7o" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_06.png" id="22_ah856"]
+[ext_resource type="Texture2D" uid="uid://cm13tf8ir2vyi" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_12.png" id="22_u51m4"]
+[ext_resource type="Texture2D" uid="uid://bk2y8gw37gla8" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_13.png" id="23_4ww57"]
 [ext_resource type="Texture2D" uid="uid://c0so6rbynmkyo" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_07.png" id="23_56ih6"]
 [ext_resource type="Texture2D" uid="uid://dtgmauo2ukr6w" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_08.png" id="24_1g1e1"]
+[ext_resource type="Texture2D" uid="uid://ckrw03x07gs5v" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_14.png" id="24_mqem5"]
 [ext_resource type="Texture2D" uid="uid://b0wqfm2fmgkwn" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_09.png" id="25_mvogy"]
+[ext_resource type="Texture2D" uid="uid://cgolsabkq1bp8" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_15.png" id="25_snagm"]
+[ext_resource type="Texture2D" uid="uid://bklm38k8hu8c6" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_16.png" id="26_5n0v8"]
 [ext_resource type="Texture2D" uid="uid://dymilwv1s68be" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_10.png" id="26_mqmt3"]
+[ext_resource type="Texture2D" uid="uid://dlhfs1xns2wyo" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_17.png" id="27_3msu7"]
 [ext_resource type="Texture2D" uid="uid://cibmbbk70agef" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_11.png" id="27_dgwn8"]
 [ext_resource type="Texture2D" uid="uid://dn45cicao2tav" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_12.png" id="28_2umda"]
+[ext_resource type="Texture2D" uid="uid://bdo5aytyxfmj8" path="res://textures/creature/Creature_Egg_Hatching/Creature_Egg_Hatching_18.png" id="28_f6vpn"]
 [ext_resource type="Texture2D" uid="uid://dmqpk7xrrkiif" path="res://textures/creature/Creature_Size01_Idle/Creature_Size01_Idle_13.png" id="29_ykuj4"]
 [ext_resource type="Texture2D" uid="uid://bhxdteu3tmqsx" path="res://textures/creature/Creature_Size02_Eating/Creature_Size02_Eating_00.png" id="30_kqrmy"]
 [ext_resource type="Texture2D" uid="uid://drj03lt73dxns" path="res://textures/creature/Creature_Size02_Eating/Creature_Size02_Eating_01.png" id="31_1k64k"]
@@ -95,7 +114,19 @@
 [ext_resource type="Texture2D" uid="uid://bt6vdadacw2p2" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_09.png" id="89_fs8fb"]
 [ext_resource type="Texture2D" uid="uid://qgbs2mv6bhin" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_10.png" id="90_orlo7"]
 [ext_resource type="Texture2D" uid="uid://clt561k5wx43q" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_11.png" id="91_4fotb"]
-[ext_resource type="PackedScene" path="res://prefabs/status_icon.tscn" id="93_0owaf"]
+[ext_resource type="PackedScene" uid="uid://capdple7xq7u0" path="res://prefabs/status_icon.tscn" id="93_0owaf"]
+[ext_resource type="Texture2D" uid="uid://yqbpfh6n5xro" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_00.png" id="102_6khl8"]
+[ext_resource type="Texture2D" uid="uid://ccjit1rlu37h5" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_01.png" id="103_e24yf"]
+[ext_resource type="Texture2D" uid="uid://ceiboio4hbjn5" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_02.png" id="104_34ih2"]
+[ext_resource type="Texture2D" uid="uid://csluypjoif1am" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_03.png" id="105_n31oi"]
+[ext_resource type="Texture2D" uid="uid://da5v6u3531fqt" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_04.png" id="106_lqp38"]
+[ext_resource type="Texture2D" uid="uid://ma0pvyb4wsgi" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_05.png" id="107_x7k1n"]
+[ext_resource type="Texture2D" uid="uid://bjcaqe5v2aeko" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_06.png" id="108_6xy4a"]
+[ext_resource type="Texture2D" uid="uid://c2gxnnrvgts8x" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_07.png" id="109_ja7ng"]
+[ext_resource type="Texture2D" uid="uid://djfpivnkj2wvu" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_08.png" id="110_6um2l"]
+[ext_resource type="Texture2D" uid="uid://bn2j55e3rcldu" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_09.png" id="111_qft2s"]
+[ext_resource type="Texture2D" uid="uid://bnyn2ouelb68u" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_10.png" id="112_anq6v"]
+[ext_resource type="Texture2D" uid="uid://beejrc40qapv1" path="res://textures/creature/Creature_Size04_Stun/Creature_Size04_Stun_11.png" id="113_x7gr1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kmpkd"]
 
@@ -104,6 +135,83 @@ radius = 4.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rdo1n"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_wa28u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_il18r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t811e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b24dn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3p64r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dslxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lwaqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_cg0s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pw2tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_avxuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ccy8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hxphp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_u51m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4ww57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mqem5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mqem5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_snagm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_snagm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5n0v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5n0v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3msu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3msu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f6vpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f6vpn")
+}],
+"loop": true,
+"name": &"Egg_Hatching",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_6bix6")
@@ -395,6 +503,47 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("102_6khl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_e24yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_34ih2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_n31oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_lqp38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_x7k1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_6xy4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_ja7ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_6um2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_qft2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_anq6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_x7gr1")
+}],
+"loop": true,
+"name": &"Size4_Stun",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("80_rxjv7")
 }, {
 "duration": 1.0,
@@ -463,7 +612,8 @@ wait_time = 0.872
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rdo1n")
-animation = &"Egg_Idle"
+animation = &"Size3_Eating"
+frame_progress = 0.164985
 script = ExtResource("45_oyrkc")
 
 [node name="FrameTimer" type="Timer" parent="AnimatedSprite2D"]
