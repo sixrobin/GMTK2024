@@ -21,4 +21,3 @@ func load_current_scene():
 	current_scene = scenes[scene_index].instantiate()
 	self.add_child(current_scene)
 	current_scene.global_position = CreatureSingleton.creature.global_position
-	# refresh nav ? change nav ?

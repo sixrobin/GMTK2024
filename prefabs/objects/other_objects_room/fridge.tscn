@@ -6,10 +6,10 @@
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_o3jvj"]
 [ext_resource type="PackedScene" uid="uid://c5w20knbajgvs" path="res://prefabs/objects/foods/egg.tscn" id="5_hnu41"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_hg02o"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/cheese.tscn" id="6_wsp5k"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/can.tscn" id="7_74vj7"]
+[ext_resource type="PackedScene" uid="uid://bno5xi0brflac" path="res://prefabs/objects/foods/cheese.tscn" id="6_wsp5k"]
+[ext_resource type="PackedScene" uid="uid://bdsqbbiyqqftm" path="res://prefabs/objects/foods/can.tscn" id="7_74vj7"]
 [ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_hftae"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/cake.tscn" id="8_4gpdh"]
+[ext_resource type="PackedScene" uid="uid://c2aa7xpvryk3f" path="res://prefabs/objects/foods/cake.tscn" id="8_4gpdh"]
 [ext_resource type="PackedScene" uid="uid://b5yorlh5s1xfc" path="res://prefabs/objects/foods/tomato.tscn" id="9_jymfl"]
 [ext_resource type="Texture2D" uid="uid://c2dfvd20bnlri" path="res://textures/environment/Fridge_Open_Empty.png" id="10_6t38e"]
 
@@ -20,6 +20,9 @@ size = Vector2(176, 295)
 size = Vector2(101, 264)
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler", "sprite")]
+lock_rotation = true
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_0rcxj")
 priority = 10
 attractive = false

@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8oopuy4vxqkf"]
+[gd_scene load_steps=7 format=3 uid="uid://c8oopuy4vxqkf"]
 
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="1_88ki1"]
 [ext_resource type="Texture2D" uid="uid://dm3ery2m4khxh" path="res://textures/tamagotchi/Tamagotchi_Device.png" id="2_ka38p"]
 [ext_resource type="Texture2D" uid="uid://csotv14nfiaij" path="res://textures/tamagotchi/Wood.png" id="3_hu4xo"]
 [ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="4_0x8rs"]
+[ext_resource type="PackedScene" uid="uid://1a380hv31a01" path="res://prefabs/nav_regions/nav_region.tscn" id="5_88vug"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8y4xj"]
+vertices = PackedVector2Array(21.2422, 20.2891, -20.125, 19.8906, -20.0469, -19.8047, 21.0859, -20.2109)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-20.0479, -19.8083, 21.0863, -20.2077, 21.246, 20.2875, -20.1278, 19.8882)])
+agent_radius = 0.0
 
 [node name="TamagotchiBackground" type="Sprite2D"]
 z_index = -1
@@ -53,3 +60,6 @@ position = Vector2(4, 277)
 rotation = -1.5708
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
+
+[node name="NavRegion" parent="." instance=ExtResource("5_88vug")]
+navigation_polygon = SubResource("NavigationPolygon_8y4xj")

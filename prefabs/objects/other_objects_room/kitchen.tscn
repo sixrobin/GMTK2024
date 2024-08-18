@@ -3,12 +3,14 @@
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_npgtw"]
 [ext_resource type="Texture2D" uid="uid://ccux7i0pbrb3l" path="res://textures/environment/Oven.png" id="2_yxnxm"]
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler", "sprite")]
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("sprite")]
+lock_rotation = true
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_npgtw")
 priority = 0
 attractive = false
 delete_on_applied = false
-on_click_handler = NodePath("")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
