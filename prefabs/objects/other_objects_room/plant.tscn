@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvvfw6apr5cgo"]
+[gd_scene load_steps=9 format=3 uid="uid://x8b87ab28c83"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_0k3of"]
 [ext_resource type="Texture2D" uid="uid://cmqfp2i0w22f7" path="res://textures/environment/Plant.png" id="2_h2av6"]
@@ -39,12 +39,11 @@ shape = SubResource("CapsuleShape2D_ymih1")
 position = Vector2(3, 0)
 shape = SubResource("CapsuleShape2D_pn7fx")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_g21rj")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_h4dic")

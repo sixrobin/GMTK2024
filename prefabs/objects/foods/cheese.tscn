@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://blpopoyathurj"]
+[gd_scene load_steps=5 format=3 uid="uid://bno5xi0brflac"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_2ivh8"]
 [ext_resource type="Texture2D" uid="uid://sslwuinjo344" path="res://textures/environment/Cheese.png" id="2_yi8ut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(92.631, 55.8614)
+size = Vector2(81.8769, 55.8614)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 71.1126
+radius = 63.7024
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.778882

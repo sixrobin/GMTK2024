@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdsqbbiyqqftm"]
+[gd_scene load_steps=9 format=3 uid="uid://bdsqbbiyqqftm"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_rlmdb"]
 [ext_resource type="Texture2D" uid="uid://b0gg3i58a0og1" path="res://textures/environment/Cans.png" id="2_ke7jb"]
@@ -6,19 +6,16 @@
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_ai1th"]
 [ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_cqsxq"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_6t2qp"]
-[ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_jl504"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(31.8198, 40.3051)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s57yb"]
+radius = 15.9694
+height = 64.4233
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 34.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_skbxg"]
-radius = 124.004
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sda0w"]
+radius = 23.0228
+height = 76.8281
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
-rotation = -0.769262
 mass = 0.05
 linear_damp = 5.0
 angular_damp = 5.0
@@ -32,25 +29,24 @@ on_click_handler = NodePath("ClickHandler")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
-rotation = 0.785398
 texture = ExtResource("2_ke7jb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_kfbe5")
+position = Vector2(0.172787, -0.132454)
+shape = SubResource("CapsuleShape2D_s57yb")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_702al")
+position = Vector2(-0.022819, -1.41403)
+shape = SubResource("CapsuleShape2D_sda0w")
 
 [node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
 script = ExtResource("3_6slxt")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("ExplosionHandler")
+explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_ai1th")
@@ -63,14 +59,5 @@ timer = NodePath("AttractionTimer")
 
 [node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
 wait_time = 5.0
-
-[node name="ExplosionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("area")]
-script = ExtResource("7_jl504")
-area = NodePath("Area2D")
-
-[node name="Area2D" type="Area2D" parent="ClickHandler/ExplosionHandler"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
-shape = SubResource("CircleShape2D_skbxg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

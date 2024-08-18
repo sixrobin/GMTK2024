@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d4lipe5bjvfsu" path="res://textures/environment/Bananas.png" id="2_eg4yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(82.9825, 19.9706)
+size = Vector2(157.94, 90.0143)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 43.0465
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5jsg"]
+size = Vector2(186, 120)
 
 [node name="Object" type="RigidBody2D"]
 mass = 0.1
@@ -23,14 +23,13 @@ position = Vector2(-1.19209e-07, 0)
 texture = ExtResource("2_eg4yb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 13)
+position = Vector2(1, 1)
 rotation = 0.00893617
 shape = SubResource("RectangleShape2D_kfbe5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 13)
-shape = SubResource("CircleShape2D_702al")
+shape = SubResource("RectangleShape2D_u5jsg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

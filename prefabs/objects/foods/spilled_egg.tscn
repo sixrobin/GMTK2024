@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg0e7nsa1py2s"]
+[gd_scene load_steps=6 format=3 uid="uid://ctmlhpgk4j6wm"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_ch5be"]
 [ext_resource type="Resource" uid="uid://c6wbk57cburla" path="res://resources/small_speed_boost.tres" id="2_rpicc"]
 [ext_resource type="Texture2D" uid="uid://iwpj8eesf7fp" path="res://textures/environment/Egg_Broken.png" id="3_7gtqp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(31.8198, 40.3051)
+[sub_resource type="CircleShape2D" id="CircleShape2D_psf0d"]
+radius = 52.9133
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 34.0
+radius = 88.1022
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.769262
@@ -30,11 +30,12 @@ texture = ExtResource("3_7gtqp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_kfbe5")
+shape = SubResource("CircleShape2D_psf0d")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.718424, 0.695605)
 shape = SubResource("CircleShape2D_702al")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

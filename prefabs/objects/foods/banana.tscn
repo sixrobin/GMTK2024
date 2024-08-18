@@ -3,11 +3,13 @@
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_32v3t"]
 [ext_resource type="Texture2D" uid="uid://bhu7ssde6f2dy" path="res://textures/environment/Banana.png" id="3_r6se0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(82.9825, 19.9706)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8bc37"]
+radius = 24.8983
+height = 101.545
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 43.0465
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44sfs"]
+radius = 37.7359
+height = 117.874
 
 [node name="Object" type="RigidBody2D"]
 mass = 0.1
@@ -23,14 +25,15 @@ position = Vector2(-1.19209e-07, 0)
 texture = ExtResource("3_r6se0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 13)
-rotation = 0.00893617
-shape = SubResource("RectangleShape2D_kfbe5")
+position = Vector2(3, 5)
+rotation = 1.01753
+shape = SubResource("CapsuleShape2D_8bc37")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 13)
-shape = SubResource("CircleShape2D_702al")
+position = Vector2(3, 5)
+rotation = 1.01229
+shape = SubResource("CapsuleShape2D_44sfs")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

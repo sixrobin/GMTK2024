@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5yorlh5s1xfc"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_6wwaf"]
-[ext_resource type="Texture2D" uid="uid://bwj0ubd0rayai" path="res://textures/environment/Tomatoes.png" id="2_awnix"]
+[ext_resource type="Texture2D" uid="uid://bvmdry4rnpp1" path="res://textures/environment/Tomato.png" id="2_oksbt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(92.631, 55.8614)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0p82v"]
+radius = 24.4915
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 71.1126
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ol6y"]
+radius = 40.8044
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.916991
@@ -20,17 +20,17 @@ growth_value = 25.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
-texture = ExtResource("2_awnix")
+texture = ExtResource("2_oksbt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -4.76837e-06)
+position = Vector2(0.443281, -0.958704)
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_kfbe5")
+shape = SubResource("CircleShape2D_0p82v")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-rotation = -0.700545
-shape = SubResource("CircleShape2D_702al")
+rotation = -0.780162
+shape = SubResource("CircleShape2D_2ol6y")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

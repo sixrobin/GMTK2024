@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://4f2xup4o5dof"]
+[gd_scene load_steps=5 format=3 uid="uid://cy7sbq0s713ec"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_3vafn"]
 [ext_resource type="Texture2D" uid="uid://hwh74wyf8acm" path="res://textures/environment/AppleRed.png" id="3_78eoo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(48.7404, 43.5492)
+[sub_resource type="CircleShape2D" id="CircleShape2D_llibt"]
+radius = 27.1589
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 41.1096
@@ -27,7 +27,7 @@ texture = ExtResource("3_78eoo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.80861, 2.84836)
 rotation = 0.900762
-shape = SubResource("RectangleShape2D_kfbe5")
+shape = SubResource("CircleShape2D_llibt")
 
 [node name="Area2D" type="Area2D" parent="."]
 
