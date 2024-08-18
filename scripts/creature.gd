@@ -185,7 +185,7 @@ func grow(growth_value: int):
 		current_growth_stage += 1
 		if current_growth_stage == 3:
 			reset_target()
-			_stun(StunResource.E_stun_mode.NONE, 0.5)
+			is_stunned = true
 			$AnimatedSprite2D.play_animation("Size3_Growing")
 			$AnimatedSprite2D.loop = false
 			$AnimatedSprite2D.lock_anim = true
@@ -199,6 +199,7 @@ func grow(growth_value: int):
 		self.grow(0)
 
 func on_grow_animation_over():
+	is_stunned = false
 	$AnimatedSprite2D.animation_over.disconnect(self.on_grow_animation_over)
 	SceneManagerSingleton.instance.next_scene()
 
