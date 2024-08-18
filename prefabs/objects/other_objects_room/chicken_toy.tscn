@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_tn1vr"]
 [ext_resource type="Texture2D" uid="uid://cqsdxn3hnt38c" path="res://textures/environment/ChickenToy.png" id="2_i0tns"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ebvq1"]
-
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_r3req"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_brkep"]

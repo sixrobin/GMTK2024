@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b52vo7447klmy"]
+[gd_scene load_steps=5 format=3 uid="uid://b52vo7447klmy"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_6hxka"]
 [ext_resource type="Texture2D" uid="uid://3fr3bt62oayj" path="res://textures/environment/Keyboard.png" id="2_qnu77"]
-[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_mn7df"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_spgiu"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_twutx"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_1d0e6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(59.9599, 153.581)
@@ -19,7 +15,7 @@ attractive = false
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
-on_click_handler = NodePath("ClickHandler")
+on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -34,24 +30,5 @@ shape = SubResource("RectangleShape2D_kfbe5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_eyego")
-
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
-script = ExtResource("3_mn7df")
-parent = NodePath("..")
-destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_spgiu")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_twutx")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_1d0e6")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

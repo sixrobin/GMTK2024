@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://5155mgcfmu8l"]
+[gd_scene load_steps=5 format=3 uid="uid://5155mgcfmu8l"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_the7j"]
 [ext_resource type="Texture2D" uid="uid://cen3f0e1bl780" path="res://textures/environment/Toast.png" id="2_270pr"]
-[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_h71mp"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_cla5u"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_bo6n6"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_ey6ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(31.8198, 40.3051)
@@ -24,14 +20,9 @@ attractive = false
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
-on_click_handler = NodePath("ClickHandler")
+on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.19209e-07, 0)
-rotation = 0.785398
-texture = ExtResource("2_270pr")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
 texture = ExtResource("2_270pr")
@@ -45,24 +36,5 @@ shape = SubResource("RectangleShape2D_kfbe5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_702al")
-
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
-script = ExtResource("3_h71mp")
-parent = NodePath("..")
-destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_cla5u")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_bo6n6")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_ey6ib")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

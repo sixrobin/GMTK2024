@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ijp2fbynh0fq"]
+[gd_scene load_steps=5 format=3 uid="uid://ijp2fbynh0fq"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_wxpns"]
 [ext_resource type="Texture2D" uid="uid://behtgeak8eteg" path="res://textures/environment/Leaf.png" id="2_wt3ev"]
-[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_hnqwr"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_6jcn6"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_vrvvk"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_gl36o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0to8l"]
 radius = 21.5374
@@ -25,7 +21,7 @@ attractive = false
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
-on_click_handler = NodePath("ClickHandler")
+on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
@@ -42,24 +38,5 @@ shape = SubResource("CapsuleShape2D_0to8l")
 position = Vector2(-1, -4)
 rotation = 1.17286
 shape = SubResource("CapsuleShape2D_m8sv1")
-
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
-script = ExtResource("3_hnqwr")
-parent = NodePath("..")
-destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_6jcn6")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_vrvvk")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_gl36o")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

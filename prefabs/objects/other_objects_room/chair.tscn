@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk3vegugdwmqi"]
+[gd_scene load_steps=7 format=3 uid="uid://bk3vegugdwmqi"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_efyq2"]
 [ext_resource type="Texture2D" uid="uid://bnoaojmcl46v6" path="res://textures/environment/Chair.png" id="2_bwc6l"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_s6wtn"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_y6dq2"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_qwtt0"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_lewkf"]
+[ext_resource type="PackedScene" uid="uid://bqtm4wvgynvcc" path="res://prefabs/objects/other_objects_room/chair_flipped.tscn" id="5_thx2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(127.733, 215.702)
@@ -30,21 +29,13 @@ position = Vector2(-0.5, 2)
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_kfbe5")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_s6wtn")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_y6dq2")
 quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_qwtt0")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_lewkf")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
+prefabs = Array[PackedScene]([ExtResource("5_thx2n")])

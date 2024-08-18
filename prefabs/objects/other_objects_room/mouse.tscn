@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsjssl486svwn"]
+[gd_scene load_steps=5 format=3 uid="uid://dv4mgfe1req60"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_wtotv"]
 [ext_resource type="Texture2D" uid="uid://dl70b6tpn7isk" path="res://textures/environment/Mouse.png" id="2_jb37y"]
-[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_yvvbi"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_pevsx"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_8e5yt"]
-[ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_noi7s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdy6w"]
 radius = 17.2096
@@ -23,7 +19,7 @@ attractive = false
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
-on_click_handler = NodePath("ClickHandler")
+on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -41,24 +37,5 @@ shape = SubResource("CapsuleShape2D_xdy6w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = -0.785398
 shape = SubResource("CapsuleShape2D_4c56i")
-
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
-script = ExtResource("3_yvvbi")
-parent = NodePath("..")
-destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_pevsx")
-quantity = 1
-prefabs = Array[PackedScene]([ExtResource("5_8e5yt")])
-
-[node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
-script = ExtResource("6_noi7s")
-timer = NodePath("AttractionTimer")
-
-[node name="AttractionTimer" type="Timer" parent="ClickHandler/AttractionHandler"]
-wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
