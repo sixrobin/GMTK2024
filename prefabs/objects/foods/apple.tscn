@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy7sbq0s713ec"]
+[gd_scene load_steps=5 format=3 uid="uid://4f2xup4o5dof"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_3vafn"]
 [ext_resource type="Texture2D" uid="uid://hwh74wyf8acm" path="res://textures/environment/AppleRed.png" id="3_78eoo"]
@@ -11,6 +11,9 @@ radius = 41.1096
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.837784
+mass = 0.1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_3vafn")
 interact_duration = 1.0
 growth_value = 25.0

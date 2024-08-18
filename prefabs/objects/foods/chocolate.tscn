@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://33d84wy1ecy7"]
+[gd_scene load_steps=5 format=3 uid="uid://bgmlnf77gptqt"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_q32om"]
 [ext_resource type="Texture2D" uid="uid://yr2i0ndvfftv" path="res://textures/environment/Chocolate.png" id="2_4y71q"]
@@ -11,6 +11,9 @@ radius = 55.0273
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.618501
+mass = 0.1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_q32om")
 interact_duration = 1.0
 growth_value = 25.0

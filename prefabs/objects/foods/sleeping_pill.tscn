@@ -11,6 +11,9 @@ size = Vector2(61.5183, 38.5373)
 radius = 55.1453
 
 [node name="Object" type="RigidBody2D"]
+mass = 0.05
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_d8lsa")
 interact_duration = 1.0
 stun_resource = ExtResource("2_y1vjp")

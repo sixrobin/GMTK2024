@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bno5xi0brflac"]
+[gd_scene load_steps=5 format=3 uid="uid://blpopoyathurj"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_2ivh8"]
 [ext_resource type="Texture2D" uid="uid://sslwuinjo344" path="res://textures/environment/Cheese.png" id="2_yi8ut"]
@@ -11,6 +11,9 @@ radius = 71.1126
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.778882
+mass = 0.1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_2ivh8")
 growth_value = 25.0
 restored_hunger = 50.0

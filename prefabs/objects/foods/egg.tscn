@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cth7oaq5g1xgb" path="res://textures/environment/Egg.png" id="2_dd1uc"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="3_ctchy"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ycjpr"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_i5yw5"]
+[ext_resource type="PackedScene" uid="uid://cg0e7nsa1py2s" path="res://prefabs/objects/foods/spilled_egg.tscn" id="5_i5yw5"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_f70is"]
 [ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_rhjyx"]
 
@@ -19,6 +19,9 @@ radius = 124.004
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
 rotation = -0.769262
+mass = 0.05
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_lbwer")
 priority = 10
 attractive = false

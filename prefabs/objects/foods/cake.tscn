@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2aa7xpvryk3f"]
+[gd_scene load_steps=5 format=3 uid="uid://cnxh5h33o8ijh"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_f6oag"]
 [ext_resource type="Texture2D" uid="uid://b7xwjvfiy4lqq" path="res://textures/environment/Cake.png" id="3_2cpa6"]
@@ -11,6 +11,9 @@ radius = 66.7308
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.882343
+mass = 0.2
+lock_rotation = true
+linear_damp = 5.0
 script = ExtResource("1_f6oag")
 interact_duration = 1.0
 growth_value = 25.0

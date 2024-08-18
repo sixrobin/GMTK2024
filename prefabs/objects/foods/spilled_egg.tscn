@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctmlhpgk4j6wm"]
+[gd_scene load_steps=6 format=3 uid="uid://cg0e7nsa1py2s"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_ch5be"]
 [ext_resource type="Resource" uid="uid://c6wbk57cburla" path="res://resources/small_speed_boost.tres" id="2_rpicc"]
@@ -10,15 +10,17 @@ size = Vector2(31.8198, 40.3051)
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 34.0
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+[node name="Object" type="RigidBody2D"]
 rotation = -0.769262
+mass = 0.05
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_ch5be")
 priority = 10
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
 speed_modifier = ExtResource("2_rpicc")
-on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)

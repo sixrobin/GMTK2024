@@ -10,6 +10,9 @@ size = Vector2(82.9825, 19.9706)
 radius = 43.0465
 
 [node name="Object" type="RigidBody2D"]
+mass = 0.1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_32v3t")
 interact_duration = 1.0
 growth_value = 25.0
