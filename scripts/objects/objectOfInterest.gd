@@ -46,6 +46,10 @@ func set_attractive(value: bool, specific_priority: int):
 		ObjectManager.unregister_object(self, current_priority)
 
 func before_apply():
+	self.linear_velocity = Vector2.ZERO
+	self.angular_velocity = 0
+	self.freeze = true
+	
 	is_being_interacted = true
 
 func on_click():
