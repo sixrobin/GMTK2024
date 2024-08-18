@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cesccqjnl0k2h"
-path="res://.godot/imported/Creature_Size3_Growing_00.png-d6a1a64b6c0ceac7917760931a3b4012.ctex"
+path="res://.godot/imported/Creature_Size03_Growing_00.png-f458902a0b3c1bc269b561289d5eeea4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/creature/Creature_Size3_Growing/Creature_Size3_Growing_00.png"
-dest_files=["res://.godot/imported/Creature_Size3_Growing_00.png-d6a1a64b6c0ceac7917760931a3b4012.ctex"]
+source_file="res://textures/creature/Creature_Size03_Growing/Creature_Size03_Growing_00.png"
+dest_files=["res://.godot/imported/Creature_Size03_Growing_00.png-f458902a0b3c1bc269b561289d5eeea4.ctex"]
 
 [params]
 
