@@ -23,8 +23,13 @@ class_name ObjectOfInterest
 var is_being_interacted: bool = false
 var current_attractive: bool = false
 var current_priority: int = 0
+var interaction_timer: Timer
 
 func _ready() -> void:
+	if interact_duration > 0:
+		interaction_timer = Timer.new()
+		interaction_timer.wait_time = interact_duration
+		interaction_timer.one_shot = true
 	set_attractive(attractive, priority)
 	if random_rotate_on_spawn:
 		self.global_rotation = deg_to_rad(randf_range(0, 360))
@@ -71,7 +76,13 @@ func on_applied():
 	is_being_interacted = false
 	if delete_on_applied:
 		destroy()
-		
+
 func destroy():
-	set_attractive(false, current_priority)
 	queue_free()
+
+func _notification(notification):
+	if notification == NOTIFICATION_PREDELETE:
+		set_attractive(false, current_priority)
+		if interaction_timer and !interaction_timer.is_stopped():
+			interaction_timer.stop()
+			interaction_timer.timeout.emit()

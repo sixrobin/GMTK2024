@@ -8,6 +8,7 @@ signal hunger_modified(old_hunger: float, new_hunger: float)
 #@export var growth_meter_max: float = 100
 @export var growth_stages: Array[GrowthStage]
 @export var max_hunger: float = 100
+@export var starting_hunger: float = 33
 @export var hunger_drain: float = 2
 @export var hunger_drain_interval: float = 0.5
 @export var nav_agent: NavigationAgent2D = null
@@ -34,7 +35,7 @@ func _ready() -> void:
 	CreatureSingleton.creature = self
 	
 	#Hunger initialisation
-	hunger = max_hunger
+	hunger = starting_hunger
 	add_child(hunger_drain_timer)
 	hunger_drain_timer.timeout.connect(func(): modify_hunger(-hunger_drain))
 	hunger_drain_timer.start(hunger_drain_interval)
@@ -98,12 +99,10 @@ func interact(object: ObjectOfInterest):
 	$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.EATING)
 	object.before_apply()
 	
-	if object.interact_duration > 0:
-		var interaction_timer: Timer = Timer.new()
-		add_child(interaction_timer)
-		interaction_timer.timeout.connect(func(): on_interaction_end(object))
-		interaction_timer.timeout.connect(func(): interaction_timer.queue_free())
-		interaction_timer.start(object.interact_duration)
+	if object.interaction_timer:
+		add_child(object.interaction_timer)
+		object.interaction_timer.timeout.connect(func(): on_interaction_end(object))
+		object.interaction_timer.start()
 	else:
 		on_interaction_end(object)
 		

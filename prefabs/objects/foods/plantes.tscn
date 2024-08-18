@@ -38,13 +38,11 @@ shape = SubResource("CapsuleShape2D_2lic5")
 position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_30kx8")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("object_spawner")]
 position = Vector2(0, -92)
 rotation = -1.5708
 script = ExtResource("3_2ayqt")
-parent = NodePath("")
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_whcly")

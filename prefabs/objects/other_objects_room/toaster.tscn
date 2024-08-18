@@ -14,6 +14,8 @@ size = Vector2(114, 120)
 size = Vector2(163, 146)
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+lock_rotation = true
+linear_damp = 5.0
 script = ExtResource("1_on7dn")
 priority = 10
 attractive = false
@@ -38,12 +40,11 @@ shape = SubResource("RectangleShape2D_gmi70")
 position = Vector2(46.5, -8)
 shape = SubResource("RectangleShape2D_ovbar")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "explosion_handler")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
 script = ExtResource("3_n2jrd")
 parent = NodePath("..")
 destroy_after_x_click = 1
 object_spawner = NodePath("ObjectSpawner")
-explosion_handler = NodePath("")
 
 [node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
 script = ExtResource("4_kgkl2")

@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://xotit38nwecc" path="res://prefabs/objects/other_objects_room/trashbag.tscn" id="22_e1vhf"]
 [ext_resource type="PackedScene" uid="uid://b52vo7447klmy" path="res://prefabs/objects/other_objects_room/keyboard.tscn" id="23_jb1ik"]
 [ext_resource type="PackedScene" uid="uid://yaw3bw00yao6" path="res://prefabs/objects/other_objects_room/lamp.tscn" id="24_4kg8e"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/other_objects_room/screen.tscn" id="25_14ydl"]
+[ext_resource type="PackedScene" uid="uid://b7ob0sk7n1jbo" path="res://prefabs/objects/other_objects_room/screen.tscn" id="25_14ydl"]
 [ext_resource type="PackedScene" uid="uid://dv4mgfe1req60" path="res://prefabs/objects/other_objects_room/mouse.tscn" id="26_bqjfi"]
 [ext_resource type="PackedScene" uid="uid://cilug5ynrbtsw" path="res://prefabs/objects/other_objects_room/pillow.tscn" id="27_kjovo"]
 [ext_resource type="PackedScene" uid="uid://qni7ep7xerv0" path="res://prefabs/objects/other_objects_room/roombot.tscn" id="28_1oofn"]
@@ -32,12 +32,12 @@
 [ext_resource type="PackedScene" uid="uid://b3ghytbfvweta" path="res://prefabs/objects/other_objects_room/paper_ball.tscn" id="31_6ld3d"]
 [ext_resource type="PackedScene" uid="uid://bdsqbbiyqqftm" path="res://prefabs/objects/foods/can.tscn" id="32_0r146"]
 [ext_resource type="PackedScene" uid="uid://boso43ucxkpki" path="res://prefabs/objects/foods/sleeping_pill.tscn" id="33_73y5t"]
-[ext_resource type="PackedScene" uid="uid://cuin8mdl0226d" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="34_yjl2o"]
+[ext_resource type="PackedScene" uid="uid://c8257wjed8ayq" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="34_yjl2o"]
 [ext_resource type="PackedScene" uid="uid://bno5xi0brflac" path="res://prefabs/objects/foods/cheese.tscn" id="35_xw4xl"]
 [ext_resource type="PackedScene" uid="uid://ijp2fbynh0fq" path="res://prefabs/objects/foods/leaf.tscn" id="36_gwjrb"]
 [ext_resource type="PackedScene" uid="uid://bqvmknwbr21ya" path="res://prefabs/objects/other_objects_room/chicken_toy.tscn" id="37_k2gn7"]
 [ext_resource type="PackedScene" uid="uid://bo7fmssmk8wyf" path="res://prefabs/objects/other_objects_room/mouse_trap.tscn" id="38_g6x3m"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
+[ext_resource type="PackedScene" uid="uid://bgmlnf77gptqt" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
 [ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="40_f2tm0"]
 [ext_resource type="PackedScene" uid="uid://ciofi5avvq48e" path="res://prefabs/objects/foods/bananas.tscn" id="41_3dgs0"]
 [ext_resource type="PackedScene" uid="uid://c2aa7xpvryk3f" path="res://prefabs/objects/foods/cake.tscn" id="42_j2e8k"]
@@ -45,9 +45,10 @@
 [ext_resource type="PackedScene" uid="uid://1a380hv31a01" path="res://prefabs/nav_regions/nav_region.tscn" id="44_pts8b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pxnfw"]
-vertices = PackedVector2Array(1900.02, -178, 1901.97, 682.992, 27, 682, 751.102, -178, 27, -206, 749.094, -381.008, -1909.02, -385.977, -25.9922, -206, -1911.03, 419.492, -26.9766, 681, -2292.01, 681.992, -1951.91, 417.539, -2292.98, -83.0781, -1956.9, -85.9063)
+vertices = PackedVector2Array(1860.11, -138, 1861.88, 642.969, 67, 642.023, 711.492, -138, 67, -246, 709.477, -341.094, -1869.12, -345.898, -65.9375, -246, -1871.13, 461.43, -66.9375, 641.023, -2252.06, 641.969, -1991.53, 455.703, -2252.93, -43.4063, -1996.5, -45.5703)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 6, 7, 9), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 12, 13)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-2303, -93, -2302, 692, -17, 691, -16, -196, 17, -196, 17, 692, 1912, 693, 1910, -188, 761, -188, 759, -391, -1919, -396, -1921, 409, -1942, 408, -1947, -96)])
+agent_radius = 50.0
 
 [node name="Rooms" type="Node2D"]
 y_sort_enabled = true
@@ -128,32 +129,6 @@ position = Vector2(562.89, 503.5)
 z_index = 1
 position = Vector2(573.89, 467.5)
 
-[node name="Chair flipped" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-809.11, 98.5)
-script = null
-
-[node name="Chair flipped2" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-535.11, -82.5)
-script = null
-
 [node name="Plant" parent="." instance=ExtResource("19_n8f48")]
 z_index = 1
 position = Vector2(-680.11, -433.5)
@@ -169,19 +144,6 @@ position = Vector2(1016.89, -354.5)
 [node name="Plant4" parent="." instance=ExtResource("19_n8f48")]
 z_index = 1
 position = Vector2(-1580.11, 597.5)
-
-[node name="Chair flipped3" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-809.11, 98.5)
-script = null
 
 [node name="Trashcan" parent="." instance=ExtResource("20_5h7fn")]
 position = Vector2(-440.11, -389.5)

@@ -10,13 +10,16 @@ size = Vector2(60.4311, 90.6068)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sgs1"]
 size = Vector2(106.286, 75.0009)
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+[node name="Object" type="RigidBody2D"]
 rotation = -0.785398
+mass = 0.1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_orkjc")
 priority = 10
 interact_duration = 0.25
 stun_resource = ExtResource("2_mymuc")
-on_click_handler = NodePath("")
+random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true

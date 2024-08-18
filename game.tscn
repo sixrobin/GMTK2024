@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://doutoksvepjsi" path="res://prefabs/rooms.tscn" id="6_kp7y2"]
 [ext_resource type="Script" path="res://scripts/scenes/level_transition.gd" id="7_drjhk"]
 [ext_resource type="PackedScene" path="res://prefabs/hunger_gauge_house.tscn" id="7_flanj"]
-[ext_resource type="PackedScene" uid="uid://bfuklq0fuc6e" path="res://prefabs/timer.tscn" id="8_r884m"]
+[ext_resource type="PackedScene" uid="uid://dtsoo4kxpn27f" path="res://prefabs/timer.tscn" id="8_r884m"]
 [ext_resource type="PackedScene" uid="uid://c8oopuy4vxqkf" path="res://prefabs/environment/tamagotchi_background.tscn" id="10_kx7gb"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
 [ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]

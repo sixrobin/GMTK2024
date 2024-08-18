@@ -3,20 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="1_88ki1"]
 [ext_resource type="Texture2D" uid="uid://dm3ery2m4khxh" path="res://textures/tamagotchi/Tamagotchi_Device.png" id="2_ka38p"]
 [ext_resource type="Texture2D" uid="uid://csotv14nfiaij" path="res://textures/tamagotchi/Wood.png" id="3_hu4xo"]
-[ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="4_0x8rs"]
+[ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="4_0x8rs"]
 
-[node name="TamagotchiBackground" type="Sprite2D"]
+[node name="Scene" type="Node2D"]
+
+[node name="TamagotchiBackground" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
 scale = Vector2(12.52, 12.52)
 texture = ExtResource("1_88ki1")
 
-[node name="TamagotchiDevice" type="Sprite2D" parent="."]
+[node name="TamagotchiDevice" type="Sprite2D" parent="TamagotchiBackground"]
 position = Vector2(0.75, -35.1875)
 scale = Vector2(0.108, 0.113)
 texture = ExtResource("2_ka38p")
 
-[node name="Wood" type="Sprite2D" parent="."]
+[node name="Wood" type="Sprite2D" parent="TamagotchiBackground"]
 z_index = -10
 texture_repeat = 2
 scale = Vector2(0.15, 0.15)
@@ -24,30 +26,30 @@ texture = ExtResource("3_hu4xo")
 region_enabled = true
 region_rect = Rect2(0, 0, 5000, 3000)
 
-[node name="Walls" type="Node2D" parent="."]
+[node name="Walls" type="Node2D" parent="TamagotchiBackground"]
 scale = Vector2(0.08, 0.08)
 
-[node name="WallLeft" parent="Walls" instance=ExtResource("4_0x8rs")]
+[node name="WallLeft" parent="TamagotchiBackground/Walls" instance=ExtResource("4_0x8rs")]
 visible = false
 position = Vector2(-270, 0)
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
 metadata/_edit_group_ = true
 
-[node name="WallRight" parent="Walls" instance=ExtResource("4_0x8rs")]
+[node name="WallRight" parent="TamagotchiBackground/Walls" instance=ExtResource("4_0x8rs")]
 visible = false
 position = Vector2(280, -2)
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
 
-[node name="WallUp" parent="Walls" instance=ExtResource("4_0x8rs")]
+[node name="WallUp" parent="TamagotchiBackground/Walls" instance=ExtResource("4_0x8rs")]
 visible = false
 position = Vector2(-1, -270)
 rotation = -1.5708
 scale = Vector2(0.551646, 6.45975)
 collision_priority = 2.0
 
-[node name="WallBottom" parent="Walls" instance=ExtResource("4_0x8rs")]
+[node name="WallBottom" parent="TamagotchiBackground/Walls" instance=ExtResource("4_0x8rs")]
 visible = false
 position = Vector2(4, 277)
 rotation = -1.5708

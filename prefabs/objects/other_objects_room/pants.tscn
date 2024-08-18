@@ -14,6 +14,9 @@ radius = 44.2041
 radius = 79.404
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+mass = 0.1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_gtjsm")
 priority = 10
 attractive = false
@@ -21,6 +24,7 @@ interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
 on_click_handler = NodePath("ClickHandler")
+random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true

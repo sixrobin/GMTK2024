@@ -11,7 +11,7 @@ radius = 40.8044
 
 [node name="Object" type="RigidBody2D"]
 rotation = -0.916991
-mass = 0.2
+mass = 0.05
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_6wwaf")

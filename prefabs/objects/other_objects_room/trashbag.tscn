@@ -16,6 +16,9 @@ radius = 124.004
 
 [node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
 rotation = -0.769262
+mass = 0.5
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_8g3fb")
 priority = 10
 attractive = false

@@ -50,7 +50,7 @@ func applyClickResult():
 	if explosion_handler:
 		explosion_handler.explode()
 	if object_spawner:
-		object_spawner.spawn_object(self.global_position, self.global_rotation, self.parent.get_parent())
+		object_spawner.spawn_object(self.global_position, self.global_rotation, SceneManagerSingleton.instance.current_scene)
 
 func has_uses_left() -> bool:
 	return max_uses <= 0 or current_click_count < max_uses

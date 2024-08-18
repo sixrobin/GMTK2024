@@ -9,14 +9,15 @@ size = Vector2(620, 492.852)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a32y"]
 size = Vector2(716, 586)
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+[node name="Object" type="RigidBody2D"]
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_4wkj3")
 priority = 10
 attractive = false
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
-on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
