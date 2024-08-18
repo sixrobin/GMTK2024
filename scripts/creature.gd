@@ -101,18 +101,22 @@ func on_interaction_end(object: ObjectOfInterest):
 
 # STUN
 func stun(stun_resource: StunResource) -> Timer:
+	return _stun(stun_resource.mode, stun_resource.duration)
+	
+func _stun(mode: StunResource.E_stun_mode, duration: float) -> Timer:
 	if is_stunned:
 		return
 	is_stunned = true
-	match stun_resource.mode:
+	match mode:
 		StunResource.E_stun_mode.STUN:
 			print("stun type is stun")
 		StunResource.E_stun_mode.SLEEP:
 			print("stun type is sleep")
 		_:
 			print("stun type is not handled")
-	stun_timer.start(stun_resource.duration)
+	stun_timer.start(duration)
 	return stun_timer
+
 
 #Speed Boost
 func speedBoost(speed_modifier: SpeedModifier):
@@ -129,7 +133,6 @@ func endSpeedBoost(timer: Timer, speed_modifier: SpeedModifier):
 func _on_stun_timer_timeout() -> void:
 	sleep_increase_timer.paused = false
 	is_stunned = false
-	print("stun ended")
 
 func grow(growth_value: int):
 	if current_growth_stage >= growth_stages.size() - 1:
@@ -158,8 +161,7 @@ func modify_hunger(hunger_value):
 func increase_sleep(sleep_value):
 	sleep_meter += sleep_value
 	if sleep_meter >= max_sleep:
-		var sleep_stun_resource: StunResource = StunResource.new(sleep_duration, StunResource.E_stun_mode.SLEEP)
-		stun(sleep_stun_resource)
+		_stun(StunResource.E_stun_mode.SLEEP, sleep_duration)
 		sleep_increase_timer.paused = true
 		sleep_meter = 0
 

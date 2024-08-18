@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://boso43ucxkpki"]
+[gd_scene load_steps=7 format=3 uid="uid://boso43ucxkpki"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_d8lsa"]
 [ext_resource type="Resource" uid="uid://b4ou5garcy602" path="res://resources/stun resources/sleeping_pill_stun.tres" id="2_y1vjp"]
+[ext_resource type="Resource" uid="uid://c6wbk57cburla" path="res://resources/small_speed_boost.tres" id="3_lk7wk"]
 [ext_resource type="Texture2D" uid="uid://cnedqwo50pndy" path="res://textures/environment/SleepingPill.png" id="3_siaib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
@@ -17,6 +18,7 @@ angular_damp = 5.0
 script = ExtResource("1_d8lsa")
 interact_duration = 1.0
 stun_resource = ExtResource("2_y1vjp")
+speed_modifier = ExtResource("3_lk7wk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
