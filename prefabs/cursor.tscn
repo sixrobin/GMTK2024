@@ -2,22 +2,23 @@
 
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="1_udoxx"]
 [ext_resource type="PackedScene" uid="uid://c5w20knbajgvs" path="res://prefabs/objects/foods/egg.tscn" id="3_q4l80"]
-[ext_resource type="PackedScene" uid="uid://cy7sbq0s713ec" path="res://prefabs/objects/foods/apple.tscn" id="3_t7w1q"]
+[ext_resource type="PackedScene" uid="uid://4f2xup4o5dof" path="res://prefabs/objects/foods/apple.tscn" id="3_t7w1q"]
 [ext_resource type="PackedScene" uid="uid://c8d8hvhsmtjkj" path="res://prefabs/objects/foods/fish.tscn" id="4_8a2ug"]
 [ext_resource type="PackedScene" uid="uid://bpkjl0jejj4r0" path="res://prefabs/objects/foods/banana.tscn" id="4_ef0ku"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_tkupw"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/burger.tscn" id="5_reg6b"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/cake.tscn" id="6_h6x8n"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/cheese.tscn" id="7_ck55r"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/chocolate.tscn" id="8_tht7l"]
+[ext_resource type="PackedScene" uid="uid://moq2w3vv436q" path="res://prefabs/objects/foods/burger.tscn" id="5_reg6b"]
+[ext_resource type="PackedScene" uid="uid://cnxh5h33o8ijh" path="res://prefabs/objects/foods/cake.tscn" id="6_h6x8n"]
+[ext_resource type="PackedScene" uid="uid://blpopoyathurj" path="res://prefabs/objects/foods/cheese.tscn" id="7_ck55r"]
+[ext_resource type="PackedScene" uid="uid://bgmlnf77gptqt" path="res://prefabs/objects/foods/chocolate.tscn" id="8_tht7l"]
 [ext_resource type="PackedScene" uid="uid://bogsjx7shaanv" path="res://prefabs/objects/foods/plantes.tscn" id="11_f66mg"]
 [ext_resource type="PackedScene" uid="uid://boso43ucxkpki" path="res://prefabs/objects/foods/sleeping_pill.tscn" id="12_q6y3i"]
-[ext_resource type="PackedScene" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="13_mlkng"]
+[ext_resource type="PackedScene" uid="uid://c8257wjed8ayq" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="13_mlkng"]
 [ext_resource type="PackedScene" uid="uid://b5yorlh5s1xfc" path="res://prefabs/objects/foods/tomato.tscn" id="14_r8g02"]
 
 [node name="Cursor" type="Node2D" node_paths=PackedStringArray("debug_object_spawner")]
 script = ExtResource("1_udoxx")
 debug_object_spawner = NodePath("DebugObjectSpawner")
+drag_force = 5
 
 [node name="DebugObjectSpawner" type="Node2D" parent="."]
 script = ExtResource("4_tkupw")

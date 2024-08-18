@@ -3,6 +3,7 @@ class_name Cursor
 
 var draggedObject: ObjectOfInterest = null
 @export var debug_object_spawner: ObjectSpawner
+@export var drag_force = 10
 
 func getObjectAtMousePosition() -> ObjectOfInterest:
 	var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
@@ -82,4 +83,8 @@ func _process(delta: float):
 	if draggedObject == null:
 		return
 	
-	draggedObject.global_position = get_global_mouse_position()
+	var force_direction: Vector2 = get_global_mouse_position() - draggedObject.global_position
+	if force_direction.length() > 200:
+		force_direction = force_direction.normalized() * 200
+	
+	draggedObject.apply_impulse(force_direction * delta * drag_force)
