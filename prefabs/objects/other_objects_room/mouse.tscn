@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv4mgfe1req60"]
+[gd_scene load_steps=5 format=3 uid="uid://dsjssl486svwn"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_wtotv"]
 [ext_resource type="Texture2D" uid="uid://dl70b6tpn7isk" path="res://textures/environment/Mouse.png" id="2_jb37y"]
@@ -20,7 +20,7 @@ script = ExtResource("1_wtotv")
 priority = 10
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 10.0
 restored_hunger = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

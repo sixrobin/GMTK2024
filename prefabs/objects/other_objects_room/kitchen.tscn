@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://df1jnsd5omw0r"]
+[gd_scene load_steps=3 format=3 uid="uid://yoapedawm1ss"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_npgtw"]
 [ext_resource type="Texture2D" uid="uid://ccux7i0pbrb3l" path="res://textures/environment/Oven.png" id="2_yxnxm"]
@@ -11,6 +11,7 @@ script = ExtResource("1_npgtw")
 priority = 0
 attractive = false
 delete_on_applied = false
+growth_value = 60.0
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

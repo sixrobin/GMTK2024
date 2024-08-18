@@ -17,7 +17,7 @@ script = ExtResource("1_em3ka")
 priority = 10
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 60.0
 restored_hunger = 50.0
 on_click_handler = NodePath("ClickHandler")
 
