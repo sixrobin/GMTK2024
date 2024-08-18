@@ -8,6 +8,7 @@ signal hunger_modified(old_hunger: float, new_hunger: float)
 #@export var growth_meter_max: float = 100
 @export var growth_stages: Array[GrowthStage]
 @export var max_hunger: float = 100
+@export var starting_hunger: float = 33
 @export var hunger_drain: float = 2
 @export var hunger_drain_interval: float = 0.5
 @export var nav_agent: NavigationAgent2D = null
@@ -34,7 +35,7 @@ func _ready() -> void:
 	CreatureSingleton.creature = self
 	
 	#Hunger initialisation
-	hunger = max_hunger
+	hunger = starting_hunger
 	add_child(hunger_drain_timer)
 	hunger_drain_timer.timeout.connect(func(): modify_hunger(-hunger_drain))
 	hunger_drain_timer.start(hunger_drain_interval)
