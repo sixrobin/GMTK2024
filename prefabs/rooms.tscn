@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://ijp2fbynh0fq" path="res://prefabs/objects/foods/leaf.tscn" id="36_gwjrb"]
 [ext_resource type="PackedScene" uid="uid://bqvmknwbr21ya" path="res://prefabs/objects/other_objects_room/chicken_toy.tscn" id="37_k2gn7"]
 [ext_resource type="PackedScene" uid="uid://bo7fmssmk8wyf" path="res://prefabs/objects/other_objects_room/mouse_trap.tscn" id="38_g6x3m"]
-[ext_resource type="PackedScene" uid="uid://bgmlnf77gptqt" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
+[ext_resource type="PackedScene" uid="uid://33d84wy1ecy7" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
 [ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="40_f2tm0"]
 [ext_resource type="PackedScene" uid="uid://ciofi5avvq48e" path="res://prefabs/objects/foods/bananas.tscn" id="41_3dgs0"]
 [ext_resource type="PackedScene" uid="uid://c2aa7xpvryk3f" path="res://prefabs/objects/foods/cake.tscn" id="42_j2e8k"]
@@ -56,218 +56,218 @@ position = Vector2(6.11, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(444.89, 4.5)
+position = Vector2(978.89, -355.5)
 texture = ExtResource("1_to5mr")
 
 [node name="Wardrobe" parent="." instance=ExtResource("2_7jjnv")]
-position = Vector2(1240.89, -425.5)
+position = Vector2(1774.89, -785.5)
 
 [node name="Bed" parent="." instance=ExtResource("3_jjj1r")]
-position = Vector2(2242.89, 55.5001)
+position = Vector2(2776.89, -304.5)
 
 [node name="Sidebed table" parent="." instance=ExtResource("4_002dc")]
-position = Vector2(2467.89, 328.5)
+position = Vector2(3001.89, -31.5)
 
 [node name="Sidebed table2" parent="." instance=ExtResource("4_002dc")]
-position = Vector2(-141.11, 367.5)
+position = Vector2(392.89, 7.5)
 
 [node name="Toy chest" parent="." instance=ExtResource("5_8lbs8")]
-position = Vector2(1871.89, 34.5001)
+position = Vector2(2405.89, -325.5)
 
 [node name="Clock" parent="." instance=ExtResource("6_sda2c")]
 z_index = 1
-position = Vector2(2471.89, 304.5)
+position = Vector2(3005.89, -55.5)
 
 [node name="Desk" parent="." instance=ExtResource("7_2r5o3")]
-position = Vector2(750.89, 427.5)
+position = Vector2(1284.89, 67.5)
 rotation = -0.785397
 
 [node name="Gaming chair" parent="." instance=ExtResource("8_bkku5")]
-position = Vector2(1020.89, 391.5)
+position = Vector2(1554.89, 31.5)
 
 [node name="Couch" parent="." instance=ExtResource("9_ya0gk")]
-position = Vector2(30.8899, 494.5)
+position = Vector2(564.89, 134.5)
 
 [node name="Aquarium" parent="." instance=ExtResource("12_6f8r3")]
 z_index = 1
-position = Vector2(-140.11, 341.5)
+position = Vector2(393.89, -18.5)
 
 [node name="Livingroom table" parent="." instance=ExtResource("10_1st25")]
-position = Vector2(-545.11, 126.5)
+position = Vector2(-11.11, -233.5)
 
 [node name="Livingroom table2" parent="." instance=ExtResource("10_1st25")]
-position = Vector2(-670.11, -336.5)
+position = Vector2(-136.11, -696.5)
 
 [node name="Chair" parent="." instance=ExtResource("11_sjwj0")]
-position = Vector2(-275.11, 96.5)
+position = Vector2(258.89, -263.5)
 
 [node name="Chair2" parent="." instance=ExtResource("11_sjwj0")]
-position = Vector2(-525.11, 242.5)
+position = Vector2(76.89, -406)
 
 [node name="Shoe" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-1398.11, 127.5)
+position = Vector2(-864.11, -232.5)
 
 [node name="Shoe2" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-1342.11, 126.5)
+position = Vector2(-808.11, -233.5)
 
 [node name="Shoe3" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-1398.11, 243.5)
+position = Vector2(-864.11, -116.5)
 
 [node name="Shoe4" parent="." instance=ExtResource("13_tg5t5")]
-position = Vector2(-1342.11, 242.5)
+position = Vector2(-808.11, -117.5)
 
 [node name="Kitchen" parent="." instance=ExtResource("14_0580l")]
-position = Vector2(-1067.11, -261.5)
+position = Vector2(-533.11, -621.5)
 
 [node name="Fridge" parent="." instance=ExtResource("15_h0vcn")]
-position = Vector2(-1153.11, -55.5)
+position = Vector2(-619.11, -415.5)
 
 [node name="TV sidetable" parent="." instance=ExtResource("16_sf3lw")]
-position = Vector2(562.89, 503.5)
+position = Vector2(1096.89, 143.5)
 
 [node name="TV" parent="." instance=ExtResource("17_4qrb8")]
 z_index = 1
-position = Vector2(573.89, 467.5)
+position = Vector2(1107.89, 107.5)
 
 [node name="Plant" parent="." instance=ExtResource("19_n8f48")]
 z_index = 1
-position = Vector2(-680.11, -433.5)
+position = Vector2(-146.11, -793.5)
 
 [node name="Plant2" parent="." instance=ExtResource("19_n8f48")]
 z_index = 1
-position = Vector2(734.89, 596.5)
+position = Vector2(1268.89, 236.5)
 
 [node name="Plant3" parent="." instance=ExtResource("19_n8f48")]
 z_index = 1
-position = Vector2(1016.89, -354.5)
+position = Vector2(1550.89, -714.5)
 
 [node name="Plant4" parent="." instance=ExtResource("19_n8f48")]
 z_index = 1
-position = Vector2(-1580.11, 597.5)
+position = Vector2(-1046.11, 237.5)
 
 [node name="Trashcan" parent="." instance=ExtResource("20_5h7fn")]
-position = Vector2(-440.11, -389.5)
+position = Vector2(93.89, -749.5)
 
 [node name="Toaster" parent="." instance=ExtResource("21_t5hk6")]
 z_index = 1
-position = Vector2(-1181.11, -458.5)
+position = Vector2(-647.11, -818.5)
 
 [node name="Trashbag" parent="." instance=ExtResource("22_e1vhf")]
-position = Vector2(-1381.11, -67.4999)
+position = Vector2(-847.11, -427.5)
 
 [node name="Keybord" parent="." instance=ExtResource("23_jb1ik")]
 z_index = 1
-position = Vector2(802.89, 355.5)
+position = Vector2(1336.89, -4.5)
 
 [node name="Lamp" parent="." instance=ExtResource("24_4kg8e")]
-position = Vector2(742.89, 58.5)
+position = Vector2(1276.89, -301.5)
 
 [node name="Lamp2" parent="." instance=ExtResource("24_4kg8e")]
-position = Vector2(-141.11, 540.5)
+position = Vector2(392.89, 180.5)
 
 [node name="Screen" parent="." instance=ExtResource("25_14ydl")]
 z_index = 1
-position = Vector2(709.89, 344.5)
+position = Vector2(1243.89, -15.5)
 
 [node name="Mouse" parent="." instance=ExtResource("26_bqjfi")]
 z_index = 1
-position = Vector2(800.89, 235.5)
+position = Vector2(1334.89, -124.5)
 
 [node name="Pillow" parent="." instance=ExtResource("27_kjovo")]
 z_index = 1
-position = Vector2(2475.89, -89.5)
+position = Vector2(3009.89, -449.5)
 
 [node name="Pillow2" parent="." instance=ExtResource("27_kjovo")]
 z_index = 1
-position = Vector2(2475.89, 107.5)
+position = Vector2(3009.89, -252.5)
 
 [node name="Roombot" parent="." instance=ExtResource("28_1oofn")]
-position = Vector2(-1001.11, 498.5)
+position = Vector2(-467.11, 138.5)
 
 [node name="Pants" parent="." instance=ExtResource("29_8g6x8")]
 z_index = 1
-position = Vector2(2033.89, 138.5)
+position = Vector2(2567.89, -221.5)
 
 [node name="Socks" parent="." instance=ExtResource("30_2ywhj")]
-position = Vector2(1976.89, 386.5)
+position = Vector2(2510.89, 26.5)
 
 [node name="Socks2" parent="." instance=ExtResource("30_2ywhj")]
-position = Vector2(1760.89, 299.5)
+position = Vector2(2294.89, -60.5)
 rotation = 0.523598
 
 [node name="Paperball" parent="." instance=ExtResource("31_6ld3d")]
-position = Vector2(993.89, 211.5)
+position = Vector2(1527.89, -148.5)
 
 [node name="Paperball2" parent="." instance=ExtResource("31_6ld3d")]
-position = Vector2(1197.89, 527.5)
+position = Vector2(1731.89, 167.5)
 
 [node name="Can" parent="." instance=ExtResource("32_0r146")]
 z_index = 1
-position = Vector2(702.89, 208.5)
+position = Vector2(1236.89, -151.5)
 
 [node name="Can2" parent="." instance=ExtResource("32_0r146")]
 z_index = 1
-position = Vector2(731.89, 231.5)
+position = Vector2(1265.89, -128.5)
 
 [node name="Can3" parent="." instance=ExtResource("32_0r146")]
 z_index = 1
-position = Vector2(737.89, 193.5)
+position = Vector2(1271.89, -166.5)
 
 [node name="Pill" parent="." instance=ExtResource("33_73y5t")]
 z_index = 1
-position = Vector2(2490.89, 267.5)
+position = Vector2(3024.89, -92.5)
 
 [node name="Stuffed animal" parent="." instance=ExtResource("34_yjl2o")]
 z_index = 1
-position = Vector2(2374.89, 1.5)
+position = Vector2(2908.89, -358.5)
 
 [node name="Cheese" parent="." instance=ExtResource("35_xw4xl")]
-position = Vector2(2430.89, 586.5)
+position = Vector2(2964.89, 226.5)
 
 [node name="Cheese2" parent="." instance=ExtResource("35_xw4xl")]
-position = Vector2(2373.89, 638.5)
+position = Vector2(2907.89, 278.5)
 
 [node name="Leaf2" parent="." instance=ExtResource("36_gwjrb")]
-position = Vector2(-1466.11, 647.5)
+position = Vector2(-932.11, 287.5)
 rotation = -1.309
 
 [node name="Chicken toy" parent="." instance=ExtResource("37_k2gn7")]
-position = Vector2(201.89, 26.5)
+position = Vector2(735.89, -333.5)
 rotation = -0.261799
 
 [node name="Mouse trap" parent="." instance=ExtResource("38_g6x3m")]
-position = Vector2(2323.89, 589.5)
+position = Vector2(2857.89, 229.5)
 
 [node name="Chocolate bar" parent="." instance=ExtResource("39_4bmu3")]
 z_index = 1
-position = Vector2(64.8899, 487.5)
+position = Vector2(598.89, 127.5)
 rotation = -0.261799
 
 [node name="Spill egg" parent="." instance=ExtResource("40_f2tm0")]
-position = Vector2(-358.11, -222.5)
+position = Vector2(175.89, -582.5)
 
 [node name="Bananas" parent="." instance=ExtResource("41_3dgs0")]
 z_index = 1
-position = Vector2(-1199.11, -296.5)
+position = Vector2(-665.11, -656.5)
 
 [node name="Cake" parent="." instance=ExtResource("42_j2e8k")]
 z_index = 1
-position = Vector2(-538.11, 75.5)
+position = Vector2(-4.10999, -284.5)
 
 [node name="Leaf" parent="." instance=ExtResource("36_gwjrb")]
-position = Vector2(-679.11, -239.5)
+position = Vector2(-145.11, -599.5)
 
 [node name="Burger" parent="." instance=ExtResource("43_qwi1b")]
 z_index = 1
-position = Vector2(796.89, 467.5)
+position = Vector2(1330.89, 107.5)
 rotation = -0.785397
 
 [node name="NavRegion" parent="." instance=ExtResource("44_pts8b")]
-position = Vector2(634.89, 15.5)
+position = Vector2(1168.89, -344.5)
 navigation_polygon = SubResource("NavigationPolygon_pxnfw")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(634.89, 15.5)
+position = Vector2(1168.89, -344.5)
 lock_rotation = true
 freeze = true
 freeze_mode = 1
