@@ -19,6 +19,7 @@ growth_value = 20.0
 restored_hunger = 8.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
 texture = ExtResource("2_oksbt")
