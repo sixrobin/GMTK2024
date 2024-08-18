@@ -1,4 +1,5 @@
 extends Node2D
+class_name Cursor
 
 var draggedObject: ObjectOfInterest = null
 @export var debug_object_spawner: ObjectSpawner
@@ -72,6 +73,10 @@ func _input(event: InputEvent) -> void:
 		self.tryCatchObject()
 	if event.is_action_released("StartDrag"):
 		self.tryReleaseObject()
+
+func _ready():
+	CursorSingleton.cursor = self
+	pass
 
 func _process(delta: float):
 	if draggedObject == null:

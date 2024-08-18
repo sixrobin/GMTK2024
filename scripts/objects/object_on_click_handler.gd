@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name ObjectOnClickHandler
 
 @export var parent: ObjectOfInterest = null
@@ -8,12 +8,15 @@ class_name ObjectOnClickHandler
 
 @export var object_spawner: ObjectSpawner = null
 @export var attraction_handler: AttractionHandler = null
+@export var explosion_handler: ExplosionHandler = null
 
 var current_click_count: int = 0
 
 func _ready() -> void:
-	if attraction_handler != null:
+	if attraction_handler:
 		attraction_handler.set_on_click_handler(self)
+	if explosion_handler:
+		explosion_handler.set_on_click_handler(self)
 
 func onClick():
 	current_click_count += 1
@@ -25,5 +28,7 @@ func onClick():
 func applyClickResult():
 	if attraction_handler:
 		attraction_handler.attract()
+	if explosion_handler:
+		explosion_handler.explode()
 	if object_spawner:
 		object_spawner.spawn_object(self.parent.global_position, self.parent.rotation, self.parent.get_parent())
