@@ -98,12 +98,10 @@ func interact(object: ObjectOfInterest):
 	$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.EATING)
 	object.before_apply()
 	
-	if object.interact_duration > 0:
-		var interaction_timer: Timer = Timer.new()
-		add_child(interaction_timer)
-		interaction_timer.timeout.connect(func(): on_interaction_end(object))
-		interaction_timer.timeout.connect(func(): interaction_timer.queue_free())
-		interaction_timer.start(object.interact_duration)
+	if object.interaction_timer:
+		add_child(object.interaction_timer)
+		object.interaction_timer.timeout.connect(func(): on_interaction_end(object))
+		object.interaction_timer.start()
 	else:
 		on_interaction_end(object)
 		
