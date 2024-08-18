@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="15_dfryj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 43.0465
+radius = 19.0263
 
 [node name="Cursor" type="Node2D" node_paths=PackedStringArray("debug_object_spawner", "self_food")]
 script = ExtResource("1_udoxx")
