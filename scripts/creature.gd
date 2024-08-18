@@ -8,7 +8,7 @@ signal hunger_modified(old_hunger: float, new_hunger: float)
 #@export var growth_meter_max: float = 100
 @export var growth_stages: Array[GrowthStage]
 @export var max_hunger: float = 100
-@export var hunger_drain: float = 1
+@export var hunger_drain: float = 2
 @export var hunger_drain_interval: float = 0.5
 @export var nav_agent: NavigationAgent2D = null
 @export var max_sleep: float = 100
