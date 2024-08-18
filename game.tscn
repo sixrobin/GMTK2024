@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bqbaaumqev5tn" path="res://prefabs/objects/other_objects_room/television.tscn" id="9_gm5vb"]
 [ext_resource type="PackedScene" uid="uid://c8oopuy4vxqkf" path="res://prefabs/environment/tamagotchi_background.tscn" id="10_kx7gb"]
 [ext_resource type="PackedScene" uid="uid://bhpyndspvoo28" path="res://prefabs/cursor.tscn" id="11_05pgy"]
-[ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="12_u6lta"]
-[ext_resource type="PackedScene" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
-[ext_resource type="PackedScene" uid="uid://1a380hv31a01" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
+[ext_resource type="PackedScene" uid="uid://bquv5rckqk4wj" path="res://prefabs/wall.tscn" id="12_u6lta"]
+[ext_resource type="PackedScene" uid="uid://bss616n6gsc8e" path="res://prefabs/hunger_gauge.tscn" id="13_jthj5"]
+[ext_resource type="PackedScene" path="res://prefabs/nav_regions/nav_region.tscn" id="13_yglgy"]
 
 [node name="Game" type="Node2D"]
 
