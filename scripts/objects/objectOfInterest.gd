@@ -30,6 +30,7 @@ func _ready() -> void:
 		interaction_timer = Timer.new()
 		interaction_timer.wait_time = interact_duration
 		interaction_timer.one_shot = true
+	ObjectManager.register_object(self)
 	set_attractive(attractive, priority)
 	if random_rotate_on_spawn:
 		self.global_rotation = deg_to_rad(randf_range(0, 360))
@@ -46,9 +47,9 @@ func set_attractive(value: bool, specific_priority: int):
 	current_attractive = value
 	current_priority = specific_priority
 	if current_attractive:
-		ObjectManager.register_object(self, current_priority)
+		ObjectManager.register_object_priority(self, current_priority)
 	else:
-		ObjectManager.unregister_object(self, current_priority)
+		ObjectManager.unregister_object_priority(self, current_priority)
 
 func before_apply():
 	self.linear_velocity = Vector2.ZERO
@@ -82,6 +83,7 @@ func destroy():
 
 func _notification(notification):
 	if notification == NOTIFICATION_PREDELETE:
+		ObjectManager.unregister_object(self)
 		set_attractive(false, current_priority)
 		if interaction_timer and !interaction_timer.is_stopped():
 			interaction_timer.stop()

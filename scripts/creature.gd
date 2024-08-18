@@ -57,7 +57,10 @@ func _process(delta: float):
 	if is_stunned or is_interacting:
 		return
 	if target_object == null:
-		target_object = ObjectManager.get_best_object()
+		if is_starving():
+			target_object = ObjectManager.get_any_random()
+		else:
+			target_object = ObjectManager.get_best_object()
 		if target_object != null:
 			is_walking = true
 			set_anim_walk_or_idle()
@@ -78,7 +81,7 @@ func _physics_process(_delta):
 	var next_path_position: Vector2 = self.nav_agent.get_next_path_position()
 	var force_direction: Vector2 = next_path_position - current_agent_position
 	force_direction = force_direction.normalized()
-	self.apply_impulse(force_direction * _delta * SMOOTH_SPEED * speed_boost)
+	self.apply_impulse(force_direction * _delta * SMOOTH_SPEED * speed_boost * get_additional_speed_starving())
 	
 	#Flip sprite in the direction of movement
 	if force_direction.x >0:
@@ -199,12 +202,21 @@ func on_grow_animation_over():
 	SceneManagerSingleton.instance.next_scene()
 
 func modify_hunger(hunger_value):
+	var old_starving = is_starving()
 	var old_hunger: float = hunger
 	hunger += hunger_value
 	hunger = clamp(hunger,0,max_hunger)
 	
 	if old_hunger - hunger != 0:
+		if old_starving != is_starving():
+			reset_target()
 		hunger_modified.emit(old_hunger,hunger)
+
+func is_starving():
+	return hunger <= 50
+
+func get_additional_speed_starving():
+	return 2 if is_starving() else 1
 
 func increase_sleep(sleep_value):
 	sleep_meter += sleep_value
