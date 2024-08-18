@@ -4,6 +4,9 @@ class_name Cursor
 var draggedObject: ObjectOfInterest = null
 @export var debug_object_spawner: ObjectSpawner
 @export var drag_force = 10
+@export var self_food: ObjectOfInterest = null
+
+@export var seen_as_food_threshold = 50
 
 func getObjectAtMousePosition() -> ObjectOfInterest:
 	var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
@@ -36,7 +39,7 @@ func tryReleaseObject():
 	
 	print("release " + draggedObject.name)
 	draggedObject = null
-	
+
 func tryClickObject() -> bool:
 	var obj = self.draggedObject
 	if obj == null:
@@ -57,13 +60,22 @@ func respawnCursor(screenPosition: Vector2):
 	self._teleportCursor(screenPosition)
 
 func _hideCursor() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _showCursor() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _teleportCursor(screenPosition: Vector2) -> void:
 	Input.warp_mouse(screenPosition)
+
+func on_hunger_modified(old_hunger: float, new_hunger: float):
+	if old_hunger > seen_as_food_threshold and new_hunger <= seen_as_food_threshold:
+		self_food.set_attractive(true, self_food.current_priority)
+		self_food.eatable = true
+	elif old_hunger <= seen_as_food_threshold and new_hunger > seen_as_food_threshold:
+		self_food.set_attractive(false, self_food.current_priority)
+		self_food.eatable = false
+	pass
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("SpawnObject"):
@@ -77,9 +89,12 @@ func _input(event: InputEvent) -> void:
 
 func _ready():
 	CursorSingleton.cursor = self
+	CreatureSingleton.creature.hunger_modified.connect(on_hunger_modified)
 	pass
 
 func _process(delta: float):
+	self.global_position = get_global_mouse_position()
+	
 	if draggedObject == null:
 		return
 	
