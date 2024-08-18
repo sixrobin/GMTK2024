@@ -74,7 +74,6 @@ position = Vector2(3005.89, -55.5)
 
 [node name="Desk" parent="." instance=ExtResource("7_2r5o3")]
 position = Vector2(1284.89, 67.5)
-rotation = -0.785397
 
 [node name="Gaming chair" parent="." instance=ExtResource("8_bkku5")]
 position = Vector2(1554.89, 31.5)

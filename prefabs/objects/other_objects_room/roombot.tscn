@@ -9,7 +9,7 @@ radius = 94.023
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 119.817
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+[node name="Object" type="RigidBody2D"]
 rotation = -0.769262
 mass = 0.5
 linear_damp = 5.0
@@ -20,7 +20,6 @@ attractive = false
 interact_duration = 1.0
 growth_value = 30.0
 restored_hunger = 25.0
-on_click_handler = NodePath("")
 random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
