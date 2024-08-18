@@ -309,8 +309,7 @@ wait_time = 0.872
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rdo1n")
-animation = &"Size3_Growing"
-frame_progress = 0.56852
+animation = &"Size1_Idle"
 script = ExtResource("45_oyrkc")
 
 [node name="FrameTimer" type="Timer" parent="AnimatedSprite2D"]

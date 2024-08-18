@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_j8a32")
 meter_to_next_stage = 1000.0
-scale_factor = 15.0
+scale_factor = 7.0

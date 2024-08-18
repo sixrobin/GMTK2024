@@ -43,6 +43,9 @@ func _ready() -> void:
 	
 	# hook on priority change
 	ObjectManager.new_highest_priority.connect(func(a, b): reset_target())
+	
+	#mettre la bonne size au départ
+	change_creature_scale(growth_stages[current_growth_stage].scale_factor)
 
 func _process(delta: float):
 	if is_stunned or is_interacting:
@@ -69,6 +72,7 @@ func _physics_process(_delta):
 # INTERACT
 func interact(object: ObjectOfInterest):
 	is_interacting = true
+	$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.EATING)
 	object.before_apply()
 	if object.interact_duration > 0:
 		var interaction_timer: Timer = Timer.new()
@@ -81,6 +85,7 @@ func interact(object: ObjectOfInterest):
 		
 func on_interaction_end(object: ObjectOfInterest):
 	is_interacting = false
+	$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.IDLE)
 	object.apply()
 	target_object = null
 
@@ -127,7 +132,7 @@ func grow(growth_value: int):
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		current_growth_stage += 1
 		change_creature_scale(growth_stages[current_growth_stage].scale_factor)
-		#TODO updater le sprite
+		$AnimatedSprite2D.change_size(current_growth_stage+1)
 	
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		self.grow(0)

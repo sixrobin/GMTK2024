@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_srtto")
 meter_to_next_stage = 500.0
-scale_factor = 6.0
+scale_factor = 5.0
