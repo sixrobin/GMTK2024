@@ -16,6 +16,8 @@ class_name ObjectOfInterest
 #ON CLICK
 @export var on_click_handler : ObjectOnClickHandler
 
+@export var sprite: Sprite2D
+
 var is_being_interacted: bool = false
 var current_attractive: bool = false
 var current_priority: int = 0
