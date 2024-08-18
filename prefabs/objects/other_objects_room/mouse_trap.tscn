@@ -19,6 +19,7 @@ script = ExtResource("1_orkjc")
 priority = 10
 interact_duration = 0.25
 stun_resource = ExtResource("2_mymuc")
+growth_value = 10.0
 random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

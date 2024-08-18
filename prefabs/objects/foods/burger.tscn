@@ -16,7 +16,7 @@ lock_rotation = true
 linear_damp = 5.0
 script = ExtResource("1_pbnk8")
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 30.0
 restored_hunger = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b80g2knt0cwde"]
+[gd_scene load_steps=15 format=3 uid="uid://bu2578tc8nejm"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_0rcxj"]
 [ext_resource type="Texture2D" uid="uid://bmkkdugbx3h6b" path="res://textures/environment/Fridge.png" id="2_cw6ig"]
@@ -27,7 +27,7 @@ script = ExtResource("1_0rcxj")
 priority = 10
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 60.0
 restored_hunger = 50.0
 on_click_handler = NodePath("ClickHandler")
 sprite = NodePath("Sprite2D")

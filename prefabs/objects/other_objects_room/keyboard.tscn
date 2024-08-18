@@ -15,7 +15,7 @@ script = ExtResource("1_6hxka")
 priority = 10
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 10.0
 restored_hunger = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
