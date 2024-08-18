@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2dfvd20bnlri"
-path="res://.godot/imported/Fridge_Open_Empty.png-05ace4478f0c5026ee71fd3cf8564d5f.ctex"
+uid="uid://buugkjvvokw6r"
+path="res://.godot/imported/Tamagotchi_ProgressBar_Progress.png-d18ded35d0465a9f59f9bc416ffaf9e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/environment/Fridge_Open_Empty.png"
-dest_files=["res://.godot/imported/Fridge_Open_Empty.png-05ace4478f0c5026ee71fd3cf8564d5f.ctex"]
+source_file="res://textures/UI/ProgresBar/Tamagotchi_ProgressBar_Progress.png"
+dest_files=["res://.godot/imported/Tamagotchi_ProgressBar_Progress.png-d18ded35d0465a9f59f9bc416ffaf9e6.ctex"]
 
 [params]
 

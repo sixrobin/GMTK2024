@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv6rhga5thynm"
-path="res://.godot/imported/Tamagotchi_Icon_Sport.png-701f328b7ff9689b0b1ce03557aa70f1.ctex"
+uid="uid://c6muwgick2y28"
+path="res://.godot/imported/Tamagotchi_Icon_Medication.png-b2d799ee98be9e926c4ef8bb5cee0695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/UI/Tamagotchi_Icon_Sport.png"
-dest_files=["res://.godot/imported/Tamagotchi_Icon_Sport.png-701f328b7ff9689b0b1ce03557aa70f1.ctex"]
+source_file="res://textures/UI/Tamagotchi_Icons/Tamagotchi_Icon_Medication.png"
+dest_files=["res://.godot/imported/Tamagotchi_Icon_Medication.png-b2d799ee98be9e926c4ef8bb5cee0695.ctex"]
 
 [params]
 

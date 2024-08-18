@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6muwgick2y28"
-path="res://.godot/imported/Tamagotchi_Icon_Medication.png-3978b59a9ec97c2ee0506c3a2147834b.ctex"
+uid="uid://bwas2sfdfe8ps"
+path="res://.godot/imported/Tamagotchi_ProgressBar_Over.png-a33be7646da2bf8d942eac418286c21a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/UI/Tamagotchi_Icon_Medication.png"
-dest_files=["res://.godot/imported/Tamagotchi_Icon_Medication.png-3978b59a9ec97c2ee0506c3a2147834b.ctex"]
+source_file="res://textures/UI/ProgresBar/Tamagotchi_ProgressBar_Over.png"
+dest_files=["res://.godot/imported/Tamagotchi_ProgressBar_Over.png-a33be7646da2bf8d942eac418286c21a.ctex"]
 
 [params]
 

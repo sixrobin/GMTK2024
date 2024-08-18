@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpkjl0jejj4r0"]
+[gd_scene load_steps=5 format=3 uid="uid://ciofi5avvq48e"]
 
-[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_32v3t"]
-[ext_resource type="Texture2D" uid="uid://bhu7ssde6f2dy" path="res://textures/environment/Banana.png" id="3_r6se0"]
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_jci00"]
+[ext_resource type="Texture2D" uid="uid://d4lipe5bjvfsu" path="res://textures/environment/Bananas.png" id="2_eg4yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(82.9825, 19.9706)
@@ -13,14 +13,14 @@ radius = 43.0465
 mass = 0.1
 linear_damp = 5.0
 angular_damp = 5.0
-script = ExtResource("1_32v3t")
+script = ExtResource("1_jci00")
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
-texture = ExtResource("3_r6se0")
+texture = ExtResource("2_eg4yb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 13)

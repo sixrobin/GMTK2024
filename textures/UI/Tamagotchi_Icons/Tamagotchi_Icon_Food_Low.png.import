@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df3mf6k45vm57"
-path="res://.godot/imported/Tamagotchi_Icon_Food_Low.png-3f5a9d8eaf535b61a3a16ffa9ca9038d.ctex"
+path="res://.godot/imported/Tamagotchi_Icon_Food_Low.png-34d45b44ce2ac54ada9e03bdb4b30ded.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/UI/Tamagotchi_Icon_Food_Low.png"
-dest_files=["res://.godot/imported/Tamagotchi_Icon_Food_Low.png-3f5a9d8eaf535b61a3a16ffa9ca9038d.ctex"]
+source_file="res://textures/UI/Tamagotchi_Icons/Tamagotchi_Icon_Food_Low.png"
+dest_files=["res://.godot/imported/Tamagotchi_Icon_Food_Low.png-34d45b44ce2ac54ada9e03bdb4b30ded.ctex"]
 
 [params]
 
