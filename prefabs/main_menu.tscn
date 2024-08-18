@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://jnq8dy3rmwmv"]
+
+[ext_resource type="PackedScene" uid="uid://jwxeec00u57g" path="res://prefabs/leaderboard.tscn" id="1_hrmlc"]
+[ext_resource type="Script" path="res://scripts/play_button.gd" id="2_dqsw0"]
+[ext_resource type="PackedScene" uid="uid://cw1e63d2mpduj" path="res://game.tscn" id="3_3kb20"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Leaderboard" parent="UI" instance=ExtResource("1_hrmlc")]
+layout_mode = 1
+
+[node name="Button" type="Button" parent="UI" node_paths=PackedStringArray("ui")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -16.5
+offset_right = 39.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+script = ExtResource("2_dqsw0")
+ui = NodePath("..")
+game_scene = ExtResource("3_3kb20")

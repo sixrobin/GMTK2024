@@ -13,11 +13,18 @@ func _ready() -> void:
 func next_scene():
 	if scene_index >= scenes.size():
 		return
-	current_scene.queue_free()
+		
 	scene_index += 1
 	load_current_scene()
 	
 func load_current_scene():
-	current_scene = scenes[scene_index].instantiate()
+	var previous_scene = current_scene
+	
+	current_scene = scenes[scene_index].instantiate() as Node2D
+	
+	if scene_index > 1:
+		current_scene.visible = false
+		$LevelTransition.transition(previous_scene, current_scene)
+	
 	self.add_child(current_scene)
 	current_scene.global_position = CreatureSingleton.creature.global_position
