@@ -185,19 +185,21 @@ func grow(growth_value: int):
 		current_growth_stage += 1
 		if current_growth_stage == 3:
 			reset_target()
-			_stun(StunResource.E_stun_mode.NONE, 0.5)
+			is_stunned = true
 			$AnimatedSprite2D.play_animation("Size3_Growing")
 			$AnimatedSprite2D.loop = false
 			$AnimatedSprite2D.lock_anim = true
 			$AnimatedSprite2D.animation_over.connect(self.on_grow_animation_over)
 		elif not SceneManagerSingleton.scene_loading:
 			change_creature_scale(growth_stages[current_growth_stage].scale_factor)
+			print(clampi(current_growth_stage+1,0,4))
 			$AnimatedSprite2D.change_size(current_growth_stage+1)
 	
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		self.grow(0)
 
 func on_grow_animation_over():
+	is_stunned = false
 	$AnimatedSprite2D.animation_over.disconnect(self.on_grow_animation_over)
 	SceneManagerSingleton.instance.next_scene()
 
@@ -209,6 +211,7 @@ func modify_hunger(hunger_value):
 	
 	if old_hunger - hunger != 0:
 		if old_starving != is_starving():
+			print("starving mode changed!")
 			reset_target()
 		hunger_modified.emit(old_hunger,hunger)
 

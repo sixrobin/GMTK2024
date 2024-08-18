@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgmlnf77gptqt"]
+[gd_scene load_steps=5 format=3 uid="uid://33d84wy1ecy7"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_q32om"]
 [ext_resource type="Texture2D" uid="uid://yr2i0ndvfftv" path="res://textures/environment/Chocolate.png" id="2_4y71q"]
@@ -16,10 +16,11 @@ linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_q32om")
 interact_duration = 1.0
-growth_value = 25.0
-restored_hunger = 50.0
+growth_value = 30.0
+restored_hunger = 25.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
 texture = ExtResource("2_4y71q")

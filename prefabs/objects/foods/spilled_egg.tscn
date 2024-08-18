@@ -18,11 +18,12 @@ angular_damp = 5.0
 script = ExtResource("1_ch5be")
 priority = 10
 interact_duration = 1.0
-growth_value = 25.0
-restored_hunger = 50.0
+growth_value = 40.0
+restored_hunger = 33.0
 speed_modifier = ExtResource("2_rpicc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.785398
 texture = ExtResource("3_7gtqp")

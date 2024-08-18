@@ -15,10 +15,11 @@ linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_yhf2o")
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 30.0
 restored_hunger = 25.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-1.19209e-07, 0)
 rotation = 0.104326
 texture = ExtResource("2_70al6")

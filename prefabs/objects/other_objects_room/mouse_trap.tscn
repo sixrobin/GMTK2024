@@ -16,9 +16,11 @@ mass = 0.1
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_orkjc")
-priority = 10
+priority = 0
 interact_duration = 0.25
 stun_resource = ExtResource("2_mymuc")
+growth_value = 10.0
+restored_hunger = 8.0
 random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

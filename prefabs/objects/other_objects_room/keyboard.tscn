@@ -12,11 +12,11 @@ size = Vector2(59.9599, 153.581)
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_6hxka")
-priority = 10
+priority = -1
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
-restored_hunger = 50.0
+growth_value = 10.0
+restored_hunger = 8.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true

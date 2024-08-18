@@ -6,18 +6,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
 size = Vector2(331.932, 244.065)
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+[node name="Object" type="RigidBody2D"]
 rotation = -0.769262
+collision_layer = 2
+collision_mask = 2
 lock_rotation = true
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_et2gu")
-priority = 10
+priority = -1
 attractive = false
 interact_duration = 1.0
-growth_value = 25.0
+growth_value = 60.0
 restored_hunger = 50.0
-on_click_handler = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)

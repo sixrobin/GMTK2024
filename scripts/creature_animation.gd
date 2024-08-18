@@ -41,7 +41,7 @@ func _on_frame_timer_timeout() -> void:
 
 #Gestion de l'anim en fx de la size et de son "activité"
 func change_size(new_size: int):
-	size = new_size
+	size = min(new_size, 4) #ici 4 = numéro de la "dernière" anim (actuellement, size4)
 	update_anim()
 
 func change_anim_type(new_type: E_animation_type):
