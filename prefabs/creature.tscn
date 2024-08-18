@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://b2jdgkrrtq7gp"]
+[gd_scene load_steps=97 format=3 uid="uid://b2jdgkrrtq7gp"]
 
 [ext_resource type="Script" path="res://scripts/creature.gd" id="1_qoasn"]
 [ext_resource type="Script" path="res://scripts/utils/growth_stage.gd" id="2_g73dj"]
@@ -92,6 +92,7 @@
 [ext_resource type="Texture2D" uid="uid://bt6vdadacw2p2" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_09.png" id="89_fs8fb"]
 [ext_resource type="Texture2D" uid="uid://qgbs2mv6bhin" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_10.png" id="90_orlo7"]
 [ext_resource type="Texture2D" uid="uid://clt561k5wx43q" path="res://textures/creature/Creature_Size04_Walk/Creature_Size04_Walk_11.png" id="91_4fotb"]
+[ext_resource type="PackedScene" uid="uid://capdple7xq7u0" path="res://prefabs/status_icon.tscn" id="93_0owaf"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kmpkd"]
 
@@ -431,7 +432,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent")]
+[node name="Creature" type="RigidBody2D" node_paths=PackedStringArray("stun_timer", "nav_agent", "status_icon")]
 gravity_scale = 0.0
 lock_rotation = true
 linear_damp = 10.0
@@ -440,6 +441,7 @@ SMOOTH_SPEED = 1000.0
 stun_timer = NodePath("Timer")
 growth_stages = Array[ExtResource("2_g73dj")]([ExtResource("3_dd8mf"), ExtResource("4_34unq"), ExtResource("5_0omj0"), ExtResource("6_0kc5i")])
 nav_agent = NodePath("NavigationAgent2D")
+status_icon = NodePath("StatusIcon")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 visible = false
@@ -463,6 +465,10 @@ script = ExtResource("45_oyrkc")
 [node name="FrameTimer" type="Timer" parent="AnimatedSprite2D"]
 wait_time = 0.001
 autostart = true
+
+[node name="StatusIcon" parent="." instance=ExtResource("93_0owaf")]
+position = Vector2(0, -48)
+scale = Vector2(0.28, 0.28)
 
 [connection signal="timeout" from="Timer" to="." method="_on_stun_timer_timeout"]
 [connection signal="timeout" from="AnimatedSprite2D/FrameTimer" to="AnimatedSprite2D" method="_on_frame_timer_timeout"]

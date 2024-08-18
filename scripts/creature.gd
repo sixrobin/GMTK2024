@@ -15,6 +15,7 @@ signal hunger_modified(old_hunger: float, new_hunger: float)
 @export var sleep_increase: float = 1
 @export var sleep_increase_interval: float = 0.5
 @export var sleep_duration: float = 5
+@export var status_icon: CreatureStatusIcon = null
 
 var target_object: ObjectOfInterest = null
 var is_interacting: bool = false
@@ -127,6 +128,10 @@ func _stun(mode: StunResource.E_stun_mode, duration: float) -> Timer:
 		_:
 			print("stun type is not handled")
 	stun_timer.start(duration)
+	
+	if status_icon:
+		status_icon.on_stun(mode)
+	
 	return stun_timer
 
 func eat_cursor(cursor: Cursor):
@@ -140,15 +145,24 @@ func speedBoost(speed_modifier: SpeedModifier):
 	add_child(speed_timer)
 	speed_timer.timeout.connect(func():endSpeedBoost(speed_timer, speed_modifier))
 	speed_timer.start(speed_modifier.duration)
+	
+	if status_icon:
+		status_icon.on_speed_boost_modified(self.speed_boost)
 
 func endSpeedBoost(timer: Timer, speed_modifier: SpeedModifier):
 	speed_boost = 1
 	timer.queue_free()
+	
+	if status_icon:
+		status_icon.on_speed_boost_modified(self.speed_boost)
 
 func _on_stun_timer_timeout() -> void:
 	sleep_increase_timer.paused = false
 	is_stunned = false
 	set_anim_walk_or_idle()
+	
+	if status_icon:
+		status_icon.on_stun(StunResource.E_stun_mode.NONE)
 
 func grow(growth_value: int):
 	# move in poop method
@@ -193,8 +207,8 @@ func change_creature_scale(scale):
 	$CollisionShape2D.scale.y = scale
 
 func set_anim_walk_or_idle():
-	if  is_interacting == false and is_stunned == false:
-		if is_walking == true and current_growth_stage >= 3:
+	if not is_interacting and not is_stunned:
+		if is_walking and current_growth_stage >= 3:
 			$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.WALK)
 		else:
 			$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.IDLE)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=8 format=3 uid="uid://capdple7xq7u0"]
+
+[ext_resource type="Script" path="res://scripts/creature_status_icon.gd" id="1_cyliy"]
+[ext_resource type="Texture2D" uid="uid://cfie5c6kocgl5" path="res://textures/UI/IconStatus/IconStatus_Anger.png" id="2_m6tpn"]
+[ext_resource type="Texture2D" uid="uid://du26lpn5rq0gr" path="res://textures/UI/IconStatus/IconStatus_Fear.png" id="3_wbdvw"]
+[ext_resource type="Texture2D" uid="uid://bs7pvs8u2vs7" path="res://textures/UI/IconStatus/IconStatus_Slow.png" id="4_uaax8"]
+[ext_resource type="Texture2D" uid="uid://v7ay16psy4ys" path="res://textures/UI/IconStatus/IconStatus_Sleep.png" id="5_qwpbk"]
+[ext_resource type="Texture2D" uid="uid://c7yncbglkj5f2" path="res://textures/UI/IconStatus/IconStatus_Stun.png" id="6_3c8ib"]
+[ext_resource type="Texture2D" uid="uid://djqad04rrlqct" path="res://textures/UI/IconStatus/IconStatus_Attracted.png" id="7_rxx7i"]
+
+[node name="StatusIcon" type="Sprite2D"]
+texture = ExtResource("2_m6tpn")
+script = ExtResource("1_cyliy")
+icon_fear = ExtResource("3_wbdvw")
+icon_slow = ExtResource("4_uaax8")
+icon_anger = ExtResource("2_m6tpn")
+icon_sleep = ExtResource("5_qwpbk")
+icon_stun = ExtResource("6_3c8ib")
+icon_attracted = ExtResource("7_rxx7i")
