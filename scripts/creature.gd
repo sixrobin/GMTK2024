@@ -49,6 +49,8 @@ func _ready() -> void:
 	
 	#mettre la bonne size au départ
 	change_creature_scale(growth_stages[current_growth_stage].scale_factor)
+	
+	SceneManagerSingleton.scene_load_transition.connect(on_scene_loaded)
 
 func _process(delta: float):
 	if is_stunned or is_interacting:
@@ -183,8 +185,10 @@ func grow(growth_value: int):
 			SceneManagerSingleton.instance.next_scene()
 			reset_target()
 			_stun(StunResource.E_stun_mode.NONE, 0.5)
-		change_creature_scale(growth_stages[current_growth_stage].scale_factor)
-		$AnimatedSprite2D.change_size(current_growth_stage+1)
+		
+		if not SceneManagerSingleton.scene_loading:
+			change_creature_scale(growth_stages[current_growth_stage].scale_factor)
+			$AnimatedSprite2D.change_size(current_growth_stage+1)
 	
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		self.grow(0)
@@ -216,3 +220,7 @@ func set_anim_walk_or_idle():
 			$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.WALK)
 		else:
 			$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.IDLE)
+
+func on_scene_loaded():
+	change_creature_scale(growth_stages[current_growth_stage].scale_factor)
+	$AnimatedSprite2D.change_size(current_growth_stage+1)

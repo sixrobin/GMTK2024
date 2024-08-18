@@ -9,6 +9,8 @@ extends Node2D
 
 
 func transition(from: Node2D, to: Node2D):
+	SceneManagerSingleton.scene_loading = true
+	
 	self._radialBlur.visible = true
 	self._whiteScreen.visible = true
 	var half_duration := self._duration * 0.5
@@ -16,6 +18,8 @@ func transition(from: Node2D, to: Node2D):
 	var tween_in = create_tween()
 	tween_in.tween_method(_tween_step_in, 0.0, 1.0, half_duration).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN)
 	await tween_in.finished
+	
+	SceneManagerSingleton.scene_load_transition.emit()
 	
 	from.queue_free()
 	to.visible = true
@@ -27,6 +31,8 @@ func transition(from: Node2D, to: Node2D):
 	tween_out.tween_callback(func(): self._radialBlur.visible = false)
 	tween_out.tween_callback(func(): self._whiteScreen.visible = false)
 	await tween_out.finished
+	
+	SceneManagerSingleton.scene_loading = false
 
 
 func _tween_step_in(value: float):
