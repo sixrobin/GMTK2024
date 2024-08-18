@@ -1,6 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://doutoksvepjsi"]
+[gd_scene load_steps=42 format=3 uid="uid://doutoksvepjsi"]
 
-[ext_resource type="PackedScene" uid="uid://cxib4i1ge2esi" path="res://prefabs/rooms_background.tscn" id="1_jteum"]
+[ext_resource type="PackedScene" path="res://prefabs/rooms_background.tscn" id="1_jteum"]
 [ext_resource type="PackedScene" uid="uid://cfg5e01751w0k" path="res://prefabs/objects/other_objects_room/wardrobe.tscn" id="2_7jjnv"]
 [ext_resource type="PackedScene" uid="uid://br1211h5s8ow" path="res://prefabs/objects/other_objects_room/bed.tscn" id="3_jjj1r"]
 [ext_resource type="PackedScene" uid="uid://6ulbh1oip77i" path="res://prefabs/objects/other_objects_room/bedside_table.tscn" id="4_002dc"]
@@ -37,10 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://ijp2fbynh0fq" path="res://prefabs/objects/foods/leaf.tscn" id="36_gwjrb"]
 [ext_resource type="PackedScene" uid="uid://bqvmknwbr21ya" path="res://prefabs/objects/other_objects_room/chicken_toy.tscn" id="37_k2gn7"]
 [ext_resource type="PackedScene" uid="uid://bo7fmssmk8wyf" path="res://prefabs/objects/other_objects_room/mouse_trap.tscn" id="38_g6x3m"]
-[ext_resource type="PackedScene" uid="uid://33d84wy1ecy7" path="res://prefabs/objects/foods/chocolate.tscn" id="39_4bmu3"]
-[ext_resource type="PackedScene" uid="uid://ctmlhpgk4j6wm" path="res://prefabs/objects/foods/spilled_egg.tscn" id="40_f2tm0"]
 [ext_resource type="PackedScene" uid="uid://ciofi5avvq48e" path="res://prefabs/objects/foods/bananas.tscn" id="41_3dgs0"]
-[ext_resource type="PackedScene" uid="uid://c2aa7xpvryk3f" path="res://prefabs/objects/foods/cake.tscn" id="42_j2e8k"]
 [ext_resource type="PackedScene" uid="uid://byedv7uirqp22" path="res://prefabs/objects/foods/burger.tscn" id="43_qwi1b"]
 [ext_resource type="PackedScene" uid="uid://1a380hv31a01" path="res://prefabs/nav_regions/nav_region.tscn" id="44_pts8b"]
 
@@ -235,21 +232,9 @@ rotation = -0.261799
 [node name="Mouse trap" parent="." instance=ExtResource("38_g6x3m")]
 position = Vector2(2857.89, 229.5)
 
-[node name="Chocolate bar" parent="." instance=ExtResource("39_4bmu3")]
-z_index = 1
-position = Vector2(598.89, 127.5)
-rotation = -0.261799
-
-[node name="Spill egg" parent="." instance=ExtResource("40_f2tm0")]
-position = Vector2(175.89, -582.5)
-
 [node name="Bananas" parent="." instance=ExtResource("41_3dgs0")]
 z_index = 1
 position = Vector2(-665.11, -656.5)
-
-[node name="Cake" parent="." instance=ExtResource("42_j2e8k")]
-z_index = 1
-position = Vector2(-4.10999, -284.5)
 
 [node name="Leaf" parent="." instance=ExtResource("36_gwjrb")]
 position = Vector2(-145.11, -599.5)
