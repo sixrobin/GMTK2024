@@ -182,16 +182,22 @@ func grow(growth_value: int):
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		current_growth_stage += 1
 		if current_growth_stage == 3:
-			SceneManagerSingleton.instance.next_scene()
 			reset_target()
 			_stun(StunResource.E_stun_mode.NONE, 0.5)
-		
-		if not SceneManagerSingleton.scene_loading:
+			$AnimatedSprite2D.play_animation("Size3_Growing")
+			$AnimatedSprite2D.loop = false
+			$AnimatedSprite2D.lock_anim = true
+			$AnimatedSprite2D.animation_over.connect(self.on_grow_animation_over)
+		elif not SceneManagerSingleton.scene_loading:
 			change_creature_scale(growth_stages[current_growth_stage].scale_factor)
 			$AnimatedSprite2D.change_size(current_growth_stage+1)
 	
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
 		self.grow(0)
+
+func on_grow_animation_over():
+	$AnimatedSprite2D.animation_over.disconnect(self.on_grow_animation_over)
+	SceneManagerSingleton.instance.next_scene()
 
 func modify_hunger(hunger_value):
 	var old_hunger: float = hunger
@@ -222,6 +228,9 @@ func set_anim_walk_or_idle():
 			$AnimatedSprite2D.change_anim_type($AnimatedSprite2D.E_animation_type.IDLE)
 
 func on_scene_loaded():
+	$AnimatedSprite2D.loop = true
+	$AnimatedSprite2D.lock_anim = false
+	
 	change_creature_scale(growth_stages[current_growth_stage].scale_factor)
 	$AnimatedSprite2D.change_size(current_growth_stage+1)
 	self.freeze = false

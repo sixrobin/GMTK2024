@@ -1,10 +1,13 @@
 class_name CreatureAnimation
 extends AnimatedSprite2D
 
+signal animation_over
+
 @export var frame_rate: int = 6
 
 var next_animation: String = ""
 var loop: bool = true
+var lock_anim: bool = false
 
 var size: int = 1
 enum E_animation_type {IDLE, HUNGRY, EATING, WALK}
@@ -14,7 +17,9 @@ func _ready():
 	$FrameTimer.wait_time = 1.0 / self.frame_rate
 	
 func play_animation(name: String, next_name: String = ""):
+	print(name)
 	self.animation = name
+	self.frame = 0
 	self.set_next_animation(next_name)
 	
 func set_next_animation(name: String):
@@ -31,6 +36,8 @@ func _on_frame_timer_timeout() -> void:
 		
 		if self.loop:
 			self.frame = 0
+		else:
+			self.animation_over.emit()
 
 #Gestion de l'anim en fx de la size et de son "activité"
 func change_size(new_size: int):
@@ -42,6 +49,9 @@ func change_anim_type(new_type: E_animation_type):
 	update_anim()
 
 func update_anim():
+	if self.lock_anim:
+		return
+		
 	match animation_type:
 		E_animation_type.IDLE:
 			self.play_animation("Size%s_Idle" % [size])
