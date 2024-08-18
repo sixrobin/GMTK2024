@@ -17,7 +17,7 @@ func getObjectAtMousePosition() -> ObjectOfInterest:
 	for collision in result:
 		if collision.has("collider"):
 			var object: ObjectOfInterest = collision.collider as ObjectOfInterest
-			if object != null and !object.is_being_interacted:
+			if object != null and !object.is_being_interacted and !object.freeze:
 				return object
 	
 	return null

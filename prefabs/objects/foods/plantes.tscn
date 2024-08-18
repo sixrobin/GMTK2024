@@ -21,7 +21,7 @@ linear_damp = 5.0
 script = ExtResource("1_2dc0o")
 interact_duration = 1.0
 growth_value = 30.0
-restored_hunger = 10.0
+restored_hunger = 25.0
 on_click_handler = NodePath("ClickHandler")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
