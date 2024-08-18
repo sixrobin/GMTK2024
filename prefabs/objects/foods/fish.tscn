@@ -3,11 +3,12 @@
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_w8jxp"]
 [ext_resource type="Texture2D" uid="uid://cwqbud0tkclv3" path="res://textures/environment/Fish_01.png" id="2_rojrc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
-size = Vector2(29.6985, 16.7028)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qk4xh"]
+height = 47.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
-radius = 24.0208
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w511p"]
+radius = 9.24368
+height = 63.6496
 
 [node name="Object" type="RigidBody2D"]
 mass = 0.05
@@ -17,20 +18,23 @@ script = ExtResource("1_w8jxp")
 interact_duration = 1.0
 growth_value = 25.0
 restored_hunger = 50.0
+random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, 0)
-rotation = 0.785398
 texture = ExtResource("2_rojrc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.59467, 0.594669)
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_kfbe5")
+position = Vector2(0.5, 3)
+rotation = 1.31249
+shape = SubResource("CapsuleShape2D_qk4xh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_702al")
+position = Vector2(1, 3)
+rotation = 1.309
+scale = Vector2(1.99292, 1)
+shape = SubResource("CapsuleShape2D_w511p")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
