@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://doutoksvepjsi"]
 
-[ext_resource type="PackedScene" path="res://prefabs/rooms_background.tscn" id="1_jteum"]
+[ext_resource type="PackedScene" uid="uid://cxib4i1ge2esi" path="res://prefabs/rooms_background.tscn" id="1_jteum"]
 [ext_resource type="PackedScene" uid="uid://cfg5e01751w0k" path="res://prefabs/objects/other_objects_room/wardrobe.tscn" id="2_7jjnv"]
 [ext_resource type="PackedScene" uid="uid://br1211h5s8ow" path="res://prefabs/objects/other_objects_room/bed.tscn" id="3_jjj1r"]
 [ext_resource type="PackedScene" uid="uid://6ulbh1oip77i" path="res://prefabs/objects/other_objects_room/bedside_table.tscn" id="4_002dc"]
@@ -255,5 +255,5 @@ freeze_mode = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(-1951, -102, -2307, -93, -2302, 678, -17, 691, -16, -192, 15, -195, 17, 690, 1909, 689, 1916, -191, 759, -182, 754, -687, -1923, -689, -1922, 407, -1949, 409)
+polygon = PackedVector2Array(-1951, -102, -2307, -93, -2302, 678, -17, 691, -16, -192, 15, -195, 17, 690, 1909, 689, 1916, -191, 759, -182, 760, -543.5, -1922, -563.5, -1922, 407, -1949, 409)
 one_way_collision_margin = 0.0
