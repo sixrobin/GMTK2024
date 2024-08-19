@@ -8,7 +8,7 @@ var draggedObject: ObjectOfInterest = null
 
 @export var seen_as_food_threshold = 50
 
-func getObjectAtMousePosition() -> ObjectOfInterest:
+func getObjectAtMousePosition(include_locked: bool) -> ObjectOfInterest:
 	var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
 	query.position = get_global_mouse_position()
 	query.collide_with_areas = true
@@ -17,13 +17,13 @@ func getObjectAtMousePosition() -> ObjectOfInterest:
 	for collision in result:
 		if collision.has("collider"):
 			var object: ObjectOfInterest = collision.collider as ObjectOfInterest
-			if object != null and !object.is_being_interacted and !object.freeze:
+			if object != null and !object.is_being_interacted and (include_locked or !object.freeze):
 				return object
 	
 	return null
 
 func tryCatchObject() -> bool:
-	var obj = self.getObjectAtMousePosition()
+	var obj = self.getObjectAtMousePosition(false)
 	if obj:
 		self.catchObject(obj)
 		return true
@@ -43,7 +43,7 @@ func tryReleaseObject():
 func tryClickObject() -> bool:
 	var obj = self.draggedObject
 	if obj == null:
-		obj = self.getObjectAtMousePosition()
+		obj = self.getObjectAtMousePosition(true)
 	if obj:
 		self.clickObject(obj)
 		return true
