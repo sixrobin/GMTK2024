@@ -12,7 +12,10 @@ func unregister_object(object: ObjectOfInterest):
 	all_objects.erase(object)
 
 func register_object_priority(object: ObjectOfInterest, priority: int):
-	dictionary.get_or_add(priority, []).append(object)
+	var array = dictionary.get_or_add(priority, [])
+	if array.has(object):
+		return
+	array.append(object)
 	refresh_highest_priority()
 	
 func unregister_object_priority(object: ObjectOfInterest, priority: int):

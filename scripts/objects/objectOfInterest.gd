@@ -34,6 +34,7 @@ func _ready() -> void:
 		interaction_timer.one_shot = true
 	ObjectManager.register_object(self)
 	current_priority = priority
+	current_attractive = attractive
 	if !is_on_furniture():
 		set_attractive(attractive, priority)
 	if collision_check_timer:
@@ -51,6 +52,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.interact(self)
 
 func on_collision_check_timeout():
+	if !current_attractive:
+		return
 	var check = self.is_on_furniture()
 	if check == last_collision_check:
 		return
@@ -71,8 +74,6 @@ func is_on_furniture() -> bool:
 	return false
 
 func set_attractive(value: bool, specific_priority: int):
-	if current_attractive == value:
-		return
 	current_attractive = value
 	current_priority = specific_priority
 	if current_attractive:
@@ -117,3 +118,5 @@ func _notification(notification):
 		if interaction_timer and !interaction_timer.is_stopped():
 			interaction_timer.stop()
 			interaction_timer.timeout.emit()
+		if collision_check_timer:
+			collision_check_timer.stop()
