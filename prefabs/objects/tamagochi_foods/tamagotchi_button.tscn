@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://nirkjdaue7sk"]
+
+[ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_35n5i"]
+[ext_resource type="Texture2D" uid="uid://b2ueu10iy8x1l" path="res://textures/UI/Tamagotchi_Icons/Tamagotchi_Icon_GiveFood.png" id="2_wemeq"]
+[ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_u3iwr"]
+[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_8f1hu"]
+[ext_resource type="PackedScene" uid="uid://cjecsmg61pqqo" path="res://prefabs/objects/tamagochi_foods/tamagotchi_burger.tscn" id="5_nd2ue"]
+[ext_resource type="PackedScene" uid="uid://cga1vfducy4nj" path="res://prefabs/objects/tamagochi_foods/tamagotchi_cake.tscn" id="6_n0hdf"]
+[ext_resource type="PackedScene" uid="uid://crkydtld7n3nl" path="res://prefabs/objects/tamagochi_foods/tamagotchi_meat.tscn" id="7_5gdxi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4maj"]
+radius = 41.5
+
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler", "sprite")]
+mass = 0.5
+lock_rotation = true
+freeze = true
+linear_damp = 5.0
+script = ExtResource("1_35n5i")
+priority = -1
+attractive = false
+eatable = false
+delete_on_applied = false
+growth_value = 100.0
+restored_hunger = 100.0
+on_click_handler = NodePath("ClickHandler")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.19209e-07, 0)
+texture = ExtResource("2_wemeq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p4maj")
+
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "cooldown", "object_spawner")]
+position = Vector2(0, -41)
+rotation = -1.5708
+script = ExtResource("3_u3iwr")
+parent = NodePath("..")
+cooldown = NodePath("Cooldown")
+object_spawner = NodePath("ObjectSpawner")
+
+[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
+script = ExtResource("4_8f1hu")
+prefabs = Array[PackedScene]([ExtResource("5_nd2ue"), ExtResource("6_n0hdf"), ExtResource("7_5gdxi")])
+spawn_force = 100.0
+
+[node name="Timer" type="Timer" parent="ClickHandler/ObjectSpawner"]
+
+[node name="Cooldown" type="Timer" parent="ClickHandler"]
+wait_time = 0.75

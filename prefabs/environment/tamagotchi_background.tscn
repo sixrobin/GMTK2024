@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8oopuy4vxqkf"]
+[gd_scene load_steps=6 format=3 uid="uid://c8oopuy4vxqkf"]
 
 [ext_resource type="Texture2D" uid="uid://dyqctmqods5dr" path="res://textures/tamagotchi/Tamagotchi_Background.png" id="1_88ki1"]
 [ext_resource type="Texture2D" uid="uid://dm3ery2m4khxh" path="res://textures/tamagotchi/Tamagotchi_Device.png" id="2_ka38p"]
 [ext_resource type="Texture2D" uid="uid://csotv14nfiaij" path="res://textures/tamagotchi/Wood.png" id="3_hu4xo"]
+[ext_resource type="PackedScene" uid="uid://nirkjdaue7sk" path="res://prefabs/objects/tamagochi_foods/tamagotchi_button.tscn" id="4_0asxw"]
 [ext_resource type="PackedScene" path="res://prefabs/wall.tscn" id="4_0x8rs"]
 
 [node name="Scene" type="Node2D"]
+
+[node name="Object" parent="." instance=ExtResource("4_0asxw")]
+position = Vector2(0, 207)
 
 [node name="TamagotchiBackground" type="Sprite2D" parent="."]
 z_index = -1
