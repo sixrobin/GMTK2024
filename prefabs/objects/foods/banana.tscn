@@ -11,7 +11,7 @@ height = 101.545
 radius = 37.7359
 height = 117.874
 
-[node name="Object" type="RigidBody2D"]
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("collision_check_timer")]
 mass = 0.1
 linear_damp = 5.0
 angular_damp = 5.0
@@ -19,6 +19,7 @@ script = ExtResource("1_32v3t")
 interact_duration = 1.0
 growth_value = 20.0
 restored_hunger = 17.0
+collision_check_timer = NodePath("CollisionCheckTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
@@ -36,5 +37,7 @@ shape = SubResource("CapsuleShape2D_8bc37")
 position = Vector2(3, 5)
 rotation = 1.01229
 shape = SubResource("CapsuleShape2D_44sfs")
+
+[node name="CollisionCheckTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

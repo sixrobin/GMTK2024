@@ -9,7 +9,7 @@ radius = 55.1893
 [sub_resource type="CircleShape2D" id="CircleShape2D_702al"]
 radius = 66.7308
 
-[node name="Object" type="RigidBody2D"]
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("collision_check_timer")]
 rotation = -0.769102
 mass = 0.2
 lock_rotation = true
@@ -18,6 +18,7 @@ script = ExtResource("1_pbnk8")
 interact_duration = 1.0
 growth_value = 30.0
 restored_hunger = 25.0
+collision_check_timer = NodePath("CollisionCheckTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
@@ -36,5 +37,7 @@ shape = SubResource("CircleShape2D_8t8p5")
 position = Vector2(-1.84439, 2.08647)
 rotation = 1.86787
 shape = SubResource("CircleShape2D_702al")
+
+[node name="CollisionCheckTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

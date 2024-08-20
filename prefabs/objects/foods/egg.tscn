@@ -17,7 +17,7 @@ radius = 34.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_skbxg"]
 radius = 124.004
 
-[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler")]
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("on_click_handler", "collision_check_timer")]
 rotation = -0.769262
 mass = 0.05
 linear_damp = 5.0
@@ -29,6 +29,7 @@ interact_duration = 1.0
 growth_value = 40.0
 restored_hunger = 33.0
 on_click_handler = NodePath("ClickHandler")
+collision_check_timer = NodePath("CollisionCheckTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
@@ -73,5 +74,7 @@ area = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickHandler/ExplosionHandler/Area2D"]
 shape = SubResource("CircleShape2D_skbxg")
+
+[node name="CollisionCheckTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

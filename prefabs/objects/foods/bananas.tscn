@@ -9,7 +9,7 @@ size = Vector2(157.94, 90.0143)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5jsg"]
 size = Vector2(186, 120)
 
-[node name="Object" type="RigidBody2D"]
+[node name="Object" type="RigidBody2D" node_paths=PackedStringArray("collision_check_timer")]
 mass = 0.2
 linear_damp = 5.0
 angular_damp = 5.0
@@ -17,6 +17,7 @@ script = ExtResource("1_jci00")
 interact_duration = 1.0
 growth_value = 30.0
 restored_hunger = 25.0
+collision_check_timer = NodePath("CollisionCheckTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
@@ -32,5 +33,7 @@ shape = SubResource("RectangleShape2D_kfbe5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_u5jsg")
+
+[node name="CollisionCheckTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
