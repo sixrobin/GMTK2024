@@ -203,6 +203,8 @@ func grow(growth_value: int):
 			$AnimatedSprite2D.loop = false
 			$AnimatedSprite2D.lock_anim = true
 			$AnimatedSprite2D.animation_over.connect(self.on_grow_animation_over)
+		elif current_growth_stage == 6:
+			SceneManagerSingleton.instance.next_scene()
 		elif not SceneManagerSingleton.scene_loading:
 			change_creature_scale(growth_stages[current_growth_stage].scale_factor)
 			$AnimatedSprite2D.change_size(current_growth_stage+1)

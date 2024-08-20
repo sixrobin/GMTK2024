@@ -15,7 +15,7 @@ offset_bottom = 648.0
 [node name="Leaderboard" parent="UI" instance=ExtResource("1_hrmlc")]
 layout_mode = 1
 
-[node name="Button" type="Button" parent="UI" node_paths=PackedStringArray("ui")]
+[node name="Button" type="Button" parent="UI" node_paths=PackedStringArray("ui", "leaderboard")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,4 +31,5 @@ grow_vertical = 2
 text = "PLAY"
 script = ExtResource("2_dqsw0")
 ui = NodePath("..")
+leaderboard = NodePath("../Leaderboard")
 game_scene = ExtResource("3_3kb20")

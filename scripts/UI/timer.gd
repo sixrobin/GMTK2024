@@ -1,4 +1,5 @@
 extends Control
+class_name GameTimer
 
 var time_elapsed: float = 0
 
