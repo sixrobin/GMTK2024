@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_ti2pf"]
 [ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_lwhon"]
 [ext_resource type="PackedScene" uid="uid://bqvmknwbr21ya" path="res://prefabs/objects/other_objects_room/chicken_toy.tscn" id="5_ondnr"]
-[ext_resource type="PackedScene" uid="uid://cuin8mdl0226d" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="6_44557"]
+[ext_resource type="PackedScene" uid="uid://c8257wjed8ayq" path="res://prefabs/objects/foods/stuffed_animal.tscn" id="6_44557"]
 [ext_resource type="Texture2D" uid="uid://1ju1jeu7fnwe" path="res://textures/environment/ToyChest_Open.png" id="6_wcnoi"]
 [ext_resource type="PackedScene" uid="uid://33d84wy1ecy7" path="res://prefabs/objects/foods/chocolate.tscn" id="7_28hoe"]
 [ext_resource type="Script" path="res://scripts/objects/explosion_handler.gd" id="7_hn71x"]
