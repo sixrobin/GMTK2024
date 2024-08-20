@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ujjguu1kkqxq"]
+[gd_scene load_steps=7 format=3 uid="uid://ujjguu1kkqxq"]
 
 [ext_resource type="Script" path="res://scripts/objects/objectOfInterest.gd" id="1_vysbs"]
 [ext_resource type="Texture2D" uid="uid://xor6eny6dygt" path="res://textures/environment/Clock.png" id="2_17li6"]
 [ext_resource type="Script" path="res://scripts/objects/object_on_click_handler.gd" id="3_oy324"]
-[ext_resource type="Script" path="res://scripts/objects/objectSpawner.gd" id="4_q4p0n"]
 [ext_resource type="Script" path="res://scripts/objects/attraction_handler.gd" id="6_eu8sr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbe5"]
@@ -37,15 +36,12 @@ shape = SubResource("RectangleShape2D_kfbe5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_r3stb")
 
-[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner")]
+[node name="ClickHandler" type="Node2D" parent="." node_paths=PackedStringArray("parent", "object_spawner", "attraction_handler")]
 script = ExtResource("3_oy324")
 parent = NodePath("..")
 destroy_after_x_click = 1
-object_spawner = NodePath("ObjectSpawner")
-
-[node name="ObjectSpawner" type="Node2D" parent="ClickHandler"]
-script = ExtResource("4_q4p0n")
-quantity = 1
+object_spawner = NodePath("")
+attraction_handler = NodePath("AttractionHandler")
 
 [node name="AttractionHandler" type="Node2D" parent="ClickHandler" node_paths=PackedStringArray("timer")]
 script = ExtResource("6_eu8sr")
