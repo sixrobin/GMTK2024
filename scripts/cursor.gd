@@ -78,8 +78,8 @@ func on_hunger_modified(old_hunger: float, new_hunger: float):
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("SpawnObject"):
-		self.debug_object_spawner.spawn_object(get_global_mouse_position(), 0, SceneManagerSingleton.instance.current_scene)
+	#if event.is_action_pressed("SpawnObject"):
+		#self.debug_object_spawner.spawn_object(get_global_mouse_position(), 0, SceneManagerSingleton.instance.current_scene)
 	if event.is_action_pressed("ClickObject"):
 		self.tryClickObject()
 	if event.is_action_pressed("StartDrag"):
