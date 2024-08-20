@@ -17,7 +17,6 @@ func _ready():
 	$FrameTimer.wait_time = 1.0 / self.frame_rate
 	
 func play_animation(name: String, next_name: String = ""):
-	print(name)
 	self.animation = name
 	self.frame = 0
 	self.set_next_animation(next_name)

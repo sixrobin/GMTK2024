@@ -19,11 +19,13 @@ class_name ObjectOfInterest
 
 @export var sprite: Sprite2D
 @export var random_rotate_on_spawn: bool = false
+@export var collision_check_timer: Timer = null
 
 var is_being_interacted: bool = false
 var current_attractive: bool = false
 var current_priority: int = 0
 var interaction_timer: Timer
+var last_collision_check = true
 
 func _ready() -> void:
 	if interact_duration > 0:
@@ -31,7 +33,13 @@ func _ready() -> void:
 		interaction_timer.wait_time = interact_duration
 		interaction_timer.one_shot = true
 	ObjectManager.register_object(self)
-	set_attractive(attractive, priority)
+	current_priority = priority
+	if !is_on_furniture():
+		set_attractive(attractive, priority)
+	if collision_check_timer:
+		collision_check_timer.timeout.connect(on_collision_check_timeout)
+		collision_check_timer.one_shot = false
+		collision_check_timer.start()
 	if random_rotate_on_spawn:
 		self.global_rotation = deg_to_rad(randf_range(0, 360))
 
@@ -41,6 +49,26 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Creature and !body.is_stunned:
 		if body.is_starving() or priority >= 0:
 			body.interact(self)
+
+func on_collision_check_timeout():
+	var check = self.is_on_furniture()
+	if check == last_collision_check:
+		return
+	last_collision_check = check
+	set_attractive(!check, current_priority)
+
+func is_on_furniture() -> bool:
+	var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
+	query.position = self.global_position
+	query.collide_with_areas = true
+	var result = get_world_2d().direct_space_state.intersect_point(query)
+	
+	for collision in result:
+		if collision.has("collider"):
+			var object: ObjectOfInterest = collision.collider as ObjectOfInterest
+			if object != null and !object.is_being_interacted and object != self and object.freeze:
+				return true
+	return false
 
 func set_attractive(value: bool, specific_priority: int):
 	if current_attractive == value:

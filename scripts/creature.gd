@@ -192,7 +192,6 @@ func grow(growth_value: int):
 		return
 	
 	growth_meter += growth_value
-	print(growth_meter)
 	
 	#Si le growth meter est rempli, on passe au prochain stage et on update la scale & le sprite
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
@@ -206,7 +205,6 @@ func grow(growth_value: int):
 			$AnimatedSprite2D.animation_over.connect(self.on_grow_animation_over)
 		elif not SceneManagerSingleton.scene_loading:
 			change_creature_scale(growth_stages[current_growth_stage].scale_factor)
-			print(clampi(current_growth_stage+1,0,4))
 			$AnimatedSprite2D.change_size(current_growth_stage+1)
 	
 	if growth_meter >= growth_stages[current_growth_stage].meter_to_next_stage:
