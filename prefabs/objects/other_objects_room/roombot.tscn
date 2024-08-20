@@ -20,7 +20,6 @@ attractive = false
 interact_duration = 1.0
 growth_value = 30.0
 restored_hunger = 25.0
-random_rotate_on_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
